@@ -1,0 +1,16 @@
+PODS:
+  - FormTextField (3.1.0)
+
+DEPENDENCIES:
+  - FormTextField
+
+SPEC REPOS:
+  trunk:
+    - FormTextField
+
+SPEC CHECKSUMS:
+  FormTextField: 229e496b8dae002c5062ea5e961e2140528782e2
+
+PODFILE CHECKSUM: 62acad802c48544b2b81faa61388d8ea8b820ee8
+
+COCOAPODS: 1.11.2
