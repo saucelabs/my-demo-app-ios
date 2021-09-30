@@ -21,10 +21,6 @@ class MyCartViewController: UIViewController {
     
     @IBOutlet weak var productTV: UITableView!
     
-    var productImagesArr = [
-        UIImage(named: "BagBlack Image"),
-        UIImage(named: "ShirtBlack Image")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         productTV.delegate = self
@@ -195,7 +191,7 @@ extension MyCartViewController: UITableViewDelegate, UITableViewDataSource {
             let totalPrice = Double(productPrice)! * Double(productQuantity)
             Engine.sharedInstance.totalPrice += totalPrice
         }
-        totalPriceLbl.text = "$" + String(Engine.sharedInstance.totalPrice)
+        totalPriceLbl.text = "$" + String(format: "%.2f", Engine.sharedInstance.totalPrice)
     }
 }
 

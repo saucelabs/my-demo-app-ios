@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import SafariServices
 
-class WebViewViewController: UIViewController,SFSafariViewControllerDelegate {
+class WebViewViewController: UIViewController {
     
     @IBOutlet weak var cartCountContView: UIView!
     
@@ -31,20 +30,15 @@ class WebViewViewController: UIViewController,SFSafariViewControllerDelegate {
     @IBAction func goToSiteButton(_ sender: Any) {
         var urlString: String = urlTF.text!
         if !urlString.starts(with: "http://") && !urlString.starts(with: "https://") {
-              urlString = "http://\(urlString)"
+              urlString = "https://\(urlString)"
         }
         
-        if let url: URL = URL(string: urlString) {
-        let controller = SFSafariViewController(url: url)
-        self.present(controller, animated: true, completion: nil)
-        controller.delegate = self
-        }
+        let storyboard = UIStoryboard.init(name: "Menu", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewHandlerViewController") as! WebViewHandlerViewController
+        vc.urlString = urlString
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
+   
     @IBAction func catalogButton(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "TabBar", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CatalogViewController") as! CatalogViewController

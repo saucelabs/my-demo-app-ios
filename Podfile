@@ -8,5 +8,6 @@ target 'My Demo App' do
   # Pods for My Demo App
 
   pod 'FormTextField'
+  pod 'EasyTipView'
 
 end
