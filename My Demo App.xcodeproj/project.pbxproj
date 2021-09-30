@@ -47,7 +47,19 @@
 		2FC1FA5726F36CEE004A2555 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */; };
 		2FF8B10826FB1BD200921534 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8B10726FB1BD200921534 /* Constants.swift */; };
 		A0794204410772F608EC9A78 /* Pods_My_Demo_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA2876F17353ADA6DBFD217 /* Pods_My_Demo_App.framework */; };
+		A2C826AB2706266600616582 /* My_Demo_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C826AA2706266600616582 /* My_Demo_AppUITests.swift */; };
+		A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A2C826AD2706266600616582 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2F45FB3926F1CC0100A13B16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2F45FB4026F1CC0100A13B16;
+			remoteInfo = "My Demo App";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0DB1B99658623646544D9A3B /* Pods-My Demo App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.release.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +105,10 @@
 		2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		2FF8B10726FB1BD200921534 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4BA2876F17353ADA6DBFD217 /* Pods_My_Demo_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Demo_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2C826A82706266600616582 /* My Demo AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Demo AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2C826AA2706266600616582 /* My_Demo_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Demo_AppUITests.swift; sourceTree = "<group>"; };
+		A2C826AC2706266600616582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDemoAppTestBase.swift; sourceTree = "<group>"; };
 		E0BA5FF8BCA19111EEBEF013 /* Pods-My Demo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.debug.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +118,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0794204410772F608EC9A78 /* Pods_My_Demo_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2C826A52706266600616582 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				2F45FB4326F1CC0100A13B16 /* My Demo App */,
+				A2C826A92706266600616582 /* My Demo AppUITests */,
 				2F45FB4226F1CC0100A13B16 /* Products */,
 				00ADF45586AA15CD74704D86 /* Pods */,
 				98B495C95C2D44BB34FF6F13 /* Frameworks */,
@@ -131,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				2F45FB4126F1CC0100A13B16 /* My Demo App.app */,
+				A2C826A82706266600616582 /* My Demo AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +263,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A2C826A92706266600616582 /* My Demo AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A2C826AA2706266600616582 /* My_Demo_AppUITests.swift */,
+				A2C826AC2706266600616582 /* Info.plist */,
+				A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */,
+			);
+			path = "My Demo AppUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,17 +295,39 @@
 			productReference = 2F45FB4126F1CC0100A13B16 /* My Demo App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A2C826A72706266600616582 /* My Demo AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A2C826AF2706266600616582 /* Build configuration list for PBXNativeTarget "My Demo AppUITests" */;
+			buildPhases = (
+				A2C826A42706266600616582 /* Sources */,
+				A2C826A52706266600616582 /* Frameworks */,
+				A2C826A62706266600616582 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2C826AE2706266600616582 /* PBXTargetDependency */,
+			);
+			name = "My Demo AppUITests";
+			productName = "My Demo AppUITests";
+			productReference = A2C826A82706266600616582 /* My Demo AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2F45FB3926F1CC0100A13B16 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					2F45FB4026F1CC0100A13B16 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					A2C826A72706266600616582 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 2F45FB4026F1CC0100A13B16;
 					};
 				};
 			};
@@ -288,6 +345,7 @@
 			projectRoot = "";
 			targets = (
 				2F45FB4026F1CC0100A13B16 /* My Demo App */,
+				A2C826A72706266600616582 /* My Demo AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,6 +364,13 @@
 				2F0DE6C226FB3485008C6D63 /* Proxima Nova Medium.otf in Resources */,
 				2F0DE6C026FB340C008C6D63 /* proximanova-semibold.otf in Resources */,
 				2F592B2526F9B5CA00F9D6ED /* TabBar.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2C826A62706266600616582 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +456,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A2C826A42706266600616582 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2C826AB2706266600616582 /* My_Demo_AppUITests.swift in Sources */,
+				A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2C826AE2706266600616582 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2F45FB4026F1CC0100A13B16 /* My Demo App */;
+			targetProxy = A2C826AD2706266600616582 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2F45FB4A26F1CC0100A13B16 /* Authentication.storyboard */ = {
@@ -537,8 +619,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = G5P3FNGJ6N;
+				DEVELOPMENT_TEAM = EKVU9746UD;
 				INFOPLIST_FILE = "My Demo App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,6 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = G5P3FNGJ6N;
 				INFOPLIST_FILE = "My Demo App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -570,6 +654,46 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A2C826B02706266600616582 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EKVU9746UD;
+				INFOPLIST_FILE = "My Demo AppUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.saucelabs.My-Demo-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "My Demo App";
+			};
+			name = Debug;
+		};
+		A2C826B12706266600616582 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EKVU9746UD;
+				INFOPLIST_FILE = "My Demo AppUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.saucelabs.My-Demo-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "My Demo App";
 			};
 			name = Release;
 		};
@@ -590,6 +714,15 @@
 			buildConfigurations = (
 				2F45FB5626F1CC0400A13B16 /* Debug */,
 				2F45FB5726F1CC0400A13B16 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A2C826AF2706266600616582 /* Build configuration list for PBXNativeTarget "My Demo AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A2C826B02706266600616582 /* Debug */,
+				A2C826B12706266600616582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
