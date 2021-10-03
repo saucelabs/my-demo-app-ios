@@ -52,7 +52,7 @@ class ProductPageDetailViewController: UIViewController {
         cartCountLbl.text = String(Engine.sharedInstance.cartCount)
         
         
-        if productName == "Test.sllTheThings() T-Shirt" || productName == "Sauce Lab Onesie" {
+        if productName == "Test.allTheThings() T-Shirt" || productName == "Sauce Lab Onesie" {
             blueBtn.isHidden = true
             redBtn.isSelected = true
             selectedColor = "Red"

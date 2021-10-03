@@ -95,6 +95,7 @@
 		2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		2FF8B10726FB1BD200921534 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4BA2876F17353ADA6DBFD217 /* Pods_My_Demo_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Demo_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A775022709DF3900C1973E /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		E0BA5FF8BCA19111EEBEF013 /* Pods-My Demo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.debug.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +152,7 @@
 				2F45FB4D26F1CC0400A13B16 /* Assets.xcassets */,
 				2F45FB4F26F1CC0400A13B16 /* LaunchScreen.storyboard */,
 				2F45FB5226F1CC0400A13B16 /* Info.plist */,
+				C4A775022709DF3900C1973E /* Bridge.h */,
 			);
 			path = "My Demo App";
 			sourceTree = "<group>";
@@ -253,6 +255,7 @@
 				2F45FB3E26F1CC0100A13B16 /* Frameworks */,
 				2F45FB3F26F1CC0100A13B16 /* Resources */,
 				D19A17DE31126BF6C3831B06 /* [CP] Embed Pods Frameworks */,
+				E8FF730E8A83296811A5A6BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,6 +333,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8FF730E8A83296811A5A6BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EA9693D2DC2608C229754F1A /* [CP] Check Pods Manifest.lock */ = {
@@ -550,6 +570,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemoapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -572,6 +593,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemoapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

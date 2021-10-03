@@ -54,7 +54,7 @@ class Utils {
         
         Engine.sharedInstance.productList.append(["Id":"6",
                                                   "ProductImageName":"ShirtRed Image",
-                                                  "ProductName":"Test.sllTheThings() T-Shirt",
+                                                  "ProductName":"Test.allTheThings() T-Shirt",
                                                   "ProductPrice":"15.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":"The classic Sauce Labs t-shirts is perfect to wear when cozying up to your keboard to automate a few tests. Super-soft and comfly ringspun combed cotton.",
