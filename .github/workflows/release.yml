@@ -29,7 +29,7 @@ jobs:
         scheme: My Demo App
         code-signing-identity: iOS Development
         export-method: development
-        outout-path: build/demo-app.ipa
+        output-path: build/demo-app.ipa
         p12-base64: ${{ secrets.P12_BASE64 }}
         certificate-password: ${{ secrets.P12_PASSWORD }}
         mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
