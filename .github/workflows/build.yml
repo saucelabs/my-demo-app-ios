@@ -13,10 +13,10 @@ jobs:
         # Available XCodes taken from https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11.0-Readme.md
         - xcode-version: 12.4
           device-destination: "name=iPhone 11 Pro Max"
-          simulator-destination: "Any iOS Simulator Device"
+          simulator-destination: "name=Any iOS Simulator Device"
         - xcode-version: 12.3
           device-destination: "name=iPhone 11 Pro Max"
-          simulator-destination: "Any iOS Simulator Device"
+          simulator-destination: "name=Any iOS Simulator Device"
     timeout-minutes: 30
     steps:
     - uses: actions/checkout@v2
