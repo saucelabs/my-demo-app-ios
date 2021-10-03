@@ -17,6 +17,7 @@ class ProductPageDetailViewController: UIViewController {
     @IBOutlet weak var addToCartBtn: ButtonRoundCorner!
     
     @IBOutlet weak var cartCountContView: UIView!
+    @IBOutlet weak var ratingView: RatingController!
     
     @IBOutlet weak var productDescriptionTV: UITextView!
     @IBOutlet weak var productHighlightsTV: UITextView!
@@ -33,8 +34,8 @@ class ProductPageDetailViewController: UIViewController {
     var productPrice = ""
     var productHighlights = ""
     var productId = ""
+    var productRating = 1
     var selectedColor = "Red"
-
     var productQuantity = 1
     
     override func viewDidLoad() {
@@ -51,11 +52,11 @@ class ProductPageDetailViewController: UIViewController {
         cartCountLbl.text = String(Engine.sharedInstance.cartCount)
         
         
-        if productName == "Sauce Lab Bike Light" || productName == "Sauce Lab Onesie" {
+        if productName == "Test.sllTheThings() T-Shirt" || productName == "Sauce Lab Onesie" {
             blueBtn.isHidden = true
             redBtn.isSelected = true
             selectedColor = "Red"
-        }else if productName == "Sauce Lab Bolt T-Shirt" || productName == "Test.sllTheThings() T-Shirt" {
+        }else if productName == "Sauce Lab Bolt T-Shirt" || productName == "Sauce Lab Bike Light" {
             blueBtn.isHidden = true
             grayBtn.isHidden = true
             redBtn.isHidden = true
@@ -76,6 +77,10 @@ class ProductPageDetailViewController: UIViewController {
         let storyboard = UIStoryboard.init(name: "TabBar", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CatalogViewController") as! CatalogViewController
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func ratingButton(_ sender: Any) {
+        Methods.showAlertMessage(vc: self, title: "", message: "Thank you for submitting your review!")
     }
     
     @IBAction func redButton(_ sender: UIButton) {
@@ -128,7 +133,7 @@ class ProductPageDetailViewController: UIViewController {
                                                       "ProductPrice":productPrice,
                                                       "ProductRating":"4",
                                                       "ProductDiscription":productHighlights,
-                                                      "ProductHighlights":productHighlights,"ProductColor":selectedColor,"ProductQuantity":productQuantity])
+                                                      "ProductHighlights":productHighlights,"ProductColor":selectedColor,"ProductQuantity":productQuantity,"ProductRating":productRating])
         }
         if Engine.sharedInstance.cartCount < 1 {
             cartCountContView.isHidden = true

@@ -24,6 +24,7 @@
 		2F4AA65B26FA0CA2006A65BB /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AA65A26FA0CA2006A65BB /* RatingController.swift */; };
 		2F5543AF26F3CEF1008F6550 /* ReviewYourOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5543AE26F3CEF1008F6550 /* ReviewYourOrderViewController.swift */; };
 		2F5543B126F3D160008F6550 /* CheckoutCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5543B026F3D160008F6550 /* CheckoutCompleteViewController.swift */; };
+		2F55AC842705C75100890C88 /* WebViewHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F55AC832705C75100890C88 /* WebViewHandlerViewController.swift */; };
 		2F592B2326F9B31B00F9D6ED /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F592B2226F9B31B00F9D6ED /* Menu.storyboard */; };
 		2F592B2526F9B5CA00F9D6ED /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F592B2426F9B5CA00F9D6ED /* TabBar.storyboard */; };
 		2F5A0C9A26F7C85600666666 /* ProductPageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A0C9926F7C85600666666 /* ProductPageDetailViewController.swift */; };
@@ -70,6 +71,7 @@
 		2F4AA65A26FA0CA2006A65BB /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		2F5543AE26F3CEF1008F6550 /* ReviewYourOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewYourOrderViewController.swift; sourceTree = "<group>"; };
 		2F5543B026F3D160008F6550 /* CheckoutCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCompleteViewController.swift; sourceTree = "<group>"; };
+		2F55AC832705C75100890C88 /* WebViewHandlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewHandlerViewController.swift; sourceTree = "<group>"; };
 		2F592B2226F9B31B00F9D6ED /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		2F592B2426F9B5CA00F9D6ED /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		2F5A0C9926F7C85600666666 /* ProductPageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageDetailViewController.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		2F45FB5A26F2002A00A13B16 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F55AC832705C75100890C88 /* WebViewHandlerViewController.swift */,
 				2F45FB4826F1CC0100A13B16 /* LoginViewController.swift */,
 				2F8026B726F35900003F8272 /* ShippingAddressViewController.swift */,
 				2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */,
@@ -367,6 +370,7 @@
 				2F3EBC2126F3DA71006CA19A /* MenuViewController.swift in Sources */,
 				2F1AAB7726F88D0800CC0A09 /* ViewTopRoundCorner.swift in Sources */,
 				2F8414EC26FC55BF008C1FA8 /* Utils.swift in Sources */,
+				2F55AC842705C75100890C88 /* WebViewHandlerViewController.swift in Sources */,
 				2F81479E26F4877E007E98EC /* GeoLocationViewController.swift in Sources */,
 				2F7BEFAE26F48C8C00457331 /* AboutViewController.swift in Sources */,
 				2F45FB4926F1CC0100A13B16 /* LoginViewController.swift in Sources */,

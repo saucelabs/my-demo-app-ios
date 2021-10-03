@@ -84,7 +84,6 @@ class CatalogViewController: UIViewController {
             return ((str1 as NSDictionary).value(forKey: "ProductName") as! String) < ((str2 as NSDictionary).value(forKey: "ProductName") as! String)
           })
         productsCV.reloadData()
-        
         sortPopUpView.removeFromSuperview()
     }
     
@@ -181,6 +180,17 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         cell.productNameLbl.text = productName
         cell.productPriceLbl.text = "$ " + productPrice
         
+        cell.star1Btn.tag = indexPath.row
+        cell.star1Btn.addTarget(self, action: #selector(showAlert(sender:)), for: .touchUpInside)
+        cell.star2Btn.tag = indexPath.row
+        cell.star2Btn.addTarget(self, action: #selector(showAlert(sender:)), for: .touchUpInside)
+        cell.star3Btn.tag = indexPath.row
+        cell.star3Btn.addTarget(self, action: #selector(showAlert(sender:)), for: .touchUpInside)
+        cell.star4Btn.tag = indexPath.row
+        cell.star4Btn.addTarget(self, action: #selector(showAlert(sender:)), for: .touchUpInside)
+        cell.star5Btn.tag = indexPath.row
+        cell.star5Btn.addTarget(self, action: #selector(showAlert(sender:)), for: .touchUpInside)
+        
         return cell
     }
     
@@ -231,6 +241,13 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         fatalError()
     }
+    
+    @objc func showAlert(sender:UIButton!)
+    {
+        let alert = UIAlertController(title: "", message: "Thank you for submitting your review!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 class ProductsCell: UICollectionViewCell {
@@ -239,4 +256,10 @@ class ProductsCell: UICollectionViewCell {
     
     @IBOutlet weak var productNameLbl: UILabel!
     @IBOutlet weak var productPriceLbl: UILabel!
+    
+    @IBOutlet weak var star1Btn: UIButton!
+    @IBOutlet weak var star2Btn: UIButton!
+    @IBOutlet weak var star3Btn: UIButton!
+    @IBOutlet weak var star4Btn: UIButton!
+    @IBOutlet weak var star5Btn: UIButton!
 }

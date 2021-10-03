@@ -10,7 +10,6 @@ import UIKit
 class ReviewYourOrderViewController: UIViewController {
     
     @IBOutlet weak var mainViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var footerViewHeight: NSLayoutConstraint!
     
     @IBOutlet weak var reviewYourOrderTV: UITableView!
     
@@ -38,28 +37,22 @@ class ReviewYourOrderViewController: UIViewController {
     
     var isBillingSame = false
     
-    var productImagesArr = [
-        UIImage(named: "BagBlack Image"),
-        UIImage(named: "ShirtBlack Image")]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         reviewYourOrderTV.delegate = self
         reviewYourOrderTV.dataSource = self
         
         cartCountLbl.text = String(Engine.sharedInstance.cartCount)
-        totalItemLbl.text = String(Engine.sharedInstance.cartCount) + "item"
-        totalPriceLbl.text = "$" + String(Engine.sharedInstance.totalPrice + 5.99)
         
         if Engine.sharedInstance.cartCount < 1 {
             cartCountContView.isHidden = true
         }
         
-        let noOfImages = productImagesArr.count
+        let noOfImages = Engine.sharedInstance.cartList.count
         let calculatedSize = noOfImages * 195
         
         if isBillingSame{
-            mainViewHeight.constant = CGFloat(650 + calculatedSize)
+            mainViewHeight.constant = CGFloat(700 + calculatedSize)
             
             fullnameBillingLbl.textColor = .white
             addressBillingLbl.textColor = .white
@@ -71,7 +64,10 @@ class ReviewYourOrderViewController: UIViewController {
             mainViewHeight.constant = CGFloat(750 + calculatedSize)
             billingAddressLbl.isHidden = true
         }
-        
+        setOrderDetail()
+    }
+    
+    func setOrderDetail() {
         fullNameLbl.text = Engine.sharedInstance.fullName
         deliveryAddressLbl.text = Engine.sharedInstance.addressLine1
         cityStateRegionLbl.text = Engine.sharedInstance.city + "," + Engine.sharedInstance.stateRegion
@@ -85,8 +81,8 @@ class ReviewYourOrderViewController: UIViewController {
         addressBillingLbl.text = Engine.sharedInstance.addressLine1Billing + "," + Engine.sharedInstance.addressLine2Billing
         cityStateBillingLbl.text = Engine.sharedInstance.cityBilling + "," + Engine.sharedInstance.countryBilling
         zipCountryBillingLbl.text = Engine.sharedInstance.zipCodeBilling + "," + Engine.sharedInstance.countryBilling
-        
-        
+        totalItemLbl.text = String(Engine.sharedInstance.cartCount) + "item"
+        totalPriceLbl.text = "$" + String(format: "%.2f", Engine.sharedInstance.totalPrice + 5.99)
     }
     
     @IBAction func backButton(_ sender: Any) {
@@ -133,7 +129,7 @@ class ReviewYourOrderViewController: UIViewController {
 extension ReviewYourOrderViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return productImagesArr.count
+        return Engine.sharedInstance.cartList.count
         
     }
     
@@ -141,7 +137,16 @@ extension ReviewYourOrderViewController: UITableViewDelegate, UITableViewDataSou
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewYourOrderCell", for: indexPath) as! ReviewYourOrderCell
         
-        cell.productIV.image = productImagesArr[indexPath.row]
+        let productDataDic = Engine.sharedInstance.cartList[indexPath.row]
+        let imageName = productDataDic.value(forKey: "ProductImageName") as! String
+        let productName = productDataDic.value(forKey: "ProductName") as! String
+        let productPrice = productDataDic.value(forKey: "ProductPrice") as! String
+        let productColor = productDataDic.value(forKey: "ProductColor") as! String
+    
+        cell.productIV.image = UIImage(named: imageName)
+        cell.productNameLbl.text = productName
+        cell.productPriceLbl.text = "$ " + productPrice
+        cell.productColorLbl.text = productColor
         
         return cell
         
