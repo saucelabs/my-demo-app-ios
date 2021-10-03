@@ -1,10 +1,3 @@
-//
-//  MyDemoAppTestBase.swift
-//  My Demo AppUITests
-//
-//  Created by Erik James on 9/30/21.
-//
-
 import XCTest
 import Foundation
 
@@ -13,9 +6,7 @@ class MyDemoAppTestBase: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        
         continueAfterFailure = true
-        
         app.launch()
     }
     
@@ -40,7 +31,6 @@ class MyDemoAppTestBase: XCTestCase {
         add(attachment)
     }
     
-    
     func waitForElementToAppear(_ element: XCUIElement){
         let result = element.waitForExistence(timeout: 5)
         guard result else {
@@ -49,10 +39,7 @@ class MyDemoAppTestBase: XCTestCase {
         }
     }
     
-    
-    
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
         app.terminate()
     }
