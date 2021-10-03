@@ -25,4 +25,4 @@ jobs:
       with:
         xcode-version: ${{ matrix.xcode-version }}
     - name: Build for iOS Simulator
-      run: xcodebuild ONLY_ACTIVE_ARCH=NO ARCHS_STANDARD="i386 x86_64" -workspace "My Demo App.xcworkspace" -scheme "My Demo App" -sdk iphonesimulator -destination "name=iPhone 12 Pro Max" -configuration Release | xcpretty
+      run:  set -o pipefail && xcodebuild ONLY_ACTIVE_ARCH=NO ARCHS_STANDARD="i386 x86_64" -workspace "My Demo App.xcworkspace" -scheme "My Demo App" -sdk iphonesimulator -destination "name=iPhone 12 Pro Max" -configuration Release -derivedDataPath build | xcpretty
