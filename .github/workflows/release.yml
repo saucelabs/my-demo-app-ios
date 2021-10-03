@@ -1,6 +1,8 @@
 name: Create Release for My Demo App
-on: 
-  push: main
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   run-tests:
