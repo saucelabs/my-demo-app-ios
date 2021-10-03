@@ -24,6 +24,7 @@
 		2F4AA65B26FA0CA2006A65BB /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4AA65A26FA0CA2006A65BB /* RatingController.swift */; };
 		2F5543AF26F3CEF1008F6550 /* ReviewYourOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5543AE26F3CEF1008F6550 /* ReviewYourOrderViewController.swift */; };
 		2F5543B126F3D160008F6550 /* CheckoutCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5543B026F3D160008F6550 /* CheckoutCompleteViewController.swift */; };
+		2F55AC842705C75100890C88 /* WebViewHandlerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F55AC832705C75100890C88 /* WebViewHandlerViewController.swift */; };
 		2F592B2326F9B31B00F9D6ED /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F592B2226F9B31B00F9D6ED /* Menu.storyboard */; };
 		2F592B2526F9B5CA00F9D6ED /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F592B2426F9B5CA00F9D6ED /* TabBar.storyboard */; };
 		2F5A0C9A26F7C85600666666 /* ProductPageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5A0C9926F7C85600666666 /* ProductPageDetailViewController.swift */; };
@@ -82,6 +83,7 @@
 		2F4AA65A26FA0CA2006A65BB /* RatingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		2F5543AE26F3CEF1008F6550 /* ReviewYourOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewYourOrderViewController.swift; sourceTree = "<group>"; };
 		2F5543B026F3D160008F6550 /* CheckoutCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutCompleteViewController.swift; sourceTree = "<group>"; };
+		2F55AC832705C75100890C88 /* WebViewHandlerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewHandlerViewController.swift; sourceTree = "<group>"; };
 		2F592B2226F9B31B00F9D6ED /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		2F592B2426F9B5CA00F9D6ED /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
 		2F5A0C9926F7C85600666666 /* ProductPageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPageDetailViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		A2C826AA2706266600616582 /* My_Demo_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = My_Demo_AppUITests.swift; sourceTree = "<group>"; };
 		A2C826AC2706266600616582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDemoAppTestBase.swift; sourceTree = "<group>"; };
+		C4A775022709DF3900C1973E /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		E0BA5FF8BCA19111EEBEF013 /* Pods-My Demo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.debug.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,6 +177,7 @@
 				2F45FB4D26F1CC0400A13B16 /* Assets.xcassets */,
 				2F45FB4F26F1CC0400A13B16 /* LaunchScreen.storyboard */,
 				2F45FB5226F1CC0400A13B16 /* Info.plist */,
+				C4A775022709DF3900C1973E /* Bridge.h */,
 			);
 			path = "My Demo App";
 			sourceTree = "<group>";
@@ -181,6 +185,7 @@
 		2F45FB5A26F2002A00A13B16 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2F55AC832705C75100890C88 /* WebViewHandlerViewController.swift */,
 				2F45FB4826F1CC0100A13B16 /* LoginViewController.swift */,
 				2F8026B726F35900003F8272 /* ShippingAddressViewController.swift */,
 				2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */,
@@ -285,6 +290,7 @@
 				2F45FB3E26F1CC0100A13B16 /* Frameworks */,
 				2F45FB3F26F1CC0100A13B16 /* Resources */,
 				D19A17DE31126BF6C3831B06 /* [CP] Embed Pods Frameworks */,
+				E8FF730E8A83296811A5A6BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -394,6 +400,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E8FF730E8A83296811A5A6BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EA9693D2DC2608C229754F1A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -432,6 +455,7 @@
 				2F3EBC2126F3DA71006CA19A /* MenuViewController.swift in Sources */,
 				2F1AAB7726F88D0800CC0A09 /* ViewTopRoundCorner.swift in Sources */,
 				2F8414EC26FC55BF008C1FA8 /* Utils.swift in Sources */,
+				2F55AC842705C75100890C88 /* WebViewHandlerViewController.swift in Sources */,
 				2F81479E26F4877E007E98EC /* GeoLocationViewController.swift in Sources */,
 				2F7BEFAE26F48C8C00457331 /* AboutViewController.swift in Sources */,
 				2F45FB4926F1CC0100A13B16 /* LoginViewController.swift in Sources */,
@@ -629,6 +653,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemoapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -652,6 +677,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemoapp.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -1,16 +1,24 @@
 PODS:
+  - EasyTipView (2.1.0)
   - FormTextField (3.1.0)
+  - TestFairy (1.29.3)
 
 DEPENDENCIES:
+  - EasyTipView
   - FormTextField
+  - TestFairy
 
 SPEC REPOS:
   trunk:
+    - EasyTipView
     - FormTextField
+    - TestFairy
 
 SPEC CHECKSUMS:
+  EasyTipView: a92b6edc377b81c5ac18e9fd35d5ee78e9409488
   FormTextField: 229e496b8dae002c5062ea5e961e2140528782e2
+  TestFairy: 7a7a552eefe8970da2b63b83f519e3928ae47f12
 
-PODFILE CHECKSUM: 62acad802c48544b2b81faa61388d8ea8b820ee8
+PODFILE CHECKSUM: fef4b3bed19073a99ec068e1fd9ee6fb105515a0
 
 COCOAPODS: 1.11.2

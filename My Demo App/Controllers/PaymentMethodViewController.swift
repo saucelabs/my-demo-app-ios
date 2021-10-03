@@ -7,10 +7,13 @@
 
 import UIKit
 import FormTextField
+import EasyTipView
 
-class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
+class PaymentMethodViewController: UIViewController, UITextFieldDelegate,EasyTipViewDelegate {
     @IBOutlet weak var billingAddresBtn: UIButton!
+    @IBOutlet weak var securityCodeTipBtn: UIButton!
     
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var billingAddressView: UIView!
     @IBOutlet weak var cartCountContView: UIView!
     
@@ -34,6 +37,7 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var billingAddressViewHeight: NSLayoutConstraint!
     
     var isBillingSame = false
+    var preferences = EasyTipView.Preferences()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,28 +47,6 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
         if Engine.sharedInstance.cartCount < 1 {
             cartCountContView.isHidden = true
         }
-        
-        let cardNumberPlaceholderText = NSAttributedString(string: "3258 1265 7568 7896",
-                                                            attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(cgColor: #colorLiteral(red: 0.4274509804, green: 0.4588235294, blue: 0.5176470588, alpha: 1))])
-        let expirationDatePlaceholderText = NSAttributedString(string: "03/25",
-                                                            attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(cgColor: #colorLiteral(red: 0.4274509804, green: 0.4588235294, blue: 0.5176470588, alpha: 1))])
-        let securityCodePlaceholderText = NSAttributedString(string: "123",
-                                                            attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(cgColor: #colorLiteral(red: 0.4274509804, green: 0.4588235294, blue: 0.5176470588, alpha: 1))])
-        
-        cardNumberTF.borderWidth = 0.7
-        cardNumberTF.layer.cornerRadius = 5
-        cardNumberTF.layer.borderColor = #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1)
-        cardNumberTF.attributedPlaceholder = cardNumberPlaceholderText
-        
-        expirationDateTF.borderWidth = 0.7
-        expirationDateTF.layer.cornerRadius = 5
-        expirationDateTF.layer.borderColor = #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1)
-        expirationDateTF.attributedPlaceholder = expirationDatePlaceholderText
-        
-        securityCodeTF.borderWidth = 0.7
-        securityCodeTF.layer.cornerRadius = 5
-        securityCodeTF.layer.borderColor = #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1)
-        securityCodeTF.attributedPlaceholder = securityCodePlaceholderText
         
         billingAddresBtn.isSelected = true
         isBillingSame = true
@@ -76,36 +58,17 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
             mainViewHeight.constant = 1100
             billingAddressView.isHidden = false
         }
-        
-        cardNumberTF.inputType = .integer
-        cardNumberTF.formatter = CardNumberFormatter()
-        var validation = Validation()
-        validation.minimumLength = "1234 5678 1234 5678".count
-        validation.maximumLength = "1234 5678 1234 5678".count
-        let characterSet = NSMutableCharacterSet.decimalDigit()
-        characterSet.addCharacters(in: " ")
-        validation.characterSet = characterSet as CharacterSet
-        var inputValidator = InputValidator(validation: validation)
-        cardNumberTF.inputValidator = inputValidator
-        
-        expirationDateTF.inputType = .integer
-        expirationDateTF.formatter = CardExpirationDateFormatter()
-        validation = Validation()
-        validation.minimumLength = 1
-        let inputValidatorExpiry = CardExpirationDateInputValidator(validation: validation)
-        expirationDateTF.inputValidator = inputValidatorExpiry
-        
-        securityCodeTF.inputType = .integer
-        validation = Validation()
-        validation.maximumLength = "CVC".count
-        validation.minimumLength = "CVC".count
-        validation.characterSet = CharacterSet.decimalDigits
-        inputValidator = InputValidator(validation: validation)
-        securityCodeTF.inputValidator = inputValidator
+        toolTipPreferences()
+        formTextFieldValidation()
     }
     
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func securityCodeTipButton(_ sender: Any) {
+        securityCodeTipBtn.isUserInteractionEnabled = false
+        showToolTip()
     }
     
     @IBAction func billingAddressButton(_ sender: UIButton) {
@@ -184,5 +147,77 @@ class PaymentMethodViewController: UIViewController, UITextFieldDelegate {
         let vc = storyboard.instantiateViewController(withIdentifier: "ReviewYourOrderViewController") as! ReviewYourOrderViewController
         vc.isBillingSame = isBillingSame
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+extension PaymentMethodViewController {
+    func toolTipPreferences() {
+        preferences.drawing.font = UIFont(name: "ProximaNova-Medium", size: 15)!
+        preferences.drawing.foregroundColor = UIColor.white
+        preferences.drawing.backgroundColor = UIColor.black
+        preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.bottom
+    }
+    
+    func formTextFieldValidation() {
+        let cardNumberPlaceholderText = NSAttributedString(string: "3258 1265 7568 7896",
+                                                           attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(cgColor: #colorLiteral(red: 0.4274509804, green: 0.4588235294, blue: 0.5176470588, alpha: 1))])
+        let expirationDatePlaceholderText = NSAttributedString(string: "03/25",
+                                                               attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(cgColor: #colorLiteral(red: 0.4274509804, green: 0.4588235294, blue: 0.5176470588, alpha: 1))])
+        let securityCodePlaceholderText = NSAttributedString(string: "123",
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(cgColor: #colorLiteral(red: 0.4274509804, green: 0.4588235294, blue: 0.5176470588, alpha: 1))])
+        
+        cardNumberTF.borderWidth = 0.7
+        cardNumberTF.layer.cornerRadius = 5
+        cardNumberTF.layer.borderColor = #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1)
+        cardNumberTF.attributedPlaceholder = cardNumberPlaceholderText
+        
+        expirationDateTF.borderWidth = 0.7
+        expirationDateTF.layer.cornerRadius = 5
+        expirationDateTF.layer.borderColor = #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1)
+        expirationDateTF.attributedPlaceholder = expirationDatePlaceholderText
+        
+        securityCodeTF.borderWidth = 0.7
+        securityCodeTF.layer.cornerRadius = 5
+        securityCodeTF.layer.borderColor = #colorLiteral(red: 0.6823529412, green: 0.6823529412, blue: 0.6980392157, alpha: 1)
+        securityCodeTF.attributedPlaceholder = securityCodePlaceholderText
+        
+        cardNumberTF.inputType = .integer
+        cardNumberTF.formatter = CardNumberFormatter()
+        var validation = Validation()
+        validation.minimumLength = "1234 5678 1234 5678".count
+        validation.maximumLength = "1234 5678 1234 5678".count
+        let characterSet = NSMutableCharacterSet.decimalDigit()
+        characterSet.addCharacters(in: " ")
+        validation.characterSet = characterSet as CharacterSet
+        var inputValidator = InputValidator(validation: validation)
+        cardNumberTF.inputValidator = inputValidator
+        
+        expirationDateTF.inputType = .integer
+        expirationDateTF.formatter = CardExpirationDateFormatter()
+        validation = Validation()
+        validation.minimumLength = 1
+        let inputValidatorExpiry = CardExpirationDateInputValidator(validation: validation)
+        expirationDateTF.inputValidator = inputValidatorExpiry
+        
+        securityCodeTF.inputType = .integer
+        validation = Validation()
+        validation.maximumLength = "CVC".count
+        validation.minimumLength = "CVC".count
+        validation.characterSet = CharacterSet.decimalDigits
+        inputValidator = InputValidator(validation: validation)
+        securityCodeTF.inputValidator = inputValidator
+    }
+    
+    func easyTipViewDidTap(_ tipView: EasyTipView) {
+        print("\(tipView) did tap!")
+        securityCodeTipBtn.isUserInteractionEnabled = true
+    }
+    
+    func easyTipViewDidDismiss(_ tipView: EasyTipView) {
+        print("\(tipView) did dismiss!")
+        securityCodeTipBtn.isUserInteractionEnabled = true
+    }
+    
+    func showToolTip() {
+        EasyTipView.show(forView: self.securityCodeTipBtn, withinSuperview : self.mainView , text: "CVV is the last three digits on the back of your credit card.",preferences:self.preferences,delegate: self)
     }
 }

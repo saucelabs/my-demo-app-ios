@@ -20,10 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var cartCountContView: UIView!
     @IBOutlet weak var faceLoginContView: UIView!
     
-    var isLogout = false
     var isFromProcessCheckout = false
     
-    //let validator = Validator()
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,11 +31,11 @@ class LoginViewController: UIViewController {
             cartCountContView.isHidden = true
         }
         
-        if !Engine.sharedInstance.isLogin{
+        if !isFromProcessCheckout{
             backBtnContVew.isHidden = true
             myCartLbl.isHidden = true
         }
-        if Engine.sharedInstance.isFaceSupported{
+        if Engine.sharedInstance.isFaceSupported && Engine.sharedInstance.isFaceLogin{
             faceLoginContView.isHidden = false
         }else{
             faceLoginContView.isHidden = true
@@ -45,7 +43,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func backButton(_ sender: Any) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func faceLoginButton(_ sender: Any) {
