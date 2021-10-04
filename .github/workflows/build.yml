@@ -37,3 +37,5 @@ jobs:
           -destination "${{ matrix.destination }}" \
           -configuration Release \
           -derivedDataPath build | xcpretty
+    - name: List build output
+      run: ls -lsrt build && ls -lsrt build/Release-iphonesimulator
