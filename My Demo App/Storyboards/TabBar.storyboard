@@ -1282,7 +1282,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3a-Va-afG">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="698"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="696"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P7-ct-EWH">
                                                 <rect key="frame" x="158.5" y="70" width="97" height="28"/>
@@ -1707,7 +1707,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                     <constraint firstAttribute="trailing" secondItem="k3a-Va-afG" secondAttribute="trailing" id="PdU-PV-eb1"/>
                                     <constraint firstItem="qTe-ou-3DJ" firstAttribute="leading" secondItem="vQo-aI-LOr" secondAttribute="leading" id="Wpv-yx-eWU"/>
                                     <constraint firstItem="L6V-ww-hoB" firstAttribute="top" secondItem="k3a-Va-afG" secondAttribute="bottom" id="amJ-Ab-WXI"/>
-                                    <constraint firstItem="k3a-Va-afG" firstAttribute="top" secondItem="WiQ-Qd-prJ" secondAttribute="bottom" id="iXQ-nw-UPl"/>
+                                    <constraint firstItem="k3a-Va-afG" firstAttribute="top" secondItem="WiQ-Qd-prJ" secondAttribute="bottom" constant="2" id="iXQ-nw-UPl"/>
                                     <constraint firstAttribute="bottom" secondItem="L6V-ww-hoB" secondAttribute="bottom" id="oqP-ev-lZh"/>
                                     <constraint firstAttribute="trailing" secondItem="L6V-ww-hoB" secondAttribute="trailing" id="ozQ-OM-3t9"/>
                                     <constraint firstAttribute="trailing" secondItem="qTe-ou-3DJ" secondAttribute="trailing" id="q3n-5E-9xm"/>
