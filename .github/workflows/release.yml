@@ -29,7 +29,7 @@ jobs:
         workspace-path: My Demo App.xcworkspace
         project-path: My Demo App.xcodeproj
         scheme: My Demo App
-        code-signing-identity: Apple Development
+        code-signing-identity: iPhone Developer
         export-method: development
         output-path: build/demo-app.ipa
         p12-base64: ${{ secrets.P12_BASE64 }}
