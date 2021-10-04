@@ -5,7 +5,7 @@ on:
     - cron:  '0 2 * * *'
 
 jobs:
-  run-tests:
+  build-ios:
     runs-on: macos-latest
     strategy:
       matrix:
