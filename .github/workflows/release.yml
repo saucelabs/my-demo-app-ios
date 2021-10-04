@@ -49,7 +49,7 @@ jobs:
         scheme: My Demo App
         code-signing-identity: iPhone Developer
         export-method: development
-        output-path: build/SauceLabs-Demo-App.ipa
+        output-path: SauceLabs-Demo-App.ipa
         p12-base64: ${{ secrets.P12_BASE64 }}
         certificate-password: ${{ secrets.P12_PASSWORD }}
         mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
