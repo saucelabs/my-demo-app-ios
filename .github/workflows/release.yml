@@ -24,10 +24,12 @@ jobs:
         xcode-version: ${{ matrix.xcode-version }}
     - uses: yukiarrr/ios-build-action@v1.4.0
       with:
+        update-targets: |
+          My Demo App
         workspace-path: My Demo App.xcworkspace
         project-path: My Demo App.xcodeproj
         scheme: My Demo App
-        code-signing-identity: iOS Development
+        code-signing-identity: Apple Development
         export-method: development
         output-path: build/demo-app.ipa
         p12-base64: ${{ secrets.P12_BASE64 }}
