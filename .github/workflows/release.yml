@@ -67,7 +67,15 @@ jobs:
           -sdk iphoneos \
           -configuration Debug \
           -derivedDataPath build
-        ls -lsrt build && ls -lsrt build/Build && ls -lsrt build/Build && ls -lsrt build/Build/Products && ls -lsrt build/Build/Products/Debug-iphoneos
+        rm -rf Payload
+        mkdir Payload
+        cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ App.app Payload
+        zip -9 -r SauceLabs-Demo-App.XCUITest.ipa Payload
+        rm -rf Payload
+        mkdir Payload
+        cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ AppUITests-Runner.app Payload
+        zip -9 -r SauceLabs-Demo-App-Runner.XCUITest.ipa Payload
+        rm -rf Payload
     - name: Add Artifacts to Github Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
@@ -75,6 +83,8 @@ jobs:
         files: |
           SauceLabs-Demo-App.Simulator.zip
           SauceLabs-Demo-App.ipa
+          SauceLabs-Demo-App.XCUITest.ipa
+          SauceLabs-Demo-App-Runner.XCUITest.ipa
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         

@@ -12,8 +12,8 @@ sauce:
   build: Release $CI_COMMIT_SHORT_SHA
 
 xcuitest:
-  app: MyDemoApp.ipa
-  testApp: MyDemoAppUITests-Runner.app
+  app: SauceLabs-Demo-App.XCUITest.ipa
+  testApp: SauceLabs-Demo-App-Runner.XCUITest.ipa
 
 suites:
   - name: "saucy xcuitest"
