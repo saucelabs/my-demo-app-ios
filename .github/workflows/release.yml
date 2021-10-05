@@ -60,13 +60,14 @@ jobs:
     - name: Build XCUITest Artifacts
       run: |
         xcodebuild \
+          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
           clean build-for-testing \
           -workspace "My Demo App.xcworkspace" \
           -scheme "My Demo App" \
           -sdk iphoneos \
           -configuration Debug \
           -derivedDataPath build
-        ls -lsrt build
+        ls -lsrt build && ls -lsrt build/Build && ls -lsrt build/Build && ls -lsrt build/Build/Products && ls -lsrt build/Build/Products/Debug-iphoneos
     - name: Add Artifacts to Github Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
