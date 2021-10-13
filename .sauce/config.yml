@@ -6,13 +6,13 @@ sauce:
   metadata:
     tags:
       - e2e
-      - release team
-      - other tag
-    build: Release $CI_COMMIT_SHORT_SHA
+      - ios
+      - mobile app
+    build: Build $CI_COMMIT_SHORT_SHA
 
 xcuitest:
-  app: SauceLabs-Demo-App.XCUITest.ipa
-  testApp: SauceLabs-Demo-App-Runner.XCUITest.ipa
+  app: build/Build/Products/Release-iphoneos/My Demo App.app
+  testApp: build/Build/Products/Release-iphoneos/My Demo AppUITests-Runner.app
 
 suites:
   - name: "saucy xcuitest"
