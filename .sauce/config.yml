@@ -4,12 +4,11 @@ sauce:
   region: us-west-1
   concurrency: 5
   metadata:
-    name: Testing XCUITEST Support
     tags:
       - e2e
       - release team
       - other tag
-  build: Release $CI_COMMIT_SHORT_SHA
+    build: Release $CI_COMMIT_SHORT_SHA
 
 xcuitest:
   app: SauceLabs-Demo-App.XCUITest.ipa
@@ -18,44 +17,6 @@ xcuitest:
 suites:
   - name: "saucy xcuitest"
     devices:
-      # If set, only device by ID will be queried.
-      #- id: <rdc_device_id>
-      - name: "iPhone.*"
-        # platformVersion: "14.6"
-        options:
-          # If set, only devices with a SIM card will be queried.
-          carrierConnectivity: false
-          # Possible values [ANY,PHONE,TABLET]
-          deviceType: PHONE
-          # If set, only private devices will be queried.
-          private: false
-      - name: "iPhone.*"
-        # platformVersion: "14.6"
-        options:
-          # If set, only devices with a SIM card will be queried.
-          carrierConnectivity: false
-          # Possible values [ANY,PHONE,TABLET]
-          deviceType: PHONE
-          # If set, only private devices will be queried.
-          private: false
-      - name: "iPhone.*"
-        # platformVersion: "14.6"
-        options:
-          # If set, only devices with a SIM card will be queried.
-          carrierConnectivity: false
-          # Possible values [ANY,PHONE,TABLET]
-          deviceType: PHONE
-          # If set, only private devices will be queried.
-          private: false
-      - name: "iPhone.*"
-        # platformVersion: "14.6"
-        options:
-          # If set, only devices with a SIM card will be queried.
-          carrierConnectivity: false
-          # Possible values [ANY,PHONE,TABLET]
-          deviceType: PHONE
-          # If set, only private devices will be queried.
-          private: false
       - name: "iPhone.*"
         # platformVersion: "14.6"
         options:
