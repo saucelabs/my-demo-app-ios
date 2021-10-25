@@ -6,15 +6,17 @@ on:
 
 jobs:
   build-ios:
-    runs-on: macos-latest
     strategy:
       matrix:
         include:
         # Available XCodes taken from https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md
-        - xcode-version: 12.4
+        - macos-version: macos-11
+          xcode-version: 12.4
           destination: "name=iPhone 11 Pro Max"
-        - xcode-version: 12.5.1
+        - macos-version: macos-11
+          xcode-version: 12.5.1
           destination: "name=iPhone 11 Pro Max"
+    runs-on: ${{ matrix.macos-version }}
     timeout-minutes: 30
     steps:
     - uses: actions/checkout@v2

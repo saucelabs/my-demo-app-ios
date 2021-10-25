@@ -8,7 +8,7 @@ on:
 
 jobs:
   create-release:
-    runs-on: macos-latest
+    runs-on: macos-11
     env:
       xcode-version: 12.4
       destination: name=iPhone 11 Pro Max
