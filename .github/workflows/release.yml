@@ -69,7 +69,7 @@ jobs:
           -derivedDataPath build | xcpretty
         rm -rf Payload
         mkdir Payload
-        cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ App.app Payload
+        cp -R build/Build/Products/Debug-iphoneos/MyDemoApp.app Payload
         zip -9 -r SauceLabs-Demo-App.XCUITest.ipa Payload
         rm -rf Payload
         mkdir Payload
@@ -87,4 +87,4 @@ jobs:
           SauceLabs-Demo-App-Runner.XCUITest.ipa
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+
