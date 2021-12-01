@@ -30,7 +30,7 @@ class NavigationTest: MyDemoAppTestBase {
         PageObject().moreSection.tap()
         XCTAssert(PageObject().about.waitForExistence(timeout: 2))
         PageObject().aboutButton.tap()
-        XCTAssert(PageObject().about.exists)
+        XCTAssert(PageObject().about.waitForExistence(timeout: 2))
     }
     
     func testNavigateMoreToQRCode() throws {
@@ -38,23 +38,24 @@ class NavigationTest: MyDemoAppTestBase {
         PageObject().moreSection.tap()
         XCTAssert(PageObject().qrCode.waitForExistence(timeout: 2))
         PageObject().QRCodeButton.tap()
-        XCTAssert(PageObject().qrCode.exists)
+        XCTAssert(PageObject().qrCode.waitForExistence(timeout: 2))
     }
     
     func testNavigateMoreToGeoLocation() throws {
         XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
         PageObject().moreSection.tap()
-        XCTAssert(PageObject().geoLocation.exists)
+        XCTAssert(PageObject().geoLocation.waitForExistence(timeout: 2))
         PageObject().geoLocationButton.tap()
-        XCTAssert(PageObject().geoLocation.exists)
+        XCTAssert(PageObject().geoLocation.waitForExistence(timeout: 2))
     }
     
     func testNavigateMoreToDrawing() throws {
         XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
         PageObject().moreSection.tap()
         XCTAssert(PageObject().drawing.exists)
+        XCTAssert(PageObject().drawing.waitForExistence(timeout: 2))
         PageObject().drawingButton.tap()
-        XCTAssert(PageObject().drawing.exists)
+        XCTAssert(PageObject().drawing.waitForExistence(timeout: 2))
     }
             
     func testNavigateFromCartToCatalog() throws {
