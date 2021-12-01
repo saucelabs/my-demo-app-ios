@@ -1,7 +1,6 @@
 import XCTest
 
-class ProductListingPage_UITests: MyDemoAppTestBase {
-
+class ProductListingPageTest: MyDemoAppTestBase {
     func testProductListingPageAddItemToCart() {
         PageObject().randonItem.tap()
         PageObject().addButton.tap()

@@ -1,6 +1,6 @@
 import XCTest
 
-class ProductDetails_UITests: MyDemoAppTestBase {
+class ProductDetailsTest: MyDemoAppTestBase {
     func testProductDetails() throws {
         PageObject().firstProduct.tap()
         XCTAssert(PageObject().firstProduct.exists)

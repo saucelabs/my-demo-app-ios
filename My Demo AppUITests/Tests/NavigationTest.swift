@@ -1,6 +1,6 @@
 import XCTest
 
-class Navigation_UITests: MyDemoAppTestBase {
+class NavigationTest: MyDemoAppTestBase {
     func testNavigateToCart() throws {
         XCTAssert(PageObject().cart.exists)
         PageObject().cartEmptyButton.tap()
