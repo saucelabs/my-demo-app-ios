@@ -1,74 +1,64 @@
 import XCTest
 
 class ProductDetailsTest: MyDemoAppTestBase {
+    let backPack = "Sauce Lab Back Packs"
+    
     func testProductDetails() throws {
-        PageObject().firstProduct.tap()
-        XCTAssert(PageObject().firstProduct.exists)
+        PageObject().selectItemByName(itemName: backPack).tap()
+        XCTAssert(PageObject().detailsPageOf(productName: backPack).exists)
     }
         
     func testProductDetailsPrice() throws {
-        PageObject().firstProduct.tap()
-        XCTAssert(PageObject().firstProduct.exists)
-        XCTAssert(PageObject().price.exists)
+        PageObject().selectItemByName(itemName: backPack).tap()
+        XCTAssert(PageObject().getPrice(price: "$ 29.99").exists)
     }
-        
+
     func testProductDetailsHighlights() throws {
-        PageObject().firstProduct.tap()
-        XCTAssert(PageObject().firstProduct.exists)
+        PageObject().selectItemByName(itemName: backPack).tap()
         XCTAssert(PageObject().infoTitle.exists)
     }
-        
+
     func testProductDetailsDecreaseNumberOfItems() throws {
-        PageObject().firstProduct.tap()
-        PageObject().substractButton.tap()
-        XCTAssert(PageObject().firstProduct.exists)
-        XCTAssert(PageObject().zeroValue.exists)
+        PageObject().selectItemByName(itemName: backPack).tap()
+        PageObject().substractAmountButton.tap()
+        XCTAssert(PageObject().productAmount(amount: "0").exists)
     }
-        
-        
+
+
     func testProductDetailsIncreaseNumberOfItems() throws {
-        PageObject().firstProduct.tap()
-        XCTAssert(PageObject().initialValue.exists)
-        PageObject().addToCartButton.tap()
-        PageObject().addToCartButton.tap()
-        XCTAssert(PageObject().finalProductsValue.exists)
+        PageObject().selectItemByName(itemName: backPack).tap()
+        XCTAssert(PageObject().productAmount(amount: "1").exists)
+        PageObject().addAmountButton.tap()
+        PageObject().addAmountButton.tap()
+        XCTAssert(PageObject().productAmount(amount: "3").exists)
     }
-        
+
     func testProductDetailsDefaultColor() throws {
-        PageObject().firstProduct.tap()
-        XCTAssert(PageObject().defaultColor.exists)
-        XCTAssert(PageObject().defaultColor.isSelected)
+        PageObject().selectItemByName(itemName: backPack).tap()
+        XCTAssert(PageObject().getColor(color: "Red").exists)
+        XCTAssert(PageObject().getColor(color: "Red").isSelected)
     }
-        
+
     func testProductDetailsColorsSwitch() throws {
-        PageObject().firstProduct.tap()
-        XCTAssert(PageObject().firstProduct.exists)
-        XCTAssert(PageObject().defaultColor.isSelected)
-        XCTAssertEqual(false, PageObject().changeColor.isSelected)
-        PageObject().changeColor.tap()
-        XCTAssert(PageObject().changeColor.isSelected)
-        XCTAssertEqual(false, PageObject().initialColor.isSelected)
+        PageObject().selectItemByName(itemName: backPack).tap()
+        XCTAssert(PageObject().getColor(color: "Red").isSelected)
+        XCTAssertEqual(false, PageObject().getColor(color: "Blue").isSelected)
+        PageObject().getColor(color: "Blue").tap()
+        XCTAssert(PageObject().getColor(color: "Blue").isSelected)
+
     }
-        
+
     func testProductDetailsRatesSelection() throws {
-        PageObject().firstProduct.tap()
+        PageObject().selectItemByName(itemName: backPack).tap()
         XCTAssert(PageObject().rateValue.exists)
         PageObject().averageRateButton.tap()
         XCTAssert(PageObject().rateValue.exists)
     }
-    
+
     func testProductDetailsAddToCart() throws {
-        PageObject().firstProduct.tap()
+        PageObject().selectItemByName(itemName: backPack).tap()
         PageObject().addToCartButton.tap()
         PageObject().cartButton.tap()
-        XCTAssert(PageObject().firstProduct.exists)
-    }
-        
-    func testProductDetailsProceedToCheckout() throws {
-        PageObject().firstProduct.tap()
-        PageObject().addToCartButton.tap()
-        PageObject().cartButton.tap()
-        PageObject().proceedToCheckoutButton.tap()
-        XCTAssert(PageObject().loginSection.exists)
+        XCTAssert(PageObject().detailsPageOf(productName: backPack).exists)
     }
 }

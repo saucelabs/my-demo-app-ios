@@ -830,6 +830,7 @@
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65.97" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1V-zE-m0S">
                                                                 <rect key="frame" x="16" y="456" width="75.5" height="24"/>
+                                                                <accessibility key="accessibilityConfiguration" identifier="Price"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -900,6 +901,7 @@
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="taG-23-Dpf">
                                                                         <rect key="frame" x="40" y="0.0" width="40" height="40"/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="Amount"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="40" id="yCa-wV-3gu"/>
                                                                         </constraints>
@@ -1448,6 +1450,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                         </stackView>
                                                                     </subviews>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <accessibility key="accessibilityConfiguration" identifier="ProductItem"/>
                                                                     <constraints>
                                                                         <constraint firstItem="Yme-Jh-36Q" firstAttribute="top" secondItem="Rdk-nA-gud" secondAttribute="bottom" constant="5" id="0Fm-1g-0Vm"/>
                                                                         <constraint firstItem="Yme-Jh-36Q" firstAttribute="leading" secondItem="Zhl-Sr-5b9" secondAttribute="leading" constant="2" id="ScZ-YL-32f"/>
