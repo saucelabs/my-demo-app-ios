@@ -29,8 +29,8 @@ class ProductDetailsTest: MyDemoAppTestBase {
     func testProductDetailsIncreaseNumberOfItems() throws {
         PageObject().firstProduct.tap()
         XCTAssert(PageObject().initialValue.exists)
-        PageObject().addButton.tap()
-        PageObject().addButton.tap()
+        PageObject().addToCartButton.tap()
+        PageObject().addToCartButton.tap()
         XCTAssert(PageObject().finalProductsValue.exists)
     }
         
@@ -59,14 +59,14 @@ class ProductDetailsTest: MyDemoAppTestBase {
     
     func testProductDetailsAddToCart() throws {
         PageObject().firstProduct.tap()
-        PageObject().addButton.tap()
+        PageObject().addToCartButton.tap()
         PageObject().cartButton.tap()
         XCTAssert(PageObject().firstProduct.exists)
     }
         
     func testProductDetailsProceedToCheckout() throws {
         PageObject().firstProduct.tap()
-        PageObject().addButton.tap()
+        PageObject().addToCartButton.tap()
         PageObject().cartButton.tap()
         PageObject().proceedToCheckoutButton.tap()
         XCTAssert(PageObject().loginSection.exists)
