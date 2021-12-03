@@ -53,6 +53,8 @@
 		88A847DD2757BD6A00B9F861 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847DC2757BD6A00B9F861 /* PageObject.swift */; };
 		A0794204410772F608EC9A78 /* Pods_My_Demo_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4BA2876F17353ADA6DBFD217 /* Pods_My_Demo_App.framework */; };
 		A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */; };
+		C4513FF52759B1BA004BABDA /* TestFairyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */; };
+		C4513FF72759B554004BABDA /* ReportABugDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4513FF62759B554004BABDA /* ReportABugDebugViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +119,8 @@
 		A2C826A82706266600616582 /* MyDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyDemoAppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C826AC2706266600616582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDemoAppTestBase.swift; sourceTree = "<group>"; };
+		C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFairyWrapper.swift; sourceTree = "<group>"; };
+		C4513FF62759B554004BABDA /* ReportABugDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportABugDebugViewController.swift; sourceTree = "<group>"; };
 		C4A775022709DF3900C1973E /* Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridge.h; sourceTree = "<group>"; };
 		E0BA5FF8BCA19111EEBEF013 /* Pods-My Demo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.debug.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +176,7 @@
 		2F45FB4326F1CC0100A13B16 /* My Demo App */ = {
 			isa = PBXGroup;
 			children = (
+				C4513FF32759B19D004BABDA /* Utilities */,
 				2F8414EF26FC562E008C1FA8 /* Font */,
 				2F8414EE26FC5611008C1FA8 /* Constants */,
 				2F8414ED26FC55D7008C1FA8 /* DesignableClasses */,
@@ -207,6 +212,7 @@
 				2F219FBC26F77A9000DBFE49 /* MyCartViewController.swift */,
 				2F5A0C9926F7C85600666666 /* ProductPageDetailViewController.swift */,
 				2FBA776326F85C0F0004BCC3 /* CatalogViewController.swift */,
+				C4513FF62759B554004BABDA /* ReportABugDebugViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -309,6 +315,14 @@
 				A2C826AC2706266600616582 /* Info.plist */,
 			);
 			path = MyDemoAppUITests;
+			sourceTree = "<group>";
+		};
+		C4513FF32759B19D004BABDA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -492,6 +506,7 @@
 				2F81479E26F4877E007E98EC /* GeoLocationViewController.swift in Sources */,
 				2F7BEFAE26F48C8C00457331 /* AboutViewController.swift in Sources */,
 				2F45FB4926F1CC0100A13B16 /* LoginViewController.swift in Sources */,
+				C4513FF52759B1BA004BABDA /* TestFairyWrapper.swift in Sources */,
 				2FF8B10826FB1BD200921534 /* Constants.swift in Sources */,
 				2F4AA65B26FA0CA2006A65BB /* RatingController.swift in Sources */,
 				2FC1FA5726F36CEE004A2555 /* PaymentMethodViewController.swift in Sources */,
@@ -508,6 +523,7 @@
 				2F45FB4726F1CC0100A13B16 /* SceneDelegate.swift in Sources */,
 				2F5A0C9A26F7C85600666666 /* ProductPageDetailViewController.swift in Sources */,
 				2F219FBD26F77A9000DBFE49 /* MyCartViewController.swift in Sources */,
+				C4513FF72759B554004BABDA /* ReportABugDebugViewController.swift in Sources */,
 				2F4AA65926FA0C72006A65BB /* Methods.swift in Sources */,
 				2F9F23F726F72BC900E9410C /* ButtonRoundCorner.swift in Sources */,
 			);

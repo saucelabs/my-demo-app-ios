@@ -2,73 +2,59 @@ import XCTest
 
 class NavigationTest: MyDemoAppTestBase {
     func testNavigateToCart() throws {
-        XCTAssert(PageObject().cart.exists)
-        PageObject().cartEmptyButton.tap()
+        PageObject().cartButton.tap()
         XCTAssert(PageObject().cartEmpty.exists)
     }
             
     func testNavigateToMore() throws {
-        XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
-        PageObject().moreSection.tap()
-        XCTAssert(PageObject().webview.exists)
-        XCTAssert(PageObject().qrCode.exists)
-        XCTAssert(PageObject().geoLocation.exists)
-        XCTAssert(PageObject().drawing.exists)
-        XCTAssert(PageObject().about.exists)
-        XCTAssert(PageObject().resetAppState.exists)
-        XCTAssert(PageObject().faceID.exists)
+        PageObject().moreButton.tap()
+        XCTAssert(PageObject().webviewButton.exists)
+        XCTAssert(PageObject().qrCodeScannerButton.exists)
+        XCTAssert(PageObject().geoLocationButton.exists)
+        XCTAssert(PageObject().drawingButton.exists)
+        XCTAssert(PageObject().aboutButton.exists)
+        XCTAssert(PageObject().resetAppStateButton.exists)
+        XCTAssert(PageObject().biometricsButton.exists)
     }
         
     func testNavigateMoreToWebview() throws {
-        XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
-        PageObject().moreSection.tap()
-        XCTAssert(PageObject().webview.waitForExistence(timeout: 2))
+        PageObject().moreButton.tap()
+        PageObject().webviewButton.tap()
+        XCTAssert(PageObject().webviewScreen.waitForExistence(timeout: 2))
     }
     
     func testNavigateMoreToAbout() throws {
-        XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
-        PageObject().moreSection.tap()
-        XCTAssert(PageObject().about.waitForExistence(timeout: 2))
+        PageObject().moreButton.tap()
         PageObject().aboutButton.tap()
-        XCTAssert(PageObject().about.waitForExistence(timeout: 2))
+        XCTAssert(PageObject().aboutScreen.waitForExistence(timeout: 2))
     }
     
     func testNavigateMoreToQRCode() throws {
-        XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
-        PageObject().moreSection.tap()
-        XCTAssert(PageObject().qrCode.waitForExistence(timeout: 2))
-        PageObject().QRCodeButton.tap()
-        XCTAssert(PageObject().qrCode.waitForExistence(timeout: 2))
+        PageObject().moreButton.tap()
+        PageObject().qrCodeScannerButton.tap()
+        XCTAssert(PageObject().qrCodeScannerScreen.waitForExistence(timeout: 2))
     }
     
     func testNavigateMoreToGeoLocation() throws {
-        XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
-        PageObject().moreSection.tap()
-        XCTAssert(PageObject().geoLocation.waitForExistence(timeout: 2))
+        PageObject().moreButton.tap()
         PageObject().geoLocationButton.tap()
-        XCTAssert(PageObject().geoLocation.waitForExistence(timeout: 2))
+        XCTAssert(PageObject().geoLocaltionScreen.waitForExistence(timeout: 2))
     }
     
     func testNavigateMoreToDrawing() throws {
-        XCTAssert(PageObject().moreButton.waitForExistence(timeout: 2))
-        PageObject().moreSection.tap()
-        XCTAssert(PageObject().drawing.exists)
-        XCTAssert(PageObject().drawing.waitForExistence(timeout: 2))
+        PageObject().moreButton.tap()
         PageObject().drawingButton.tap()
-        XCTAssert(PageObject().drawing.waitForExistence(timeout: 2))
+        XCTAssert(PageObject().drawingScreen.waitForExistence(timeout: 2))
     }
             
     func testNavigateFromCartToCatalog() throws {
-        XCTAssert(PageObject().cart.waitForExistence(timeout: 2))
-        PageObject().cartEmptyButton.tap()
-        XCTAssert(PageObject().goShoppingButton.waitForExistence(timeout: 2))
+        PageObject().cartButton.tap()
+        XCTAssert(PageObject().cartScreen.waitForExistence(timeout: 2))
     }
             
     func testNavigateCartToCatalog() throws {
-        XCTAssert(PageObject().cart.waitForExistence(timeout: 2))
-        PageObject().cartEmptyButton.tap()
-        XCTAssert(PageObject().goShoppingButton.waitForExistence(timeout: 2))
-        PageObject().goShoppingSection.tap()
-        XCTAssert(PageObject().catalog.waitForExistence(timeout: 2))
+        PageObject().cartButton.tap()
+        PageObject().goShoppingButton.tap()
+        XCTAssert(PageObject().catalogScreen.waitForExistence(timeout: 2))
     }
 }
