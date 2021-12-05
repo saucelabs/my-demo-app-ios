@@ -49,6 +49,12 @@ class TestFairyWrapper {
                     placeholder: "Your Phone Number",
                     defaultValue: ""
                 )!,
+                TestFairySelectFeedbackFormField(
+                    attribute: "type",
+                    label: "Is this a bug or feature?",
+                    values: ["Bug": "bug", "Feature": "feature"],
+                    defaultValue: "Bug"
+                )!,
                 TestFairyTextAreaFeedbackFormField(
                     attribute: ":text",
                     placeholder: "Your Message",
