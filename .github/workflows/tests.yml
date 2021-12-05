@@ -11,9 +11,7 @@ jobs:
       matrix:
         include:
         # Available XCodes taken from https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md
-        - xcode-version: 12.4
-          destination: "name=iPhone 11 Pro Max"
-        - xcode-version: 12.5.1
+        - xcode-version: 12.5
           destination: "name=iPhone 11 Pro Max"
     timeout-minutes: 30
     steps:

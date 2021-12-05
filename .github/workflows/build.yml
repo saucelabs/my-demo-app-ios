@@ -11,9 +11,6 @@ jobs:
         include:
         # Available XCodes taken from https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md
         - macos-version: macos-11
-          xcode-version: 12.4
-          destination: "name=iPhone 11 Pro Max"
-        - macos-version: macos-11
           xcode-version: 12.5.1
           destination: "name=iPhone 11 Pro Max"
     runs-on: ${{ matrix.macos-version }}
