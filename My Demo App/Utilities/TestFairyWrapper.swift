@@ -43,6 +43,12 @@ class TestFairyWrapper {
                     placeholder: "Your Email",
                     defaultValue: ""
                 )!,
+                TestFairyStringFeedbackFormField(
+                    attribute: "phone",
+                    label: nil,
+                    placeholder: "Your Phone Number",
+                    defaultValue: ""
+                )!,
                 TestFairyTextAreaFeedbackFormField(
                     attribute: ":text",
                     placeholder: "Your Message",
