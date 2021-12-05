@@ -35,7 +35,7 @@ class TestFairyWrapper {
         return TestFairyFeedbackOptions.create { builder in
             builder?.title = "My Demo Feedback From"
 
-            // See https://docs.testfairy.com/SDK/Customizing_feedback_dialog.html#ios-objc for more way to customize your feedback form
+            // See https://docs.testfairy.com/SDK/Customizing_feedback_dialog.html#ios-objc for more ways to customize your feedback form
             builder?.feedbackFormFields = [
                 TestFairyStringFeedbackFormField(
                     attribute: ":userId",
