@@ -177,27 +177,8 @@ TestFairy.showFeedbackForm()
 """
         ) {
             TestFairyWrapper.resetFeedbackForm()
-            TestFairyWrapper.customFeedback(self.createFeedbackForm())
+            TestFairyWrapper.customFeedback()
         })
-    }
-    
-    private func createFeedbackForm() -> TestFairyFeedbackOptions {
-        // See https://docs.testfairy.com/SDK/Customizing_feedback_dialog.html#ios-objc for more way to customize your feedback form
-        return TestFairyFeedbackOptions.create { builder in
-            builder?.feedbackFormFields = [
-                TestFairyStringFeedbackFormField(
-                    attribute: ":userId",
-                    label: nil,
-                    placeholder: "Your Email",
-                    defaultValue: ""
-                )!,
-                TestFairyTextAreaFeedbackFormField(
-                    attribute: ":text",
-                    placeholder: "Your Message",
-                    defaultValue: ""
-                )!,
-            ]
-        }
     }
 }
 

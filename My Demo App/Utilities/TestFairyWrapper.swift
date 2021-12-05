@@ -25,9 +25,31 @@ class TestFairyWrapper {
         TestFairy.showFeedbackForm(TESTFAIRY_APP_TOKEN, takeScreenshot: false)
     }
     
-    public static func customFeedback(_ options: TestFairyFeedbackOptions) {
+    public static func customFeedback() {
+        let options = TestFairyWrapper.createFeedbackForm()
         TestFairy.setTestFairyFeedbackOptions(options)
         TestFairy.showFeedbackForm()
+    }
+    
+    private static func createFeedbackForm() -> TestFairyFeedbackOptions {
+        return TestFairyFeedbackOptions.create { builder in
+            builder?.title = "My Demo Feedback From"
+
+            // See https://docs.testfairy.com/SDK/Customizing_feedback_dialog.html#ios-objc for more way to customize your feedback form
+            builder?.feedbackFormFields = [
+                TestFairyStringFeedbackFormField(
+                    attribute: ":userId",
+                    label: nil,
+                    placeholder: "Your Email",
+                    defaultValue: ""
+                )!,
+                TestFairyTextAreaFeedbackFormField(
+                    attribute: ":text",
+                    placeholder: "Your Message",
+                    defaultValue: ""
+                )!,
+            ]
+        }
     }
     
     public static func resetFeedbackForm() {
