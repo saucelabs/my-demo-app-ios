@@ -198,18 +198,18 @@
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10203040" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="px5-uD-jmK">
-                                                                <rect key="frame" x="264" y="404" width="63" height="14"/>
+                                                                <rect key="frame" x="264" y="405.5" width="63" height="14"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                                 <color key="textColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g5G-MW-14h">
-                                                                <rect key="frame" x="50" y="398" width="117" height="26"/>
+                                                                <rect key="frame" x="50" y="398" width="124" height="28.5"/>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="bob@example.com">
                                                                             <attributes>
                                                                                 <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="14" name="ProximaNova-Regular"/>
+                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                 <integer key="NSUnderline" value="1"/>
                                                                             </attributes>
                                                                         </fragment>
@@ -220,13 +220,13 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wHO-iw-AWj">
-                                                                <rect key="frame" x="50" y="432" width="122" height="26"/>
+                                                                <rect key="frame" x="50" y="434.5" width="129" height="28.5"/>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="alice@example.com">
                                                                             <attributes>
                                                                                 <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="14" name="ProximaNova-Regular"/>
+                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 <integer key="NSUnderline" value="1"/>
                                                                             </attributes>
@@ -238,13 +238,13 @@
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RIw-Dv-Bht">
-                                                                <rect key="frame" x="50" y="466" width="120" height="26"/>
+                                                                <rect key="frame" x="50" y="471" width="126" height="28.5"/>
                                                                 <state key="normal">
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="john@example.com">
                                                                             <attributes>
                                                                                 <color key="NSColor" red="0.42745098039215684" green="0.45882352941176469" blue="0.51764705882352935" alpha="1" colorSpace="calibratedRGB"/>
-                                                                                <font key="NSFont" size="14" name="ProximaNova-Regular"/>
+                                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                                 <integer key="NSUnderline" value="1"/>
                                                                             </attributes>
@@ -510,7 +510,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkk-UG-8UZ">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="Ks5-va-BqX">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="Ks5-va-BqX">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="Ksz-dw-BiF"/>
@@ -649,7 +649,7 @@
         <image name="CatalogUnselected Icons" width="20" height="20"/>
         <image name="FaceId Icons" width="24.333333969116211" height="24"/>
         <image name="GrayRoundView Icons" width="18" height="18"/>
-        <image name="PlusMoreUnselected Icons" width="24" height="24"/>
+        <image name="Menu Icons" width="20" height="20"/>
         <image name="RedButton Icons" width="342" height="48"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

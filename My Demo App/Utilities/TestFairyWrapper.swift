@@ -31,6 +31,7 @@ class TestFairyWrapper {
     }
     
     public static func resetFeedbackForm() {
+		TestFairy.stop()
         TestFairy.setTestFairyFeedbackOptions(TestFairyFeedbackOptions.create { _ in})
     }
 }

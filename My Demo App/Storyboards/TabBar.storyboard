@@ -574,7 +574,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KxR-Lk-qBX">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="eMS-3v-Kuq">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="eMS-3v-Kuq">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="6Yu-aD-UPt"/>
@@ -1138,7 +1138,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cz-ZM-qde">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-cD-g7T">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="qDw-cD-g7T">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="Y4a-oE-bBh"/>
@@ -1667,7 +1667,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DoU-6h-1g0">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-Ap-cmq">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="9lU-Ap-cmq">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="ewK-ao-irx"/>
@@ -2559,7 +2559,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y6X-MZ-pE4">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="v45-aD-QN5">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="v45-aD-QN5">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="KGh-fK-Jym"/>
@@ -3703,7 +3703,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CY-Fe-iAr">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="AR5-cL-Xyf">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="AR5-cL-Xyf">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="jc1-TA-Pag"/>
@@ -4450,7 +4450,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8O2-p4-ud5">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="brQ-fl-e1k">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="brQ-fl-e1k">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="fLM-w1-NPT"/>
@@ -4614,34 +4614,34 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout Complete" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqj-P1-ZvD">
-                                                                <rect key="frame" x="38" y="70" width="338" height="28"/>
+                                                                <rect key="frame" x="38" y="70" width="338" height="24"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your order " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-n3-heQ">
-                                                                <rect key="frame" x="16" y="130" width="382" height="19"/>
+                                                                <rect key="frame" x="16" y="126" width="382" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your new swag is on its way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-QW-ceh">
-                                                                <rect key="frame" x="16" y="165" width="382" height="19"/>
+                                                                <rect key="frame" x="16" y="158" width="382" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                 <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your order has been dispatched and will arrive as fast as the pony gallops!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBJ-lN-iUj">
-                                                                <rect key="frame" x="16" y="200" width="382" height="37.5"/>
+                                                                <rect key="frame" x="16" y="190" width="382" height="32"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PonyExpress Icons" translatesAutoresizingMaskIntoConstraints="NO" id="vt4-u0-e9H">
-                                                                <rect key="frame" x="111.5" y="253.5" width="191" height="140"/>
+                                                                <rect key="frame" x="111.5" y="238" width="191" height="140"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="191" id="IaV-N9-9oS"/>
                                                                     <constraint firstAttribute="height" constant="140" id="Iu6-9v-mU6"/>
                                                                 </constraints>
                                                             </imageView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCn-mO-76u">
-                                                                <rect key="frame" x="76" y="417.5" width="262" height="80"/>
+                                                                <rect key="frame" x="76" y="402" width="262" height="80"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSV-0e-irE" customClass="ButtonRoundCorner" customModule="My_Demo_App" customModuleProvider="target">
                                                                         <rect key="frame" x="16" y="16" width="230" height="48"/>
@@ -4735,7 +4735,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catalog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wmt-Li-aTf">
-                                                                <rect key="frame" x="51.5" y="38" width="35" height="12"/>
+                                                                <rect key="frame" x="52" y="38" width="34.5" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -4797,7 +4797,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEO-dk-Fh0">
-                                                                <rect key="frame" x="59.5" y="38" width="19.5" height="12"/>
+                                                                <rect key="frame" x="59.5" y="38" width="19" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -4826,7 +4826,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p3i-Ks-swr">
                                                         <rect key="frame" x="276" y="0.0" width="138" height="60"/>
                                                         <subviews>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PlusMoreUnselected Icons" translatesAutoresizingMaskIntoConstraints="NO" id="MxU-oA-f7T">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu Icons" translatesAutoresizingMaskIntoConstraints="NO" id="MxU-oA-f7T">
                                                                 <rect key="frame" x="59" y="15" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="20" id="CV8-TJ-bqh"/>
@@ -4834,7 +4834,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pg3-7H-p5Y">
-                                                                <rect key="frame" x="57.5" y="38" width="23" height="12"/>
+                                                                <rect key="frame" x="57.5" y="38" width="23" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -5020,7 +5020,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
         <image name="GrayColorUnSelected Icons" width="24" height="24"/>
         <image name="GrayRoundView Icons" width="18" height="18"/>
         <image name="Linkedin Icons" width="20" height="20"/>
-        <image name="PlusMoreUnselected Icons" width="24" height="24"/>
+        <image name="Menu Icons" width="20" height="20"/>
         <image name="PonyExpress Icons" width="365.5" height="266.5"/>
         <image name="QuestionMark Icons" width="16" height="16"/>
         <image name="RedButton Icons" width="342" height="48"/>

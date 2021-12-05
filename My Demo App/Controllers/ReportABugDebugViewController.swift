@@ -182,6 +182,7 @@ TestFairy.showFeedbackForm()
     }
     
     private func createFeedbackForm() -> TestFairyFeedbackOptions {
+        // See https://docs.testfairy.com/SDK/Customizing_feedback_dialog.html#ios-objc for more way to customize your feedback form
         return TestFairyFeedbackOptions.create { builder in
             builder?.feedbackFormFields = [
                 TestFairyStringFeedbackFormField(
