@@ -123,6 +123,12 @@ class MenuViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func pushNotification() {
+        let storyboard = UIStoryboard.init(name: "Menu", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PushNotificationsViewController") as! PushNotificationsViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func resetAppState() {
         Engine.sharedInstance.cartList.removeAll()
         Engine.sharedInstance.cartCount = 0

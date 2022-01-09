@@ -60,8 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                   })
 //               })
            }
-           
-           
        }
 
     // MARK: UISceneSession Lifecycle
@@ -78,6 +76,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    func application(
+      _ application: UIApplication,
+      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data
+    ) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+        NotificationCenter.default.post(
+            name: Notification.Name("RegisterForRemoteNotificationsWithDeviceToken"),
+            object: nil,
+            userInfo: ["token": token]
+        )
+    }
 
+    func application(
+      _ application: UIApplication,
+      didFailToRegisterForRemoteNotificationsWithError error: Error
+    ) {
+        print("Failed to register: \(error)")
+        NotificationCenter.default.post(
+            name: Notification.Name("RegisterForRemoteNotificationsWithError"),
+            object: nil,
+            userInfo: ["error": error]
+        )
+    }
 }
 
