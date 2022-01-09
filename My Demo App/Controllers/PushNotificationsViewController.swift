@@ -215,16 +215,26 @@ class PushNotificationsViewController: UIViewController {
     
     @objc func registerSuccess(notification: Notification) {
         if let token = notification.userInfo?["token"] as? String {
-            labelView.label.text = "Successfully registred device with Apple APN with the following token:\n\n\(token)"
+            buttonView.labelText = "Successfully registred device with Apple APN with the following token:\n\n\(token)"
+            buttonView.buttonText = "Click to Share token"
+            buttonView.action = {
+                let share = UIActivityViewController(
+                    activityItems: [token],
+                    applicationActivities: nil
+                )
+                self.present(share, animated: true, completion: nil)
+            }
+            self.fill(view: buttonView)
         } else {
             labelView.label.text = "Successfully registred device with Apple APN, but token is unknown"
+            self.fill(view: labelView)
         }
-        self.fill(view: labelView)
     }
     
     @objc func registerFailed(notification: Notification) {
         let data = notification.userInfo?["error"] as? Error
-        buttonView.labelText = data?.localizedDescription ?? "Failed registration, with no error"
+        let message = data?.localizedDescription ?? "Failed registration, with no error"
+        buttonView.labelText = message
         buttonView.buttonText = "Try Again"
         self.fill(view: buttonView)
     }
@@ -244,14 +254,14 @@ class PushNotificationsViewController: UIViewController {
         UNUserNotificationCenter.current().requestAuthorization(
             options: [.alert, .sound, .badge]
         ) { [weak self] granted, _ in
-            print("Permission granted: \(granted)")
+            TestFairyWrapper.log("Permission granted: \(granted)")
             self?.getNotificationSettings(callback)
         }
     }
     
     func getNotificationSettings(_ callback: ((UNAuthorizationStatus) -> Void)? = nil) {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
-            print("Notification settings: \(settings)")
+            TestFairyWrapper.log("Notification settings: \(settings)")
             
             DispatchQueue.main.async {
                 callback?(settings.authorizationStatus)

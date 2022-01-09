@@ -31,6 +31,11 @@ class TestFairyWrapper {
         TestFairy.showFeedbackForm()
     }
     
+    public static func log(_ message: String!) {
+        print("\(message ?? "")")
+        TestFairy.log(message)
+    }
+    
     private static func createFeedbackForm() -> TestFairyFeedbackOptions {
         return TestFairyFeedbackOptions.create { builder in
             builder?.title = "My Demo Feedback From"

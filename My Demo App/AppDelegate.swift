@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) {
         let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
-        print("Device Token: \(token)")
+        TestFairyWrapper.log("Device Token: \(token)")
         NotificationCenter.default.post(
             name: Notification.Name("RegisterForRemoteNotificationsWithDeviceToken"),
             object: nil,
@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       _ application: UIApplication,
       didFailToRegisterForRemoteNotificationsWithError error: Error
     ) {
-        print("Failed to register: \(error)")
+        TestFairyWrapper.log("Failed to register: \(error)")
         NotificationCenter.default.post(
             name: Notification.Name("RegisterForRemoteNotificationsWithError"),
             object: nil,
