@@ -50,8 +50,8 @@ jobs:
         workspace-path: My Demo App.xcworkspace
         project-path: My Demo App.xcodeproj
         scheme: My Demo App
-        code-signing-identity: iPhone Developer
-        export-method: development
+        code-signing-identity: iPhone Distribution
+        export-method: ad-hoc
         output-path: SauceLabs-Demo-App.ipa
         p12-base64: ${{ secrets.P12_BASE64 }}
         certificate-password: ${{ secrets.P12_PASSWORD }}
