@@ -38,6 +38,10 @@ class ProductPageDetailViewController: UIViewController {
     var selectedColor = "Red"
     var productQuantity = 1
     
+    override func viewDidAppear(_ animated: Bool) {
+        TestFairyWrapper.simulateNetworkEvent(url: URL(string: "https://my-demo-app.net/api/load-item")!);
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if Engine.sharedInstance.cartCount < 1 {
@@ -135,6 +139,9 @@ class ProductPageDetailViewController: UIViewController {
                                                       "ProductDiscription":productHighlights,
                                                       "ProductHighlights":productHighlights,"ProductColor":selectedColor,"ProductQuantity":productQuantity,"ProductRating":productRating])
         }
+        
+        TestFairyWrapper.simulateNetworkEvent(url: URL(string:"https://my-demo-app.net/api/add-item")!);
+        
         if Engine.sharedInstance.cartCount < 1 {
             cartCountContView.isHidden = true
         }else{

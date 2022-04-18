@@ -91,6 +91,7 @@ class MyCartViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        TestFairyWrapper.simulateNetworkEvent(url: URL(string:"https://my-demo-app.net/api/checkout")!);
     }
 }
 
@@ -153,6 +154,7 @@ extension MyCartViewController: UITableViewDelegate, UITableViewDataSource {
         Engine.sharedInstance.cartList.remove(at: sender.tag)
         calculateTotalPrice ()
         self.productTV.reloadData()
+        TestFairyWrapper.simulateNetworkEvent(url: URL(string:"https://my-demo-app.net/api/remove-item")!);
     }
     
     @objc func addButton(_ sender: UIButton) {
@@ -172,6 +174,7 @@ extension MyCartViewController: UITableViewDelegate, UITableViewDataSource {
         
         if quantity < 1 {
             Engine.sharedInstance.cartList.remove(at: sender.tag)
+            TestFairyWrapper.simulateNetworkEvent(url: URL(string:"https://my-demo-app.net/api/remove-item")!);
         }
         
         productFound.setValue(quantity, forKey: "ProductQuantity")

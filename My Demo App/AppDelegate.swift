@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         TestFairyWrapper.begin()
+        TestFairyWrapper.simulateNetworkEvent(url: URL(string:"https://my-demo-app.net/api/init")!);
         FaceIdlocalAuthentication()
         Utils.setProductList()
         return true
