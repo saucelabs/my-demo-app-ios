@@ -45,7 +45,7 @@ jobs:
          cp -R build/Build/Products/Release-iphonesimulator/My\ Demo\ App.app Payload
          zip -9 -r SauceLabs-Demo-App.Simulator.zip Payload
          rm -rf Payload
-    - uses: yukiarrr/ios-build-action@v1.4.0
+    - uses: yukiarrr/ios-build-action@v1.5.0
       with:
         workspace-path: My Demo App.xcworkspace
         project-path: My Demo App.xcodeproj
