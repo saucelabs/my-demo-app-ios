@@ -9,7 +9,17 @@ class TestFairyWrapper {
     public static let TESTFAIRY_APP_TOKEN = ""
     
 public static func simulateNetworkEvent(url: URL){
-    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in }
+    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        
+        guard let unwrappedData = data else { return }
+            do {
+                let str = try JSONSerialization.jsonObject(with: unwrappedData, options: .allowFragments)
+                print(str)
+            } catch {
+                print("json error: \(error)")
+            }
+        
+    }
     task.resume()
 }
     public static func begin() {
