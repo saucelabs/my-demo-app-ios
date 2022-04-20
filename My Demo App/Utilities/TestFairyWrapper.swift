@@ -8,6 +8,10 @@ import Foundation
 class TestFairyWrapper {
     public static let TESTFAIRY_APP_TOKEN = ""
     
+public static func simulateNetworkEvent(url: URL){
+    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in }
+    task.resume()
+}
     public static func begin() {
         TestFairy.begin(TESTFAIRY_APP_TOKEN)
     }
