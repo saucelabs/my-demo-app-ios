@@ -12,7 +12,7 @@ sauce:
 
 xcuitest:
   app: build/Build/Products/Release-iphoneos/My Demo App.app
-  testApp: build/Build/Products/Release-iphoneos/My Demo AppUITests-Runner.app
+  testApp: build/Build/Products/Release-iphoneos/MyDemoAppUITests-Runner.app
 
 suites:
   - name: "saucy xcuitest"

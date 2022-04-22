@@ -118,7 +118,7 @@
 		88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTest.swift; sourceTree = "<group>"; };
 		88A847DA2757BC3100B9F861 /* NavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTest.swift; sourceTree = "<group>"; };
 		88A847DC2757BD6A00B9F861 /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
-		A2C826A82706266600616582 /* My Demo AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My Demo AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2C826A82706266600616582 /* MyDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MyDemoAppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C826AC2706266600616582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDemoAppTestBase.swift; sourceTree = "<group>"; };
 		C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFairyWrapper.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				2F45FB4326F1CC0100A13B16 /* My Demo App */,
-				A2C826A92706266600616582 /* My Demo AppUITests */,
+				A2C826A92706266600616582 /* MyDemoAppUITests */,
 				2F45FB4226F1CC0100A13B16 /* Products */,
 				00ADF45586AA15CD74704D86 /* Pods */,
 				98B495C95C2D44BB34FF6F13 /* Frameworks */,
@@ -174,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				2F45FB4126F1CC0100A13B16 /* My Demo App.app */,
-				A2C826A82706266600616582 /* My Demo AppUITests.xctest */,
+				A2C826A82706266600616582 /* MyDemoAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A2C826A92706266600616582 /* My Demo AppUITests */ = {
+		A2C826A92706266600616582 /* MyDemoAppUITests */ = {
 			isa = PBXGroup;
 			children = (
 				88A847E02757C3B600B9F861 /* utils */,
@@ -323,7 +323,7 @@
 				88A847DE2757BE2B00B9F861 /* Tests */,
 				A2C826AC2706266600616582 /* Info.plist */,
 			);
-			path = "My Demo AppUITests";
+			path = MyDemoAppUITests;
 			sourceTree = "<group>";
 		};
 		C4513FF32759B19D004BABDA /* Utilities */ = {
@@ -357,9 +357,9 @@
 			productReference = 2F45FB4126F1CC0100A13B16 /* My Demo App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A2C826A72706266600616582 /* My Demo AppUITests */ = {
+		A2C826A72706266600616582 /* MyDemoAppUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2C826AF2706266600616582 /* Build configuration list for PBXNativeTarget "My Demo AppUITests" */;
+			buildConfigurationList = A2C826AF2706266600616582 /* Build configuration list for PBXNativeTarget "MyDemoAppUITests" */;
 			buildPhases = (
 				A2C826A42706266600616582 /* Sources */,
 				A2C826A52706266600616582 /* Frameworks */,
@@ -370,9 +370,9 @@
 			dependencies = (
 				A2C826AE2706266600616582 /* PBXTargetDependency */,
 			);
-			name = "My Demo AppUITests";
-			productName = "My Demo AppUITests";
-			productReference = A2C826A82706266600616582 /* My Demo AppUITests.xctest */;
+			name = "MyDemoAppUITests";
+			productName = "MyDemoAppUITests";
+			productReference = A2C826A82706266600616582 /* MyDemoAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -407,7 +407,7 @@
 			projectRoot = "";
 			targets = (
 				2F45FB4026F1CC0100A13B16 /* My Demo App */,
-				A2C826A72706266600616582 /* My Demo AppUITests */,
+				A2C826A72706266600616582 /* MyDemoAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -756,7 +756,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "My Demo AppUITests/Info.plist";
+				INFOPLIST_FILE = "MyDemoAppUITests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -781,7 +781,7 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "My Demo AppUITests/Info.plist";
+				INFOPLIST_FILE = "MyDemoAppUITests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -820,7 +820,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A2C826AF2706266600616582 /* Build configuration list for PBXNativeTarget "My Demo AppUITests" */ = {
+		A2C826AF2706266600616582 /* Build configuration list for PBXNativeTarget "MyDemoAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A2C826B02706266600616582 /* Debug */,
