@@ -13,7 +13,6 @@ class QRCodeScannerViewController: UIViewController {
     
     let captureSession = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer!
-    var qrCodeFrameView:UIView?
 
     private let sessionQueue = DispatchQueue(label: "session queue")
     
