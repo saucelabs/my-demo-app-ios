@@ -9,8 +9,9 @@
 /* Begin PBXAggregateTarget section */
 		F60027FAE4C10A68998A12C22EDF64F3 /* TestFairy */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 00205DB52B6B1E770BD75EA30CC76DC6 /* Build configuration list for PBXAggregateTarget "TestFairy" */;
+			buildConfigurationList = 688D006C6A704EDBD5911542250AD521 /* Build configuration list for PBXAggregateTarget "TestFairy" */;
 			buildPhases = (
+				882877672F47053C4BBE5EEAA397F6A7 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
 			);
@@ -19,107 +20,106 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		1F8CA56DDB4D3C03A8E68ADBE17E1936 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1E5271B838B2DB9FF936EA76AD4ED7 /* FormTextField.swift */; };
-		27719E1719165FEBCA7D1DAF939C9E72 /* FormTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 334C25E04496F0CF48CFECB12837FBBC /* FormTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2BCB5765265D70CA24079AB63949E4D2 /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 189DEC451880F4FA5EE91D853EF1BB46 /* DecimalInputValidator.swift */; };
-		3E4BC78628D0BAF038D6085DA3397AE5 /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D235DBC1464E1AB656028F8BE42B0 /* InputValidatable.swift */; };
-		4671398F69B53D5989414A6CEE1D8C30 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4AEA6A5EB392F8F16CF07F71EDC55E /* UIKitExtensions.swift */; };
-		51C970BDD37360B18DD62D878937E81D /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430D8A511A9CB2D156A43B47E9383A43 /* FormTextFieldTypeManager.swift */; };
-		56C63BAEB93D20A948A8F1BE1838B972 /* Pods-My Demo App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 007C787DA31B73DF99EA0392B99F14A6 /* Pods-My Demo App-dummy.m */; };
-		5DF05A417F536F618EF8C8BA949B4502 /* Pods-My Demo App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2006E0B0151AB539808DC899C3B5F8CE /* Pods-My Demo App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1F8CA56DDB4D3C03A8E68ADBE17E1936 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1F66C504FB74B2E1048C43EEAAA76A /* FormTextField.swift */; };
+		27719E1719165FEBCA7D1DAF939C9E72 /* FormTextField-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C7CA7A7AF7B22E0272939A5382EA392B /* FormTextField-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BCB5765265D70CA24079AB63949E4D2 /* DecimalInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B47AF04D413EAFDA6B00089D98828FD /* DecimalInputValidator.swift */; };
+		3E4BC78628D0BAF038D6085DA3397AE5 /* InputValidatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3025410749289A298D282BF0B0D33F /* InputValidatable.swift */; };
+		4671398F69B53D5989414A6CEE1D8C30 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225948DC3FFDABB7B7FA55DA80A69C22 /* UIKitExtensions.swift */; };
+		51C970BDD37360B18DD62D878937E81D /* FormTextFieldTypeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA431B2B6D293F5A6ED56484E997D16 /* FormTextFieldTypeManager.swift */; };
+		56C63BAEB93D20A948A8F1BE1838B972 /* Pods-My Demo App-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FABB0969C24D9DB6E6A2C444492F12 /* Pods-My Demo App-dummy.m */; };
+		5DF05A417F536F618EF8C8BA949B4502 /* Pods-My Demo App-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 178F1352DBE276A8C24237C7FF9A38E7 /* Pods-My Demo App-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		659B1F8EA25E1E0117966342E2B65C07 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		7E519DF539EF53ABE7880B88A4A637AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
 		8924CFC806352CD0EEDB6C971DC8DCA5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
-		8D7E3F259A58ED961E9F7262D250CD68 /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70DC0F03B605322D6372EB28E259A48 /* FormTextFieldClearButton.swift */; };
-		9ACBACAC93045EFB130E59C2681D1384 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4F2480282D0900470CAC6599B1CD4A /* Validation.swift */; };
-		A1B74155626A3DA480C9316AF3FF8DC0 /* EasyTipView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A85FC83D3F4D2E755DC2EF1055EF5430 /* EasyTipView-dummy.m */; };
-		A341742B21F5CB41E97300E76C47E32C /* FormTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB8C2C0A289EB5DB170F698EC0383DB /* FormTextField-dummy.m */; };
-		AB6B7AFA23757E4018C35C0D4E87B903 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48D6DBD4027BBC0634901EF76772DA4 /* InputValidator.swift */; };
+		8D7E3F259A58ED961E9F7262D250CD68 /* FormTextFieldClearButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37693C22A09DF8C70F255FCD4276FE8F /* FormTextFieldClearButton.swift */; };
+		9ACBACAC93045EFB130E59C2681D1384 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13EC511628D40E41377B72232AB9E82 /* Validation.swift */; };
+		A1B74155626A3DA480C9316AF3FF8DC0 /* EasyTipView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A11795010AD8AED8AB4F94A9923E265 /* EasyTipView-dummy.m */; };
+		A341742B21F5CB41E97300E76C47E32C /* FormTextField-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D8A507516259A4FFF586452E4D835ED /* FormTextField-dummy.m */; };
+		AB6B7AFA23757E4018C35C0D4E87B903 /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F521D6BD672D59EC30E260D38E725C /* InputValidator.swift */; };
 		AD3B91AF4FB2D4664B800C6769C7F9A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
-		B35570E42B0B5DA2EA7FE6FCE711CC24 /* RequiredInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3E9FE8C556882B66312C2DE5903F82 /* RequiredInputValidator.swift */; };
-		B5F859BBA322A177500F16B37F426E70 /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C67C7148EBF61D65AFDBA805955850 /* CardExpirationDateInputValidator.swift */; };
-		D09341A5DADC4D6C7BAE2E892B48E111 /* EasyTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1556708FD7CB428672A0F27ABD176394 /* EasyTipView.swift */; };
-		D50B41343936922017DFA46EE21ECB6B /* FormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = BF401019ACB0A7FAA774E4515D34668B /* FormTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E344296D5F4DB09A8FACA769581D644D /* EasyTipView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D3F9A92016C78E89CD67AC1B5F5CD5 /* EasyTipView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E40BBB1782503594F6FA87CA419F42B3 /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B943D5D220C51E9944C2C56BBC1074 /* Formattable.swift */; };
-		F019BD2498636C09671A70AF57B559CD /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B31D5C9DE65C89ED965DDEAF59ECD59 /* CardNumberFormatter.swift */; };
-		F5332736303B5D0E5F149B72F3819346 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40FD361967E7E26C59DC269CB78BE69F /* CardExpirationDateFormatter.swift */; };
+		B35570E42B0B5DA2EA7FE6FCE711CC24 /* RequiredInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AA38970A49A38C768F4F561353997E /* RequiredInputValidator.swift */; };
+		B5F859BBA322A177500F16B37F426E70 /* CardExpirationDateInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3831559784629EDD69322F49F743AE94 /* CardExpirationDateInputValidator.swift */; };
+		D09341A5DADC4D6C7BAE2E892B48E111 /* EasyTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7988FBE37587D67286830C69AB6E0EC8 /* EasyTipView.swift */; };
+		D50B41343936922017DFA46EE21ECB6B /* FormTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 718D721881515EDC3204BB0588529C59 /* FormTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E344296D5F4DB09A8FACA769581D644D /* EasyTipView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 15DE5AAA4F5F5D6E03426CBDEEA21B11 /* EasyTipView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E40BBB1782503594F6FA87CA419F42B3 /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1676931F9DE8825764C8646F2DEA5649 /* Formattable.swift */; };
+		F019BD2498636C09671A70AF57B559CD /* CardNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB416ADF7CFC03722DEF694A1F76EBE /* CardNumberFormatter.swift */; };
+		F5332736303B5D0E5F149B72F3819346 /* CardExpirationDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5118B7DBE576A9BCC820297F8AEB9931 /* CardExpirationDateFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AA2EE28E218111330E68DA7DF10DE4F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 048D21E3C8151CD23D428D38093E1538;
-			remoteInfo = EasyTipView;
-		};
-		AB292E64BDFF31D61527C2A1258C7484 /* PBXContainerItemProxy */ = {
+		2084307D2755A36B8DC97A938D131536 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = F60027FAE4C10A68998A12C22EDF64F3;
 			remoteInfo = TestFairy;
 		};
-		B7B50257B71206EEC3E73E4733763128 /* PBXContainerItemProxy */ = {
+		6EA41E724452F59CCE398C4B7E914EA0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FA56E39EF6C470C3DFC0A23077F6D611;
 			remoteInfo = FormTextField;
 		};
+		D1D98460DFFA315BCC0B23F7E91FDD69 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 048D21E3C8151CD23D428D38093E1538;
+			remoteInfo = EasyTipView;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		007C787DA31B73DF99EA0392B99F14A6 /* Pods-My Demo App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-My Demo App-dummy.m"; sourceTree = "<group>"; };
-		03B943D5D220C51E9944C2C56BBC1074 /* Formattable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formattable.swift; path = Source/Formatter/Formattable.swift; sourceTree = "<group>"; };
-		06CEFF15743FA6E9081FF6435FB952CA /* TestFairy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TestFairy.debug.xcconfig; sourceTree = "<group>"; };
-		09658134EF3E8FF70E7E8DAEA44A284C /* Pods-My Demo App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-My Demo App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0052E70E1D9768AE3719746A04BE3106 /* FormTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FormTextField.modulemap; sourceTree = "<group>"; };
+		0A3E2647E60F53E0BA9736359B19B0E0 /* TestFairy.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = TestFairy.xcframework; sourceTree = "<group>"; };
+		0AD0407E8EDC73EC25520EC510552CC8 /* EasyTipView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EasyTipView-Info.plist"; sourceTree = "<group>"; };
+		0FFA5CC1EC0C2DB3BBA84A83B1C2C2BA /* EasyTipView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyTipView-prefix.pch"; sourceTree = "<group>"; };
+		12997E802BE4892A44AD40684CB8BCB8 /* EasyTipView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyTipView.debug.xcconfig; sourceTree = "<group>"; };
 		130F86DE4394AAFB62D69486F1BA4717 /* Pods-My Demo App */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-My Demo App"; path = Pods_My_Demo_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1556708FD7CB428672A0F27ABD176394 /* EasyTipView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyTipView.swift; path = Sources/EasyTipView/EasyTipView.swift; sourceTree = "<group>"; };
-		189DEC451880F4FA5EE91D853EF1BB46 /* DecimalInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecimalInputValidator.swift; path = Source/InputValidator/DecimalInputValidator.swift; sourceTree = "<group>"; };
-		1B31D5C9DE65C89ED965DDEAF59ECD59 /* CardNumberFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardNumberFormatter.swift; path = Source/Formatter/CardNumberFormatter.swift; sourceTree = "<group>"; };
-		2006E0B0151AB539808DC899C3B5F8CE /* Pods-My Demo App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-My Demo App-umbrella.h"; sourceTree = "<group>"; };
-		24599A3E071406E6D4A22B2AC6CE2603 /* Pods-My Demo App-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-My Demo App-resources.sh"; sourceTree = "<group>"; };
-		24B6962353C655710CDFDF45B5DC8DBB /* EasyTipView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyTipView-prefix.pch"; sourceTree = "<group>"; };
+		15DE5AAA4F5F5D6E03426CBDEEA21B11 /* EasyTipView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyTipView-umbrella.h"; sourceTree = "<group>"; };
+		1676931F9DE8825764C8646F2DEA5649 /* Formattable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Formattable.swift; path = Source/Formatter/Formattable.swift; sourceTree = "<group>"; };
+		178F1352DBE276A8C24237C7FF9A38E7 /* Pods-My Demo App-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-My Demo App-umbrella.h"; sourceTree = "<group>"; };
+		197D781AA15F58468C5D8BC7861F0F40 /* Pods-My Demo App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-My Demo App-frameworks.sh"; sourceTree = "<group>"; };
+		1A11795010AD8AED8AB4F94A9923E265 /* EasyTipView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyTipView-dummy.m"; sourceTree = "<group>"; };
+		225948DC3FFDABB7B7FA55DA80A69C22 /* UIKitExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = Sources/EasyTipView/UIKitExtensions.swift; sourceTree = "<group>"; };
+		289DF3F3F8D2D1544C3F8AE263B431E7 /* EasyTipView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EasyTipView.modulemap; sourceTree = "<group>"; };
+		30A424E9C4FD61E012E384DB04D362CD /* Pods-My Demo App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-My Demo App.release.xcconfig"; sourceTree = "<group>"; };
 		31FB42D7B4767AE8B951CCBB850BA1FD /* FormTextField */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FormTextField; path = FormTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		334C25E04496F0CF48CFECB12837FBBC /* FormTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormTextField-umbrella.h"; sourceTree = "<group>"; };
-		3C3E9FE8C556882B66312C2DE5903F82 /* RequiredInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequiredInputValidator.swift; path = Source/InputValidator/RequiredInputValidator.swift; sourceTree = "<group>"; };
-		3CDF33B65A2B7B6143E3C9075AF07230 /* FormTextField.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FormTextField.modulemap; sourceTree = "<group>"; };
-		40FD361967E7E26C59DC269CB78BE69F /* CardExpirationDateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardExpirationDateFormatter.swift; path = Source/Formatter/CardExpirationDateFormatter.swift; sourceTree = "<group>"; };
-		41F8BCF6A085440024C13C225971F1BC /* Pods-My Demo App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-My Demo App-Info.plist"; sourceTree = "<group>"; };
-		430D8A511A9CB2D156A43B47E9383A43 /* FormTextFieldTypeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextFieldTypeManager.swift; path = Source/FormTextFieldTypeManager.swift; sourceTree = "<group>"; };
-		4B39C325BCA7689CEC6B7AB961E71979 /* FormTextField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FormTextField.release.xcconfig; sourceTree = "<group>"; };
-		53DE17DD43AE388ACC45CA1926022410 /* Pods-My Demo App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-My Demo App.modulemap"; sourceTree = "<group>"; };
-		63D3F9A92016C78E89CD67AC1B5F5CD5 /* EasyTipView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyTipView-umbrella.h"; sourceTree = "<group>"; };
-		6B4AEA6A5EB392F8F16CF07F71EDC55E /* UIKitExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitExtensions.swift; path = Sources/EasyTipView/UIKitExtensions.swift; sourceTree = "<group>"; };
-		7E4F2480282D0900470CAC6599B1CD4A /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation/Validation.swift; sourceTree = "<group>"; };
-		8052A9C932B42F33F3B866326F807CEF /* Pods-My Demo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-My Demo App.debug.xcconfig"; sourceTree = "<group>"; };
-		80DD0F6343F6772BE00A16B2FFB60E9C /* EasyTipView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyTipView.debug.xcconfig; sourceTree = "<group>"; };
-		875E04A1994EC3D3F411E86449F1950E /* FormTextField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FormTextField.debug.xcconfig; sourceTree = "<group>"; };
+		37693C22A09DF8C70F255FCD4276FE8F /* FormTextFieldClearButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextFieldClearButton.swift; path = Source/FormTextFieldClearButton.swift; sourceTree = "<group>"; };
+		3831559784629EDD69322F49F743AE94 /* CardExpirationDateInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardExpirationDateInputValidator.swift; path = Source/InputValidator/CardExpirationDateInputValidator.swift; sourceTree = "<group>"; };
+		3B3025410749289A298D282BF0B0D33F /* InputValidatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidatable.swift; path = Source/InputValidator/InputValidatable.swift; sourceTree = "<group>"; };
+		4AA431B2B6D293F5A6ED56484E997D16 /* FormTextFieldTypeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextFieldTypeManager.swift; path = Source/FormTextFieldTypeManager.swift; sourceTree = "<group>"; };
+		4B7A8CE2EA5DF4F7AD9EE8375B2694FB /* FormTextField.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FormTextField.release.xcconfig; sourceTree = "<group>"; };
+		5118B7DBE576A9BCC820297F8AEB9931 /* CardExpirationDateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardExpirationDateFormatter.swift; path = Source/Formatter/CardExpirationDateFormatter.swift; sourceTree = "<group>"; };
+		5D8A507516259A4FFF586452E4D835ED /* FormTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FormTextField-dummy.m"; sourceTree = "<group>"; };
+		6BB416ADF7CFC03722DEF694A1F76EBE /* CardNumberFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardNumberFormatter.swift; path = Source/Formatter/CardNumberFormatter.swift; sourceTree = "<group>"; };
+		7020389F3C0A1E5D8BF280418B8EE09C /* TestFairy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TestFairy.debug.xcconfig; sourceTree = "<group>"; };
+		718D721881515EDC3204BB0588529C59 /* FormTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FormTextField.h; path = Source/FormTextField.h; sourceTree = "<group>"; };
+		79549AB0D10ACBAC11287E250D85F60E /* TestFairy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TestFairy.release.xcconfig; sourceTree = "<group>"; };
+		7988FBE37587D67286830C69AB6E0EC8 /* EasyTipView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EasyTipView.swift; path = Sources/EasyTipView/EasyTipView.swift; sourceTree = "<group>"; };
+		80F85387C605509644179643EE021FEB /* Pods-My Demo App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-My Demo App.debug.xcconfig"; sourceTree = "<group>"; };
+		832EECD39CC9CEF286A7EE8D66EFB6B4 /* TestFairy-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "TestFairy-xcframeworks.sh"; sourceTree = "<group>"; };
 		8A63F6AA6A1D241970B6D28C2970A8B9 /* EasyTipView */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyTipView; path = EasyTipView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F1FB6C8AB648D0A6ECDDEE2C2E55C65 /* FormTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormTextField-prefix.pch"; sourceTree = "<group>"; };
+		8B47AF04D413EAFDA6B00089D98828FD /* DecimalInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DecimalInputValidator.swift; path = Source/InputValidator/DecimalInputValidator.swift; sourceTree = "<group>"; };
+		8F7CC2757F1182555B8AFFFDC8736AC5 /* FormTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FormTextField-Info.plist"; sourceTree = "<group>"; };
+		92FA2191864FE69236DA5EAC393F14BA /* Pods-My Demo App-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-My Demo App-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9364C8CD39848EB7FEDA86A3560F22A7 /* FormTextField.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FormTextField.debug.xcconfig; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A48D6DBD4027BBC0634901EF76772DA4 /* InputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidator.swift; path = Source/InputValidator/InputValidator.swift; sourceTree = "<group>"; };
-		A5C67C7148EBF61D65AFDBA805955850 /* CardExpirationDateInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CardExpirationDateInputValidator.swift; path = Source/InputValidator/CardExpirationDateInputValidator.swift; sourceTree = "<group>"; };
-		A842EC85501BAD55D08022A936D196AE /* upload-dsym.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "upload-dsym.sh"; sourceTree = "<group>"; };
-		A85FC83D3F4D2E755DC2EF1055EF5430 /* EasyTipView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EasyTipView-dummy.m"; sourceTree = "<group>"; };
-		A9375FF332035949149144CAED1DF673 /* Pods-My Demo App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-My Demo App.release.xcconfig"; sourceTree = "<group>"; };
-		BC72744CCDDE366F35CD6E34806AB602 /* EasyTipView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EasyTipView.modulemap; sourceTree = "<group>"; };
-		BF401019ACB0A7FAA774E4515D34668B /* FormTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FormTextField.h; path = Source/FormTextField.h; sourceTree = "<group>"; };
-		C5513A494CE5A2E35576B65C445F2502 /* TestFairy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TestFairy.release.xcconfig; sourceTree = "<group>"; };
-		CA9D235DBC1464E1AB656028F8BE42B0 /* InputValidatable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidatable.swift; path = Source/InputValidator/InputValidatable.swift; sourceTree = "<group>"; };
-		CC5D2E23D96A94045CF5E02BBFBF01E1 /* FormTextField-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FormTextField-Info.plist"; sourceTree = "<group>"; };
-		CCD3D8E677D2E4663EAE24FA79031144 /* Pods-My Demo App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-My Demo App-acknowledgements.plist"; sourceTree = "<group>"; };
-		D1F354524D626B360170C6F2C99C26EF /* Pods-My Demo App-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-My Demo App-frameworks.sh"; sourceTree = "<group>"; };
+		A9C66D0F6F9191D5ED8A230567F2A9EC /* Pods-My Demo App-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-My Demo App-acknowledgements.plist"; sourceTree = "<group>"; };
+		A9FABB0969C24D9DB6E6A2C444492F12 /* Pods-My Demo App-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-My Demo App-dummy.m"; sourceTree = "<group>"; };
+		AC29DFFEA2EC24C8BB4B6F847F745628 /* EasyTipView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyTipView.release.xcconfig; sourceTree = "<group>"; };
+		BCA5180567C20B0A587B6CA612A5D2BC /* FormTextField-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormTextField-prefix.pch"; sourceTree = "<group>"; };
+		C412D993C20B92FB9836A1936E6ED570 /* Pods-My Demo App.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-My Demo App.modulemap"; sourceTree = "<group>"; };
+		C7CA7A7AF7B22E0272939A5382EA392B /* FormTextField-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormTextField-umbrella.h"; sourceTree = "<group>"; };
+		D205B3C2FC1C83F02330DAC1FF90EB65 /* Pods-My Demo App-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-My Demo App-Info.plist"; sourceTree = "<group>"; };
 		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D8D0CA36E49E1E0B2AE8CA3C8D102C1D /* EasyTipView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EasyTipView-Info.plist"; sourceTree = "<group>"; };
-		DDB8C2C0A289EB5DB170F698EC0383DB /* FormTextField-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FormTextField-dummy.m"; sourceTree = "<group>"; };
-		E5610BFF0CDE65D0E9B583AD8D755731 /* EasyTipView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyTipView.release.xcconfig; sourceTree = "<group>"; };
+		E13EC511628D40E41377B72232AB9E82 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation/Validation.swift; sourceTree = "<group>"; };
 		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EEA13E6F79307F3F3AE7212D7045E4FF /* TestFairy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TestFairy.h; sourceTree = "<group>"; };
-		F70DC0F03B605322D6372EB28E259A48 /* FormTextFieldClearButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextFieldClearButton.swift; path = Source/FormTextFieldClearButton.swift; sourceTree = "<group>"; };
-		FD1E5271B838B2DB9FF936EA76AD4ED7 /* FormTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextField.swift; path = Source/FormTextField.swift; sourceTree = "<group>"; };
+		F2AA38970A49A38C768F4F561353997E /* RequiredInputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequiredInputValidator.swift; path = Source/InputValidator/RequiredInputValidator.swift; sourceTree = "<group>"; };
+		F7F521D6BD672D59EC30E260D38E725C /* InputValidator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = InputValidator.swift; path = Source/InputValidator/InputValidator.swift; sourceTree = "<group>"; };
+		FA1F66C504FB74B2E1048C43EEAAA76A /* FormTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormTextField.swift; path = Source/FormTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +151,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15EE1CC7A38C5C3CCAA287672D473760 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F8E82B65DF13A7D8EA881458AA98C496 /* Pods-My Demo App */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
 		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,34 +167,45 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1BFD83EFBC79D09119BBF355A7AA559D /* FormTextField */ = {
+		204DF6D375330DBB01D9B223B697C409 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				40FD361967E7E26C59DC269CB78BE69F /* CardExpirationDateFormatter.swift */,
-				A5C67C7148EBF61D65AFDBA805955850 /* CardExpirationDateInputValidator.swift */,
-				1B31D5C9DE65C89ED965DDEAF59ECD59 /* CardNumberFormatter.swift */,
-				189DEC451880F4FA5EE91D853EF1BB46 /* DecimalInputValidator.swift */,
-				03B943D5D220C51E9944C2C56BBC1074 /* Formattable.swift */,
-				BF401019ACB0A7FAA774E4515D34668B /* FormTextField.h */,
-				FD1E5271B838B2DB9FF936EA76AD4ED7 /* FormTextField.swift */,
-				F70DC0F03B605322D6372EB28E259A48 /* FormTextFieldClearButton.swift */,
-				430D8A511A9CB2D156A43B47E9383A43 /* FormTextFieldTypeManager.swift */,
-				CA9D235DBC1464E1AB656028F8BE42B0 /* InputValidatable.swift */,
-				A48D6DBD4027BBC0634901EF76772DA4 /* InputValidator.swift */,
-				3C3E9FE8C556882B66312C2DE5903F82 /* RequiredInputValidator.swift */,
-				7E4F2480282D0900470CAC6599B1CD4A /* Validation.swift */,
-				61ECAF36A36335BE019E59C383D25B26 /* Support Files */,
+				832EECD39CC9CEF286A7EE8D66EFB6B4 /* TestFairy-xcframeworks.sh */,
+				7020389F3C0A1E5D8BF280418B8EE09C /* TestFairy.debug.xcconfig */,
+				79549AB0D10ACBAC11287E250D85F60E /* TestFairy.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/TestFairy";
+			sourceTree = "<group>";
+		};
+		2F6A789D236A89946C4F087C960DECBD /* FormTextField */ = {
+			isa = PBXGroup;
+			children = (
+				5118B7DBE576A9BCC820297F8AEB9931 /* CardExpirationDateFormatter.swift */,
+				3831559784629EDD69322F49F743AE94 /* CardExpirationDateInputValidator.swift */,
+				6BB416ADF7CFC03722DEF694A1F76EBE /* CardNumberFormatter.swift */,
+				8B47AF04D413EAFDA6B00089D98828FD /* DecimalInputValidator.swift */,
+				1676931F9DE8825764C8646F2DEA5649 /* Formattable.swift */,
+				718D721881515EDC3204BB0588529C59 /* FormTextField.h */,
+				FA1F66C504FB74B2E1048C43EEAAA76A /* FormTextField.swift */,
+				37693C22A09DF8C70F255FCD4276FE8F /* FormTextFieldClearButton.swift */,
+				4AA431B2B6D293F5A6ED56484E997D16 /* FormTextFieldTypeManager.swift */,
+				3B3025410749289A298D282BF0B0D33F /* InputValidatable.swift */,
+				F7F521D6BD672D59EC30E260D38E725C /* InputValidator.swift */,
+				F2AA38970A49A38C768F4F561353997E /* RequiredInputValidator.swift */,
+				E13EC511628D40E41377B72232AB9E82 /* Validation.swift */,
+				BF519D9D93E4BBBD43C33A7EB4A06D62 /* Support Files */,
 			);
 			name = FormTextField;
 			path = FormTextField;
 			sourceTree = "<group>";
 		};
-		5276F0CC1A225E970DEEC6447F423AC0 /* Resources */ = {
+		3E3059B3497B7752E5A8FE5C35DFF815 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A842EC85501BAD55D08022A936D196AE /* upload-dsym.sh */,
+				0A3E2647E60F53E0BA9736359B19B0E0 /* TestFairy.xcframework */,
 			);
-			name = Resources;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
@@ -198,84 +217,55 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		61ECAF36A36335BE019E59C383D25B26 /* Support Files */ = {
+		82B33BDBAA618DBCB134A56CDA38A047 /* TestFairy */ = {
 			isa = PBXGroup;
 			children = (
-				3CDF33B65A2B7B6143E3C9075AF07230 /* FormTextField.modulemap */,
-				DDB8C2C0A289EB5DB170F698EC0383DB /* FormTextField-dummy.m */,
-				CC5D2E23D96A94045CF5E02BBFBF01E1 /* FormTextField-Info.plist */,
-				8F1FB6C8AB648D0A6ECDDEE2C2E55C65 /* FormTextField-prefix.pch */,
-				334C25E04496F0CF48CFECB12837FBBC /* FormTextField-umbrella.h */,
-				875E04A1994EC3D3F411E86449F1950E /* FormTextField.debug.xcconfig */,
-				4B39C325BCA7689CEC6B7AB961E71979 /* FormTextField.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FormTextField";
-			sourceTree = "<group>";
-		};
-		76D2FFDAFE7687A0C2328D0539B5330F /* EasyTipView */ = {
-			isa = PBXGroup;
-			children = (
-				1556708FD7CB428672A0F27ABD176394 /* EasyTipView.swift */,
-				6B4AEA6A5EB392F8F16CF07F71EDC55E /* UIKitExtensions.swift */,
-				C27A6CF67518D5C2BCF3F815B2669D96 /* Support Files */,
-			);
-			name = EasyTipView;
-			path = EasyTipView;
-			sourceTree = "<group>";
-		};
-		8C34E57DF40BF217FAE64AB4A173E05C /* TestFairy */ = {
-			isa = PBXGroup;
-			children = (
-				EEA13E6F79307F3F3AE7212D7045E4FF /* TestFairy.h */,
-				5276F0CC1A225E970DEEC6447F423AC0 /* Resources */,
-				F23F4EECA04073E2FFFB3DB35E638F39 /* Support Files */,
+				3E3059B3497B7752E5A8FE5C35DFF815 /* Frameworks */,
+				204DF6D375330DBB01D9B223B697C409 /* Support Files */,
 			);
 			name = TestFairy;
 			path = TestFairy;
 			sourceTree = "<group>";
 		};
-		BC0352A00438F2B8CCCB8C92CB13CB47 /* Pods */ = {
+		98BFB1E18944DA6F43065CD488C66FCA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				76D2FFDAFE7687A0C2328D0539B5330F /* EasyTipView */,
-				1BFD83EFBC79D09119BBF355A7AA559D /* FormTextField */,
-				8C34E57DF40BF217FAE64AB4A173E05C /* TestFairy */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		C27A6CF67518D5C2BCF3F815B2669D96 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BC72744CCDDE366F35CD6E34806AB602 /* EasyTipView.modulemap */,
-				A85FC83D3F4D2E755DC2EF1055EF5430 /* EasyTipView-dummy.m */,
-				D8D0CA36E49E1E0B2AE8CA3C8D102C1D /* EasyTipView-Info.plist */,
-				24B6962353C655710CDFDF45B5DC8DBB /* EasyTipView-prefix.pch */,
-				63D3F9A92016C78E89CD67AC1B5F5CD5 /* EasyTipView-umbrella.h */,
-				80DD0F6343F6772BE00A16B2FFB60E9C /* EasyTipView.debug.xcconfig */,
-				E5610BFF0CDE65D0E9B583AD8D755731 /* EasyTipView.release.xcconfig */,
+				289DF3F3F8D2D1544C3F8AE263B431E7 /* EasyTipView.modulemap */,
+				1A11795010AD8AED8AB4F94A9923E265 /* EasyTipView-dummy.m */,
+				0AD0407E8EDC73EC25520EC510552CC8 /* EasyTipView-Info.plist */,
+				0FFA5CC1EC0C2DB3BBA84A83B1C2C2BA /* EasyTipView-prefix.pch */,
+				15DE5AAA4F5F5D6E03426CBDEEA21B11 /* EasyTipView-umbrella.h */,
+				12997E802BE4892A44AD40684CB8BCB8 /* EasyTipView.debug.xcconfig */,
+				AC29DFFEA2EC24C8BB4B6F847F745628 /* EasyTipView.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/EasyTipView";
 			sourceTree = "<group>";
 		};
-		C3CC403571E6B06F4BF1DC96E35B4B76 /* Pods-My Demo App */ = {
+		BF519D9D93E4BBBD43C33A7EB4A06D62 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				53DE17DD43AE388ACC45CA1926022410 /* Pods-My Demo App.modulemap */,
-				09658134EF3E8FF70E7E8DAEA44A284C /* Pods-My Demo App-acknowledgements.markdown */,
-				CCD3D8E677D2E4663EAE24FA79031144 /* Pods-My Demo App-acknowledgements.plist */,
-				007C787DA31B73DF99EA0392B99F14A6 /* Pods-My Demo App-dummy.m */,
-				D1F354524D626B360170C6F2C99C26EF /* Pods-My Demo App-frameworks.sh */,
-				41F8BCF6A085440024C13C225971F1BC /* Pods-My Demo App-Info.plist */,
-				24599A3E071406E6D4A22B2AC6CE2603 /* Pods-My Demo App-resources.sh */,
-				2006E0B0151AB539808DC899C3B5F8CE /* Pods-My Demo App-umbrella.h */,
-				8052A9C932B42F33F3B866326F807CEF /* Pods-My Demo App.debug.xcconfig */,
-				A9375FF332035949149144CAED1DF673 /* Pods-My Demo App.release.xcconfig */,
+				0052E70E1D9768AE3719746A04BE3106 /* FormTextField.modulemap */,
+				5D8A507516259A4FFF586452E4D835ED /* FormTextField-dummy.m */,
+				8F7CC2757F1182555B8AFFFDC8736AC5 /* FormTextField-Info.plist */,
+				BCA5180567C20B0A587B6CA612A5D2BC /* FormTextField-prefix.pch */,
+				C7CA7A7AF7B22E0272939A5382EA392B /* FormTextField-umbrella.h */,
+				9364C8CD39848EB7FEDA86A3560F22A7 /* FormTextField.debug.xcconfig */,
+				4B7A8CE2EA5DF4F7AD9EE8375B2694FB /* FormTextField.release.xcconfig */,
 			);
-			name = "Pods-My Demo App";
-			path = "Target Support Files/Pods-My Demo App";
+			name = "Support Files";
+			path = "../Target Support Files/FormTextField";
+			sourceTree = "<group>";
+		};
+		CDBCF2966ECEBF9027CE2AD77CB1DA91 /* EasyTipView */ = {
+			isa = PBXGroup;
+			children = (
+				7988FBE37587D67286830C69AB6E0EC8 /* EasyTipView.swift */,
+				225948DC3FFDABB7B7FA55DA80A69C22 /* UIKitExtensions.swift */,
+				98BFB1E18944DA6F43065CD488C66FCA /* Support Files */,
+			);
+			name = EasyTipView;
+			path = EasyTipView;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -283,28 +273,37 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
-				BC0352A00438F2B8CCCB8C92CB13CB47 /* Pods */,
+				F1DAC6BFE903E8703B9D5C66BC88E172 /* Pods */,
 				FF74947C3EABF77755BBD47156A9578A /* Products */,
-				D7D8DDAD38028D0001EC1AE63EB2D7DA /* Targets Support Files */,
+				15EE1CC7A38C5C3CCAA287672D473760 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		D7D8DDAD38028D0001EC1AE63EB2D7DA /* Targets Support Files */ = {
+		F1DAC6BFE903E8703B9D5C66BC88E172 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C3CC403571E6B06F4BF1DC96E35B4B76 /* Pods-My Demo App */,
+				CDBCF2966ECEBF9027CE2AD77CB1DA91 /* EasyTipView */,
+				2F6A789D236A89946C4F087C960DECBD /* FormTextField */,
+				82B33BDBAA618DBCB134A56CDA38A047 /* TestFairy */,
 			);
-			name = "Targets Support Files";
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		F23F4EECA04073E2FFFB3DB35E638F39 /* Support Files */ = {
+		F8E82B65DF13A7D8EA881458AA98C496 /* Pods-My Demo App */ = {
 			isa = PBXGroup;
 			children = (
-				06CEFF15743FA6E9081FF6435FB952CA /* TestFairy.debug.xcconfig */,
-				C5513A494CE5A2E35576B65C445F2502 /* TestFairy.release.xcconfig */,
+				C412D993C20B92FB9836A1936E6ED570 /* Pods-My Demo App.modulemap */,
+				92FA2191864FE69236DA5EAC393F14BA /* Pods-My Demo App-acknowledgements.markdown */,
+				A9C66D0F6F9191D5ED8A230567F2A9EC /* Pods-My Demo App-acknowledgements.plist */,
+				A9FABB0969C24D9DB6E6A2C444492F12 /* Pods-My Demo App-dummy.m */,
+				197D781AA15F58468C5D8BC7861F0F40 /* Pods-My Demo App-frameworks.sh */,
+				D205B3C2FC1C83F02330DAC1FF90EB65 /* Pods-My Demo App-Info.plist */,
+				178F1352DBE276A8C24237C7FF9A38E7 /* Pods-My Demo App-umbrella.h */,
+				80F85387C605509644179643EE021FEB /* Pods-My Demo App.debug.xcconfig */,
+				30A424E9C4FD61E012E384DB04D362CD /* Pods-My Demo App.release.xcconfig */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/TestFairy";
+			name = "Pods-My Demo App";
+			path = "Target Support Files/Pods-My Demo App";
 			sourceTree = "<group>";
 		};
 		FF74947C3EABF77755BBD47156A9578A /* Products */ = {
@@ -378,9 +377,9 @@
 			buildRules = (
 			);
 			dependencies = (
-				1B04AFCBB32001E433D75EE7A2786E27 /* PBXTargetDependency */,
-				AE77BD03B8694FAB45128E5DFAB96716 /* PBXTargetDependency */,
-				CD33F459F7FF75A34C04CC493E0D92C4 /* PBXTargetDependency */,
+				1809D93D5D13DF54582E5AA18F4EDD8D /* PBXTargetDependency */,
+				6415875D66929DBC29B24962C6AB1067 /* PBXTargetDependency */,
+				C01EB99BA8BFAE3D265D80ADA82AF613 /* PBXTargetDependency */,
 			);
 			name = "Pods-My Demo App";
 			productName = Pods_My_Demo_App;
@@ -459,6 +458,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		882877672F47053C4BBE5EEAA397F6A7 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/TestFairy/TestFairy-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/TestFairy/TestFairy-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/TestFairy/TestFairy-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2149F177678DC152DF3DB739C8A69798 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -501,23 +520,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B04AFCBB32001E433D75EE7A2786E27 /* PBXTargetDependency */ = {
+		1809D93D5D13DF54582E5AA18F4EDD8D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EasyTipView;
 			target = 048D21E3C8151CD23D428D38093E1538 /* EasyTipView */;
-			targetProxy = AA2EE28E218111330E68DA7DF10DE4F7 /* PBXContainerItemProxy */;
+			targetProxy = D1D98460DFFA315BCC0B23F7E91FDD69 /* PBXContainerItemProxy */;
 		};
-		AE77BD03B8694FAB45128E5DFAB96716 /* PBXTargetDependency */ = {
+		6415875D66929DBC29B24962C6AB1067 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FormTextField;
 			target = FA56E39EF6C470C3DFC0A23077F6D611 /* FormTextField */;
-			targetProxy = B7B50257B71206EEC3E73E4733763128 /* PBXContainerItemProxy */;
+			targetProxy = 6EA41E724452F59CCE398C4B7E914EA0 /* PBXContainerItemProxy */;
 		};
-		CD33F459F7FF75A34C04CC493E0D92C4 /* PBXTargetDependency */ = {
+		C01EB99BA8BFAE3D265D80ADA82AF613 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TestFairy;
 			target = F60027FAE4C10A68998A12C22EDF64F3 /* TestFairy */;
-			targetProxy = AB292E64BDFF31D61527C2A1258C7484 /* PBXContainerItemProxy */;
+			targetProxy = 2084307D2755A36B8DC97A938D131536 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -588,26 +607,9 @@
 			};
 			name = Debug;
 		};
-		254A2FCD3D5C4271BE1FA7E59525523C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5513A494CE5A2E35576B65C445F2502 /* TestFairy.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 		25FF11868C9E16D275DDAC52EB5AB92B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E5610BFF0CDE65D0E9B583AD8D755731 /* EasyTipView.release.xcconfig */;
+			baseConfigurationReference = AC29DFFEA2EC24C8BB4B6F847F745628 /* EasyTipView.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -643,7 +645,7 @@
 		};
 		37700282DEA1D08B925A84B04317EC35 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9375FF332035949149144CAED1DF673 /* Pods-My Demo App.release.xcconfig */;
+			baseConfigurationReference = 30A424E9C4FD61E012E384DB04D362CD /* Pods-My Demo App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -681,7 +683,7 @@
 		};
 		3C823A8B3CD48784A0CA28EC390FA292 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80DD0F6343F6772BE00A16B2FFB60E9C /* EasyTipView.debug.xcconfig */;
+			baseConfigurationReference = 12997E802BE4892A44AD40684CB8BCB8 /* EasyTipView.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -716,7 +718,7 @@
 		};
 		6A517093209A56570E33F9E5DB8F9712 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B39C325BCA7689CEC6B7AB961E71979 /* FormTextField.release.xcconfig */;
+			baseConfigurationReference = 4B7A8CE2EA5DF4F7AD9EE8375B2694FB /* FormTextField.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -750,9 +752,42 @@
 			};
 			name = Release;
 		};
+		6EF8560C2335BCAEC2E7FE7823D58FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7020389F3C0A1E5D8BF280418B8EE09C /* TestFairy.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		746D4F6D54DDA3C535849F33B4F148E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79549AB0D10ACBAC11287E250D85F60E /* TestFairy.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		7EA9A9A1DC785863F9ACCD0DC31AA3E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 875E04A1994EC3D3F411E86449F1950E /* FormTextField.debug.xcconfig */;
+			baseConfigurationReference = 9364C8CD39848EB7FEDA86A3560F22A7 /* FormTextField.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -849,7 +884,7 @@
 		};
 		B94CBC77208FA5B86D2B63309144D0DA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8052A9C932B42F33F3B866326F807CEF /* Pods-My Demo App.debug.xcconfig */;
+			baseConfigurationReference = 80F85387C605509644179643EE021FEB /* Pods-My Demo App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -884,39 +919,23 @@
 			};
 			name = Debug;
 		};
-		DB7E8863071F522E6F6AC7B22E44475B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06CEFF15743FA6E9081FF6435FB952CA /* TestFairy.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00205DB52B6B1E770BD75EA30CC76DC6 /* Build configuration list for PBXAggregateTarget "TestFairy" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DB7E8863071F522E6F6AC7B22E44475B /* Debug */,
-				254A2FCD3D5C4271BE1FA7E59525523C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				125C51B0F88E28C868DC90BD45E4E727 /* Debug */,
 				92A3E9AC052A7345115439021B218E3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		688D006C6A704EDBD5911542250AD521 /* Build configuration list for PBXAggregateTarget "TestFairy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EF8560C2335BCAEC2E7FE7823D58FA6 /* Debug */,
+				746D4F6D54DDA3C535849F33B4F148E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
