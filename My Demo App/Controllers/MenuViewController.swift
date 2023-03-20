@@ -28,6 +28,12 @@ class MenuViewController: UIViewController {
         }
     }
     
+    @IBAction func crashButton(_ sender: Any) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            fatalError()
+        }
+    }
+
     @IBAction func webViewButton(_ sender: Any) {
         let storyboard = UIStoryboard.init(name: "Menu", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
