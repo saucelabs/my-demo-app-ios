@@ -6,32 +6,86 @@
 import Foundation
 
 class TestFairyWrapper {
-    public static let TESTFAIRY_APP_TOKEN = ""
+    static func begin() {
+        instance.begin()
+    }
+    static func showFeedbackForm() {
+        instance.showFeedbackForm()
+    }
+    static func reportBug(_ takeScreenshot: Bool) {
+        instance.reportBug(takeScreenshot)
+    }
+    static func remoteSupport() {
+        instance.remoteSupport()
+    }
+    static func customFeedback() {
+        instance.customFeedback()
+    }
+    static func log(_ message: String!) {
+        instance.log(message)
+    }
+    static func resetFeedbackForm() {
+        instance.resetFeedbackForm()
+    }
     
-    public static func begin() {
+    private static var instance: TestFairyProtocol {
+        get {
+            guard let testfairyEnabled = Bundle.main.infoDictionary?["testfairyEnabled"] as? Bool else {
+                return NoOpTestFairyWrapper()
+            }
+            
+            return testfairyEnabled ? DefaultTestFairyWrapper() : NoOpTestFairyWrapper()
+        }
+    }
+}
+
+protocol TestFairyProtocol {
+    func begin()
+    func showFeedbackForm()
+    func reportBug(_ takeScreenshot: Bool)
+    func remoteSupport()
+    func customFeedback()
+    func log(_ message: String!)
+    func resetFeedbackForm()
+}
+
+class NoOpTestFairyWrapper: TestFairyProtocol {
+    func begin() {}
+    func showFeedbackForm() {}
+    func reportBug(_ takeScreenshot: Bool) {}
+    func remoteSupport() {}
+    func customFeedback() {}
+    func log(_ message: String!) {}
+    func resetFeedbackForm() {}
+}
+
+class DefaultTestFairyWrapper: TestFairyProtocol {
+    public let TESTFAIRY_APP_TOKEN = ""
+    
+    public func begin() {
         TestFairy.begin(TESTFAIRY_APP_TOKEN)
     }
     
-    public static func showFeedbackForm() {
+    public func showFeedbackForm() {
         TestFairy.showFeedbackForm()
     }
     
-    public static func reportBug(_ takeScreenshot: Bool) {
+    public func reportBug(_ takeScreenshot: Bool) {
         TestFairy.showFeedbackForm(TESTFAIRY_APP_TOKEN, takeScreenshot: takeScreenshot)
     }
     
-    public static func remoteSupport() {
+    public func remoteSupport() {
         TestFairy.stop()
         TestFairy.showFeedbackForm(TESTFAIRY_APP_TOKEN, takeScreenshot: false)
     }
     
-    public static func customFeedback() {
-        let options = TestFairyWrapper.createFeedbackForm()
+    public func customFeedback() {
+        let options = DefaultTestFairyWrapper.createFeedbackForm()
         TestFairy.setTestFairyFeedbackOptions(options)
         TestFairy.showFeedbackForm()
     }
     
-    public static func log(_ message: String!) {
+    public func log(_ message: String!) {
         print("\(message ?? "")")
         TestFairy.log(message)
     }
@@ -69,7 +123,7 @@ class TestFairyWrapper {
         }
     }
     
-    public static func resetFeedbackForm() {
+    public func resetFeedbackForm() {
         TestFairy.stop()
         TestFairy.setTestFairyFeedbackOptions(TestFairyFeedbackOptions.create { _ in})
     }
