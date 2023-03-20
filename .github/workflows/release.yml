@@ -52,7 +52,7 @@ jobs:
         scheme: My Demo App
         code-signing-identity: iPhone Distribution
         export-method: ad-hoc
-        output-path: SauceLabs-Demo-App.ipa
+        output-path: SauceLabs-Demo-App-With-TestFairy.ipa
         p12-base64: ${{ secrets.P12_BASE64 }}
         certificate-password: ${{ secrets.P12_PASSWORD }}
         mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
@@ -76,6 +76,20 @@ jobs:
         cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ AppUITests-Runner.app Payload
         zip -9 -r SauceLabs-Demo-App-Runner.XCUITest.ipa Payload
         rm -rf Payload
+    - name: Disable TestFairy
+      run: /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
+    - uses: yukiarrr/ios-build-action@v1.5.0
+      with:
+        workspace-path: My Demo App.xcworkspace
+        project-path: My Demo App.xcodeproj
+        scheme: My Demo App
+        code-signing-identity: iPhone Distribution
+        export-method: ad-hoc
+        output-path: SauceLabs-Demo-App.ipa
+        p12-base64: ${{ secrets.P12_BASE64 }}
+        certificate-password: ${{ secrets.P12_PASSWORD }}
+        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+        team-id: ${{ secrets.TEAM_ID }}
     - name: Add Artifacts to Github Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
@@ -83,6 +97,7 @@ jobs:
         files: |
           SauceLabs-Demo-App.Simulator.zip
           SauceLabs-Demo-App.ipa
+          SauceLabs-Demo-App-With-TestFairy.ipa
           SauceLabs-Demo-App.XCUITest.ipa
           SauceLabs-Demo-App-Runner.XCUITest.ipa
       env:
