@@ -363,6 +363,7 @@
 				A2C826A42706266600616582 /* Sources */,
 				A2C826A52706266600616582 /* Frameworks */,
 				A2C826A62706266600616582 /* Resources */,
+				8857AC672A15FED400C89032 /* Output classes */,
 			);
 			buildRules = (
 			);
@@ -438,6 +439,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		8857AC672A15FED400C89032 /* Output classes */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Output classes";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set the path to the output file\nOUTPUT_FILE=\"${SRCROOT}/test_classes.txt\"\n\n# Find all Swift files in the test target and exclude the ones you don't want\nTEST_FILES=$(find \"${SRCROOT}/${TARGET_NAME}\" -name \"*.swift\" -not -name \"Info.plist\")\n\n# Print the found test files\necho \"Found test files:\"\necho \"$TEST_FILES\"\necho \"\"\n\n# Initialize an empty string to store class names\nCLASS_NAMES=\"\"\n\n# Get the class names from the Swift files that contain test methods\nwhile IFS= read -r file; do\n    # Check if the file contains a test method\n    if grep -q \"func test[A-Za-z0-9_]*()\" \"$file\"; then\n        # Extract the class name and append it to the list\n        CLASS_NAME=$(grep -Eo \"class [a-zA-Z_][a-zA-Z0-9_]*:*\" \"$file\" | awk '{gsub(\":\", \"\", $2); print $2}')\n        CLASS_NAMES+=\"$CLASS_NAME\"$'\\n'\n    fi\ndone <<< \"$TEST_FILES\"\n\n# Remove duplicate class names\nUNIQUE_CLASS_NAMES=$(echo \"$CLASS_NAMES\" | sort | uniq | grep -v '^$')\n\n# Write the unique class names to the output file\necho \"$UNIQUE_CLASS_NAMES\" > \"$OUTPUT_FILE\"\n\n# Print the class names and the path to the output file\necho \"Test class names:\"\necho \"$UNIQUE_CLASS_NAMES\"\necho \"\"\necho \"Test class list has been created at: ${OUTPUT_FILE}\"\n";
+		};
 		D19A17DE31126BF6C3831B06 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
