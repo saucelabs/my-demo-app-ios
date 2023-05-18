@@ -73,7 +73,7 @@ jobs:
         zip -9 -r SauceLabs-Demo-App.XCUITest.ipa Payload
         rm -rf Payload
         mkdir Payload
-        cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ AppUITests-Runner.app Payload
+        cp -R build/Build/Products/Debug-iphoneos/MyDemoAppUITests-Runner.app Payload
         zip -9 -r SauceLabs-Demo-App-Runner.XCUITest.ipa Payload
         rm -rf Payload
     - name: Disable TestFairy
