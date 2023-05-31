@@ -76,6 +76,7 @@ jobs:
         cp -R build/Build/Products/Debug-iphoneos/MyDemoAppUITests-Runner.app Payload
         zip -9 -r SauceLabs-Demo-App-Runner.XCUITest.ipa Payload
         rm -rf Payload
+        cp -R build/Build/Products/*.xctestrun MyDemoApp.xctestrun
     - name: Disable TestFairy
       run: /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
     - uses: yukiarrr/ios-build-action@v1.5.0
@@ -100,6 +101,7 @@ jobs:
           SauceLabs-Demo-App-With-TestFairy.ipa
           SauceLabs-Demo-App.XCUITest.ipa
           SauceLabs-Demo-App-Runner.XCUITest.ipa
+          MyDemoApp.xctestrun
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
