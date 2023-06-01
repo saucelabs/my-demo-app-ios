@@ -14,82 +14,83 @@ jobs:
       destination: name=iPhone 11 Pro Max
     timeout-minutes: 30
     steps:
-    - uses: actions/checkout@v2
-    - name: Install Dependencies
-      run: gem install xcpretty
-    - name: Select XCode
-      uses: maxim-lobanov/setup-xcode@v1.2.1
-      with:
-        xcode-version: ${{ env.xcode-version }}
-    - name: Set Release Version
-      run: |
-        echo ${GITHUB_REF##*/} > RELEASE_TAG
-        xcrun agvtool new-marketing-version $(cat RELEASE_TAG)
-      if: startsWith(github.ref, 'refs/tags/')
-    - name: Build for iOS Simulator
-      run:  |
-        set -o pipefail && \
-        xcodebuild \
-          ONLY_ACTIVE_ARCH=NO \
-          ARCHS_STANDARD="i386 x86_64" \
-          build \
-          -workspace "My Demo App.xcworkspace" \
-          -scheme "My Demo App" \
-          -sdk iphonesimulator \
-          -destination "${{ env.destination }}" \
-          -configuration Release \
-          -derivedDataPath build | xcpretty
-    - name: Zip iOS Simulator Build
-      run: |
-         mkdir Payload
-         cp -R build/Build/Products/Release-iphonesimulator/My\ Demo\ App.app Payload
-         zip -9 -r SauceLabs-Demo-App.Simulator.zip Payload
-         rm -rf Payload
-    - uses: yukiarrr/ios-build-action@v1.5.0
-      with:
-        workspace-path: My Demo App.xcworkspace
-        project-path: My Demo App.xcodeproj
-        scheme: My Demo App
-        code-signing-identity: iPhone Distribution
-        export-method: ad-hoc
-        output-path: SauceLabs-Demo-App-With-TestFairy.ipa
-        p12-base64: ${{ secrets.P12_BASE64 }}
-        certificate-password: ${{ secrets.P12_PASSWORD }}
-        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
-        team-id: ${{ secrets.TEAM_ID }}
-    - name: Build XCUITest Real Device Artifacts
-      run: |
-        xcodebuild \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
-          clean build-for-testing \
-          -workspace "My Demo App.xcworkspace" \
-          -scheme "My Demo App" \
-          -sdk iphoneos \
-          -configuration Debug \
-          -derivedDataPath build | xcpretty
-        rm -rf Payload
-        mkdir Payload
-        cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ App.app Payload
-        zip -9 -r SauceLabs-Demo-App.XCUITest.ipa Payload
-        rm -rf Payload
-        mkdir Payload
-        cp -R build/Build/Products/Debug-iphoneos/MyDemoAppUITests-Runner.app Payload
-        zip -9 -r SauceLabs-Demo-App-Runner.XCUITest.ipa Payload
-        rm -rf Payload
-    - name: Build XCUITest Simulator Artifacts
-      run: |
-        xcodebuild \
-          CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
-          ONLY_ACTIVE_ARCH=NO \
-          ARCHS_STANDARD="i386 x86_64" \
-          clean build-for-testing \
-          -workspace "My Demo App.xcworkspace" \
-          -scheme "My Demo App" \
-          -sdk iphonesimulator \
-          -destination "${{ env.destination }}" \
-          -derivedDataPath build | xcpretty
-    - name: Zip XCUITest Simulator Artifacts
-      run: |
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: gem install xcpretty
+      - name: Select XCode
+        uses: maxim-lobanov/setup-xcode@v1.2.1
+        with:
+          xcode-version: ${{ env.xcode-version }}
+      - name: Set Release Version
+        run: |
+          echo ${GITHUB_REF##*/} > RELEASE_TAG
+          xcrun agvtool new-marketing-version $(cat RELEASE_TAG)
+        if: startsWith(github.ref, 'refs/tags/')
+      - name: Build for iOS Simulator
+        run: |
+          set -o pipefail && \
+          xcodebuild \
+            ONLY_ACTIVE_ARCH=NO \
+            ARCHS_STANDARD="i386 x86_64" \
+            build \
+            -workspace "My Demo App.xcworkspace" \
+            -scheme "My Demo App" \
+            -sdk iphonesimulator \
+            -destination "${{ env.destination }}" \
+            -configuration Release \
+            -derivedDataPath build | xcpretty
+      - name: Zip iOS Simulator Build
+        run: |
+          mkdir Payload
+          cp -R build/Build/Products/Release-iphonesimulator/My\ Demo\ App.app Payload
+          zip -9 -r SauceLabs-Demo-App.Simulator.zip Payload
+          rm -rf Payload
+      - uses: yukiarrr/ios-build-action@v1.5.0
+        with:
+          workspace-path: My Demo App.xcworkspace
+          project-path: My Demo App.xcodeproj
+          scheme: My Demo App
+          code-signing-identity: iPhone Distribution
+          export-method: ad-hoc
+          output-path: SauceLabs-Demo-App-With-TestFairy.ipa
+          p12-base64: ${{ secrets.P12_BASE64 }}
+          certificate-password: ${{ secrets.P12_PASSWORD }}
+          mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+          team-id: ${{ secrets.TEAM_ID }}
+      - name: Build XCUITest Real Device Artifacts
+        run: |
+          xcodebuild \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+            clean build-for-testing \
+            -workspace "My Demo App.xcworkspace" \
+            -scheme "My Demo App" \
+            -sdk iphoneos \
+            -configuration Debug \
+            -derivedDataPath build | xcpretty
+          rm -rf Payload
+          mkdir Payload
+          cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ App.app Payload
+          zip -9 -r SauceLabs-Demo-App.XCUITest.ipa Payload
+          rm -rf Payload
+          mkdir Payload
+          cp -R build/Build/Products/Debug-iphoneos/MyDemoAppUITests-Runner.app Payload
+          zip -9 -r SauceLabs-Demo-App-Runner.XCUITest.ipa Payload
+          rm -rf Payload
+      - name: Build XCUITest Simulator Artifacts
+        run: |
+          xcodebuild \
+            CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO \
+            ONLY_ACTIVE_ARCH=NO \
+            ARCHS_STANDARD="i386 x86_64" \
+            clean build-for-testing \
+            -workspace "My Demo App.xcworkspace" \
+            -scheme "My Demo App" \
+            -sdk iphonesimulator \
+            -configuration Debug \
+            -destination "${{ env.destination }}" \
+            -derivedDataPath build | xcpretty
+      - name: Zip XCUITest Simulator Artifacts
+        run: |
           cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ App.app My\ Demo\ App.app
           zip -9 -r SauceLabs-Demo-App.Simulator.XCUITest.zip MyDemoAppUITests-Runner.app
           rm -rf MyDemoAppUITests-Runner.app
@@ -97,33 +98,32 @@ jobs:
           zip -9 -r SauceLabs-Demo-App-Runner.Simulator.XCUITest.zip MyDemoAppUITests-Runner.app
           rm -rf MyDemoAppUITests-Runner.app
           cp -R build/Build/Products/*.xctestrun SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
-    - name: Disable TestFairy
-      run: /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
-    - uses: yukiarrr/ios-build-action@v1.5.0
-      with:
-        workspace-path: My Demo App.xcworkspace
-        project-path: My Demo App.xcodeproj
-        scheme: My Demo App
-        code-signing-identity: iPhone Distribution
-        export-method: ad-hoc
-        output-path: SauceLabs-Demo-App.ipa
-        p12-base64: ${{ secrets.P12_BASE64 }}
-        certificate-password: ${{ secrets.P12_PASSWORD }}
-        mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
-        team-id: ${{ secrets.TEAM_ID }}
-    - name: Add Artifacts to Github Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: |
-          SauceLabs-Demo-App.Simulator.zip
-          SauceLabs-Demo-App.ipa
-          SauceLabs-Demo-App-With-TestFairy.ipa
-          SauceLabs-Demo-App.XCUITest.ipa
-          SauceLabs-Demo-App-Runner.XCUITest.ipa
-          SauceLabs-Demo-App.Simulator.XCUITest.zip
-          SauceLabs-Demo-App.Simulator.XCUITest.zip
-          SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
-      env:
+      - name: Disable TestFairy
+        run: /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
+      - uses: yukiarrr/ios-build-action@v1.5.0
+        with:
+          workspace-path: My Demo App.xcworkspace
+          project-path: My Demo App.xcodeproj
+          scheme: My Demo App
+          code-signing-identity: iPhone Distribution
+          export-method: ad-hoc
+          output-path: SauceLabs-Demo-App.ipa
+          p12-base64: ${{ secrets.P12_BASE64 }}
+          certificate-password: ${{ secrets.P12_PASSWORD }}
+          mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
+          team-id: ${{ secrets.TEAM_ID }}
+      - name: Add Artifacts to Github Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            SauceLabs-Demo-App.Simulator.zip
+            SauceLabs-Demo-App.ipa
+            SauceLabs-Demo-App-With-TestFairy.ipa
+            SauceLabs-Demo-App.XCUITest.ipa
+            SauceLabs-Demo-App-Runner.XCUITest.ipa
+            SauceLabs-Demo-App.Simulator.XCUITest.zip
+            SauceLabs-Demo-App.Simulator.XCUITest.zip
+            SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
