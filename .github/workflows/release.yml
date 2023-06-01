@@ -92,12 +92,13 @@ jobs:
       - name: Zip XCUITest Simulator Artifacts
         run: |
           cp -R build/Build/Products/Debug-iphonesimulator/My\ Demo\ App.app My\ Demo\ App.app
-          zip -9 -r SauceLabs-Demo-App.Simulator.XCUITest.zip MyDemoAppUITests-Runner.app
-          rm -rf MyDemoAppUITests-Runner.app
+          zip -9 -r SauceLabs-Demo-App.Simulator.XCUITest.zip My\ Demo\ App.app
+          rm -rf My\ Demo\ App.app
           cp -R build/Build/Products/Debug-iphonesimulator/MyDemoAppUITests-Runner.app MyDemoAppUITests-Runner.app
           zip -9 -r SauceLabs-Demo-App-Runner.Simulator.XCUITest.zip MyDemoAppUITests-Runner.app
           rm -rf MyDemoAppUITests-Runner.app
           cp -R build/Build/Products/*.xctestrun SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
+          rm -rfSauceLabs-Demo-App.Simulator.XCUITest.xctestrun
       - name: Disable TestFairy
         run: /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
       - uses: yukiarrr/ios-build-action@v1.5.0
