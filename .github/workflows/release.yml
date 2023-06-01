@@ -91,10 +91,10 @@ jobs:
             -derivedDataPath build | xcpretty
       - name: Zip XCUITest Simulator Artifacts
         run: |
-          cp -R build/Build/Products/Debug-iphoneos/My\ Demo\ App.app My\ Demo\ App.app
+          cp -R build/Build/Products/Debug-iphonesimulator/My\ Demo\ App.app My\ Demo\ App.app
           zip -9 -r SauceLabs-Demo-App.Simulator.XCUITest.zip MyDemoAppUITests-Runner.app
           rm -rf MyDemoAppUITests-Runner.app
-          cp -R build/Build/Products/Debug-iphoneos/MyDemoAppUITests-Runner.app MyDemoAppUITests-Runner.app
+          cp -R build/Build/Products/Debug-iphonesimulator/MyDemoAppUITests-Runner.app MyDemoAppUITests-Runner.app
           zip -9 -r SauceLabs-Demo-App-Runner.Simulator.XCUITest.zip MyDemoAppUITests-Runner.app
           rm -rf MyDemoAppUITests-Runner.app
           cp -R build/Build/Products/*.xctestrun SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
