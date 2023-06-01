@@ -98,7 +98,6 @@ jobs:
           zip -9 -r SauceLabs-Demo-App-Runner.Simulator.XCUITest.zip MyDemoAppUITests-Runner.app
           rm -rf MyDemoAppUITests-Runner.app
           cp -R build/Build/Products/*.xctestrun SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
-          rm -rf SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
       - name: Disable TestFairy
         run: /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
       - uses: yukiarrr/ios-build-action@v1.5.0
@@ -124,7 +123,7 @@ jobs:
             SauceLabs-Demo-App.XCUITest.ipa
             SauceLabs-Demo-App-Runner.XCUITest.ipa
             SauceLabs-Demo-App.Simulator.XCUITest.zip
-            SauceLabs-Demo-App.Simulator.XCUITest.zip
+            SauceLabs-Demo-App-Runner.Simulator.XCUITest.zip
             SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
