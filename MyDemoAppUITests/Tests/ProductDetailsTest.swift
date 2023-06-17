@@ -58,7 +58,6 @@ class ProductDetailsTest: MyDemoAppTestBase {
     func testProductDetailsAddToCart() throws {
         PageObject().selectItemByName(itemName: backPack).tap()
         PageObject().addToCartButton.tap()
-        PageObject().cartButton.tap()
         XCTAssert(PageObject().detailsPageOf(productName: backPack).exists)
     }
 }
