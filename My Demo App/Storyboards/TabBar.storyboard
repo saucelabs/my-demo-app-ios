@@ -842,8 +842,8 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="24" id="IYr-J4-d0t"/>
                                                                         </constraints>
-                                                                        <state key="normal" image="RedColorUnSelected Icons"/>
-                                                                        <state key="selected" image="RedColorSelected Icons"/>
+                                                                        <state key="normal" image="GreenColorUnselected Icons"/>
+                                                                        <state key="selected" image="GreenColorSelected Icons"/>
                                                                         <connections>
                                                                             <action selector="redButton:" destination="BLp-WG-JHm" eventType="touchUpInside" id="UEa-66-9ln"/>
                                                                         </connections>
@@ -5020,12 +5020,12 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
         <image name="GrayColorUnSelected Icons" width="24" height="24"/>
         <image name="GrayRoundView Icons" width="18" height="18"/>
         <image name="GreenButton Icons" width="342" height="48"/>
+        <image name="GreenColorSelected Icons" width="32" height="31"/>
+        <image name="GreenColorUnselected Icons" width="24" height="24"/>
         <image name="Linkedin Icons" width="20" height="20"/>
         <image name="Menu Icons" width="20" height="20"/>
         <image name="PonyExpress Icons" width="365.5" height="266.5"/>
         <image name="QuestionMark Icons" width="16" height="16"/>
-        <image name="RedColorSelected Icons" width="32" height="31"/>
-        <image name="RedColorUnSelected Icons" width="24" height="24"/>
         <image name="RedRoundView Icons" width="18" height="18"/>
         <image name="SortNameAscending Icons" width="20" height="20"/>
         <image name="SortNameDescending Icons" width="16" height="16"/>
