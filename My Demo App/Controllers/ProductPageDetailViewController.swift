@@ -8,7 +8,7 @@
 import UIKit
 
 class ProductPageDetailViewController: UIViewController {
-    @IBOutlet weak var redBtn: UIButton!
+    @IBOutlet weak var greenBtn: UIButton!
     @IBOutlet weak var blueBtn: UIButton!
     @IBOutlet weak var blackBtn: UIButton!
     @IBOutlet weak var grayBtn: UIButton!
@@ -35,7 +35,7 @@ class ProductPageDetailViewController: UIViewController {
     var productHighlights = ""
     var productId = ""
     var productRating = 1
-    var selectedColor = "Red"
+    var selectedColor = "Green"
     var productQuantity = 1
     
     override func viewDidLoad() {
@@ -54,22 +54,22 @@ class ProductPageDetailViewController: UIViewController {
         
         if productName == "Test.allTheThings() T-Shirt" || productName == "Sauce Lab Onesie" {
             blueBtn.isHidden = true
-            redBtn.isSelected = true
-            selectedColor = "Red"
+            greenBtn.isSelected = true
+            selectedColor = "Green"
         }else if productName == "Sauce Lab Bolt T-Shirt" || productName == "Sauce Lab Bike Light" {
             blueBtn.isHidden = true
             grayBtn.isHidden = true
-            redBtn.isHidden = true
+            greenBtn.isHidden = true
             blackBtn.isSelected = true
             selectedColor = "Black"
         }else if productName == "Sauce Lab Fleece T-Shirt" {
             blueBtn.isHidden = true
             blackBtn.isHidden = true
-            redBtn.isHidden = true
+            greenBtn.isHidden = true
             grayBtn.isSelected = true
             selectedColor = "Gray"
         }else if productName == "Sauce Lab Back Packs" {
-            redBtn.isSelected = true
+            greenBtn.isSelected = true
         }
     }
     
@@ -83,9 +83,9 @@ class ProductPageDetailViewController: UIViewController {
         Methods.showAlertMessage(vc: self, title: "", message: "Thank you for submitting your review!")
     }
     
-    @IBAction func redButton(_ sender: UIButton) {
+    @IBAction func greenButton(_ sender: UIButton) {
         selection(button: sender)
-        selectedColor = "Red"
+        selectedColor = "Green"
     }
     
     @IBAction func blueButton(_ sender: UIButton) {
@@ -199,7 +199,7 @@ class ProductPageDetailViewController: UIViewController {
     }
     
     func selection(button:UIButton) {
-        self.redBtn.isSelected = false
+        self.greenBtn.isSelected = false
         self.blueBtn.isSelected = false
         self.blackBtn.isSelected = false
         self.grayBtn.isSelected = false

@@ -35,13 +35,13 @@ class ProductDetailsTest: MyDemoAppTestBase {
 
     func testProductDetailsDefaultColor() throws {
         PageObject().selectItemByName(itemName: backPack).tap()
-        XCTAssert(PageObject().getColor(color: "Red").exists)
-        XCTAssert(PageObject().getColor(color: "Red").isSelected)
+        XCTAssert(PageObject().getColor(color: "Green").exists)
+        XCTAssert(PageObject().getColor(color: "Green").isSelected)
     }
 
     func testProductDetailsColorsSwitch() throws {
         PageObject().selectItemByName(itemName: backPack).tap()
-        XCTAssert(PageObject().getColor(color: "Red").isSelected)
+        XCTAssert(PageObject().getColor(color: "Green").isSelected)
         XCTAssertEqual(false, PageObject().getColor(color: "Blue").isSelected)
         PageObject().getColor(color: "Blue").tap()
         XCTAssert(PageObject().getColor(color: "Blue").isSelected)

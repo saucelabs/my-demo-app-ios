@@ -520,7 +520,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OV-b0-ljX">
                                                                 <rect key="frame" x="67" y="9" width="20" height="20"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="jdX-tD-eWF">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="jdX-tD-eWF">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="hEG-kL-GWg">
@@ -845,7 +845,7 @@
                                                                         <state key="normal" image="GreenColorUnselected Icons"/>
                                                                         <state key="selected" image="GreenColorSelected Icons"/>
                                                                         <connections>
-                                                                            <action selector="redButton:" destination="BLp-WG-JHm" eventType="touchUpInside" id="UEa-66-9ln"/>
+                                                                            <action selector="greenButton:" destination="BLp-WG-JHm" eventType="touchUpInside" id="UEa-66-9ln"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3V-u3-1xF">
@@ -1220,6 +1220,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <outlet property="cartCountContView" destination="WsF-Fc-jtC" id="ePz-yX-QQV"/>
                         <outlet property="cartCountLbl" destination="F2a-7u-l3x" id="g6Q-6l-iF9"/>
                         <outlet property="grayBtn" destination="tiH-uu-G8l" id="9J5-3Z-zhT"/>
+                        <outlet property="greenBtn" destination="cSy-on-LMt" id="UcO-Ft-Y4a"/>
                         <outlet property="productCountLbl" destination="taG-23-Dpf" id="jHJ-Fi-84o"/>
                         <outlet property="productDescriptionTV" destination="e7c-yK-9H2" id="0e2-92-teg"/>
                         <outlet property="productHighlightsTV" destination="jiY-6b-eHk" id="waC-kT-dRG"/>
@@ -1227,7 +1228,6 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <outlet property="productNameLbl" destination="kFc-el-fGo" id="PEB-y9-dZk"/>
                         <outlet property="productPriceLbl" destination="j1V-zE-m0S" id="guq-OI-5Mr"/>
                         <outlet property="ratingView" destination="pcP-Am-R5H" id="6fF-6Z-3YO"/>
-                        <outlet property="redBtn" destination="cSy-on-LMt" id="UcO-Ft-Y4a"/>
                         <outlet property="subtractBtn" destination="uXE-ka-Vgo" id="zRy-h6-MYC"/>
                     </connections>
                 </viewController>
@@ -2505,7 +2505,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sU4-oM-b9T">
                                                                 <rect key="frame" x="67" y="9" width="20" height="20"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="U02-MD-N2a">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="U02-MD-N2a">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="GTr-22-Ghf">
@@ -3650,7 +3650,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4yy-lc-4Qy">
                                                                 <rect key="frame" x="67" y="9" width="20" height="20"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-6W-Zcl">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="tZJ-6W-Zcl">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="7SR-Ot-PYm">
@@ -4396,7 +4396,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bWz-LT-e5p">
                                                                 <rect key="frame" x="67" y="9" width="20" height="20"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="Sy1-N9-ql1">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="Sy1-N9-ql1">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Vn6-ei-TZw">
@@ -4772,7 +4772,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBD-Sc-rWa">
                                                                 <rect key="frame" x="67" y="9" width="20" height="20"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-Kc-VgR">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenRoundView Icons" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-Kc-VgR">
                                                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-i7-jZZ">
@@ -5022,11 +5022,11 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
         <image name="GreenButton Icons" width="342" height="48"/>
         <image name="GreenColorSelected Icons" width="32" height="31"/>
         <image name="GreenColorUnselected Icons" width="24" height="24"/>
+        <image name="GreenRoundView Icons" width="18" height="18"/>
         <image name="Linkedin Icons" width="20" height="20"/>
         <image name="Menu Icons" width="20" height="20"/>
         <image name="PonyExpress Icons" width="365.5" height="266.5"/>
         <image name="QuestionMark Icons" width="16" height="16"/>
-        <image name="RedRoundView Icons" width="18" height="18"/>
         <image name="SortNameAscending Icons" width="20" height="20"/>
         <image name="SortNameDescending Icons" width="16" height="16"/>
         <image name="SortPriceAscending Icons" width="16" height="16"/>
