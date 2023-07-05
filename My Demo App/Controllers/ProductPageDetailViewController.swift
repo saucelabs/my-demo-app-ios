@@ -156,7 +156,7 @@ class ProductPageDetailViewController: UIViewController {
             subtractBtn.isUserInteractionEnabled = true
             addToCartBtn.isUserInteractionEnabled = true
             addToCartBtn.setTitleColor(.white, for: .normal)
-            addToCartBtn.setBackgroundImage(UIImage(named: "RedButton Icons"), for: .normal)
+            addToCartBtn.setBackgroundImage(UIImage(named: "GreenButton Icons"), for: .normal)
             
         }
     }
@@ -174,7 +174,7 @@ class ProductPageDetailViewController: UIViewController {
             subtractBtn.isUserInteractionEnabled = true
             addToCartBtn.isUserInteractionEnabled = true
             addToCartBtn.setTitleColor(.white, for: .normal)
-            addToCartBtn.setBackgroundImage(UIImage(named: "RedButton Icons"), for: .normal)
+            addToCartBtn.setBackgroundImage(UIImage(named: "GreenButton Icons"), for: .normal)
             
         }
     }

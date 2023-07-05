@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y4s-4M-PJF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y4s-4M-PJF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uM-ZX-qFe">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T34-NX-REM" customClass="ViewShadowBottom" customModule="My_Demo_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -66,7 +66,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZtX-UJ-ePM">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="698"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="694"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWY-lc-4dB">
                                                 <rect key="frame" x="159.5" y="70" width="95" height="24"/>
@@ -93,7 +93,7 @@
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="GoShopping"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <state key="normal" title="Go Shopping" backgroundImage="RedButton Icons">
+                                                        <state key="normal" title="Go Shopping" backgroundImage="GreenButton Icons">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                         <connections>
@@ -131,7 +131,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZWQ-cV-Tk3">
-                                        <rect key="frame" x="0.0" y="60" width="414" height="585"/>
+                                        <rect key="frame" x="0.0" y="60" width="414" height="581"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAV-ST-PqX">
                                                 <rect key="frame" x="16" y="24" width="82.5" height="24"/>
@@ -139,11 +139,11 @@
                                                 <nil key="textColor"/>
                                             </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hre-jV-4KD">
-                                                <rect key="frame" x="16" y="64" width="382" height="521"/>
+                                                <rect key="frame" x="16" y="64" width="382" height="517"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <view key="tableFooterView" contentMode="scaleToFill" id="Whu-jd-ab1">
-                                                    <rect key="frame" x="0.0" y="343" width="382" height="44"/>
+                                                    <rect key="frame" x="0.0" y="354" width="382" height="44"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZIp-t4-YOG">
@@ -201,7 +201,7 @@
                                                 </view>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductCell" rowHeight="276" id="la7-nS-9k5" customClass="ProductCell" customModule="My_Demo_App" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="44.5" width="382" height="276"/>
+                                                        <rect key="frame" x="0.0" y="50" width="382" height="276"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="la7-nS-9k5" id="VKu-dt-ECw">
                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="276"/>
@@ -397,7 +397,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1f-GY-WbK" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="645" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="641" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="1nX-JK-Fbu"/>
@@ -409,7 +409,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEr-EP-MnH">
-                                        <rect key="frame" x="0.0" y="645" width="414" height="111"/>
+                                        <rect key="frame" x="0.0" y="641" width="414" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Er0-TX-ZT9">
                                                 <rect key="frame" x="16" y="16" width="37.5" height="16"/>
@@ -431,7 +431,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="ProceedToCheckout"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
-                                                <state key="normal" title="Proceed To Checkout" backgroundImage="RedButton Icons">
+                                                <state key="normal" title="Proceed To Checkout" backgroundImage="GreenButton Icons">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -460,14 +460,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVI-eC-0ac" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="YVl-uc-Jh4"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJ6-lc-7uH">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aiG-Y0-0hn">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -682,7 +682,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtW-ZY-DW7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="922"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="918"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaE-Xo-uJj" customClass="ViewShadowBottom" customModule="My_Demo_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -733,10 +733,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsq-HH-ZJx">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="798"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="794"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A9b-q3-emK">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="798"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="794"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltP-eW-3I6">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
@@ -933,7 +933,7 @@
                                                                     <constraint firstAttribute="height" constant="40" id="ttE-js-KQv"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
-                                                                <state key="normal" title="Add To Cart" backgroundImage="RedButton Icons">
+                                                                <state key="normal" title="Add To Cart" backgroundImage="GreenButton Icons">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                                 <connections>
@@ -1024,14 +1024,14 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJ3-KB-ugU" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="862" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="858" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="kQm-7F-596"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2a-Ct-BJZ">
-                                        <rect key="frame" x="0.0" y="862" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="858" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="450-7g-G6L">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -1244,7 +1244,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vQo-aI-LOr">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WiQ-Qd-prJ" customClass="ViewShadowBottom" customModule="My_Demo_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -1296,7 +1296,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3a-Va-afG">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="696"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="692"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P7-ct-EWH">
                                                 <rect key="frame" x="160" y="70" width="94" height="24"/>
@@ -1322,7 +1322,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                         <rect key="frame" x="16" y="16" width="230" height="48"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <state key="normal" title="Go Shopping" backgroundImage="RedButton Icons">
+                                                        <state key="normal" title="Go Shopping" backgroundImage="GreenButton Icons">
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
                                                     </button>
@@ -1357,7 +1357,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-ou-3DJ">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="694"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="690"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfl-nE-xjB">
                                                 <rect key="frame" x="16" y="24" width="94" height="24"/>
@@ -1365,7 +1365,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                 <nil key="textColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4KV-Hh-Xdg">
-                                                <rect key="frame" x="0.0" y="72" width="414" height="622"/>
+                                                <rect key="frame" x="0.0" y="72" width="414" height="618"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="16" id="wVw-hZ-71A">
                                                     <size key="itemSize" width="190" height="270"/>
@@ -1553,14 +1553,14 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKi-rY-4ox" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="rub-dQ-qaT"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L6V-ww-hoB">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="X7n-fO-SJv">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -1763,20 +1763,20 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHL-ey-I9Z">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="534"/>
                             <color key="backgroundColor" red="0.42745098040000001" green="0.45882352939999999" blue="0.51764705879999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nX-Ef-h41" customClass="ViewTopRoundCorner" customModule="My_Demo_App" customModuleProvider="target">
-                            <rect key="frame" x="8" y="348" width="304" height="220"/>
+                            <rect key="frame" x="8" y="314" width="304" height="220"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort by:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bl6-xq-xlK">
-                                    <rect key="frame" x="20" y="10" width="54" height="16"/>
+                                    <rect key="frame" x="20" y="10" width="56.5" height="19"/>
                                     <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dyw-AP-sq8">
-                                    <rect key="frame" x="0.0" y="41" width="304" height="153"/>
+                                    <rect key="frame" x="0.0" y="44" width="304" height="153"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Srz-NK-a9W">
                                             <rect key="frame" x="0.0" y="0.0" width="304" height="36"/>
@@ -1885,7 +1885,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WmV-jg-e4c">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJd-qO-aHw" customClass="ViewShadowBottom" customModule="My_Demo_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -1919,7 +1919,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVC-XA-OqY">
-                                                <rect key="frame" x="50" y="20.5" width="40" height="19"/>
+                                                <rect key="frame" x="50" y="22" width="39" height="16"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1936,31 +1936,31 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POG-NK-LR8">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="612"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="608"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4X-ow-5BH">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="612"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="608"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DiE-fg-kvX">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="615"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0I-Cb-PpS">
-                                                                <rect key="frame" x="16" y="24" width="104" height="28"/>
+                                                                <rect key="frame" x="16" y="24" width="102" height="24"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a shipping address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTT-Gd-aEw">
-                                                                <rect key="frame" x="16" y="84" width="382" height="19"/>
+                                                                <rect key="frame" x="16" y="80" width="382" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oi-VC-HIA">
-                                                                <rect key="frame" x="16" y="135" width="78" height="19"/>
+                                                                <rect key="frame" x="16" y="128" width="77" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0V-aY-qZu">
-                                                                <rect key="frame" x="16" y="162" width="382" height="45"/>
+                                                                <rect key="frame" x="16" y="152" width="382" height="45"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rebecca Winter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7lY-fT-hvP" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -2004,12 +2004,12 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 1*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Hq-yX-50c">
-                                                                <rect key="frame" x="16" y="223" width="112.5" height="19"/>
+                                                                <rect key="frame" x="16" y="213" width="108" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jvR-6a-2Yf">
-                                                                <rect key="frame" x="16" y="250" width="382" height="45"/>
+                                                                <rect key="frame" x="16" y="237" width="382" height="45"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mandorley 112" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6hP-ep-Sbu" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -2050,12 +2050,12 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5z-MV-252">
-                                                                <rect key="frame" x="16" y="311" width="107" height="19"/>
+                                                                <rect key="frame" x="16" y="298" width="106" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dG0-sd-1PW">
-                                                                <rect key="frame" x="16" y="338" width="382" height="45"/>
+                                                                <rect key="frame" x="16" y="322" width="382" height="45"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrance 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5fl-GN-KkH" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -2097,7 +2097,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r1J-me-f7P">
-                                                                <rect key="frame" x="16" y="399" width="382" height="160"/>
+                                                                <rect key="frame" x="16" y="383" width="382" height="160"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-CI-gFi">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="160"/>
@@ -2109,15 +2109,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                         <rect key="frame" x="0.0" y="0.0" width="183" height="72"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-oW-D11">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="34" height="19"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="33" height="16"/>
                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                 <nil key="textColor"/>
                                                                                             </label>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GdF-gx-a09">
-                                                                                                <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                 <subviews>
                                                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Truro" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8PS-wL-qWQ" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                         <textInputTraits key="textInputTraits"/>
                                                                                                         <userDefinedRuntimeAttributes>
@@ -2167,15 +2167,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                         <rect key="frame" x="0.0" y="88" width="183" height="72"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c5s-uF-Otu">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="19"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                 <nil key="textColor"/>
                                                                                             </label>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GfT-LH-Tli">
-                                                                                                <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                 <subviews>
                                                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="89750" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRD-hd-7mQ" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                                                         <userDefinedRuntimeAttributes>
@@ -2230,15 +2230,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                         <rect key="frame" x="0.0" y="0.0" width="183" height="72"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State/Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRE-ry-48w">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="91" height="16"/>
                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                 <nil key="textColor"/>
                                                                                             </label>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6g-mq-eBy">
-                                                                                                <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                 <subviews>
                                                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cornwall" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCd-AB-QlJ" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                         <textInputTraits key="textInputTraits"/>
                                                                                                         <userDefinedRuntimeAttributes>
@@ -2288,15 +2288,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                         <rect key="frame" x="0.0" y="88" width="183" height="72"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCv-aM-kMt">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="63" height="19"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="62" height="16"/>
                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                 <nil key="textColor"/>
                                                                                             </label>
                                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT5-vE-jQ9">
-                                                                                                <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                 <subviews>
                                                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="United Kingdom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3dq-Qi-y0p" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                         <textInputTraits key="textInputTraits"/>
                                                                                                         <userDefinedRuntimeAttributes>
@@ -2404,7 +2404,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83s-RR-P3a" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="676" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="672" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="h4f-tU-niY"/>
@@ -2416,13 +2416,13 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o48-Tc-St8">
-                                        <rect key="frame" x="0.0" y="676" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="672" width="414" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcb-I2-odu" customClass="ButtonRoundCorner" customModule="My_Demo_App" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="382" height="48"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
-                                                <state key="normal" title="To Payment" backgroundImage="RedButton Icons">
+                                                <state key="normal" title="To Payment" backgroundImage="GreenButton Icons">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -2445,14 +2445,14 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="alu-5H-YCK" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="oH6-8R-U9n"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4GJ-0D-a5e">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xci-qi-B6A">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -2468,7 +2468,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catalog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8y-yf-9xH">
-                                                                <rect key="frame" x="51.5" y="38" width="35" height="12"/>
+                                                                <rect key="frame" x="52" y="38" width="34.5" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -2530,7 +2530,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k1g-pS-Csd">
-                                                                <rect key="frame" x="59.5" y="38" width="19.5" height="12"/>
+                                                                <rect key="frame" x="59.5" y="38" width="19" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -2567,7 +2567,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQk-ad-ReA">
-                                                                <rect key="frame" x="57.5" y="38" width="23" height="12"/>
+                                                                <rect key="frame" x="57.5" y="38" width="23" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -2663,7 +2663,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Cf-Jm-2gp">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1302"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="1298"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tvM-LU-dPt" customClass="ViewShadowBottom" customModule="My_Demo_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -2698,7 +2698,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VT-5G-1Uc">
-                                                <rect key="frame" x="50" y="20.5" width="127" height="19"/>
+                                                <rect key="frame" x="50" y="22" width="125.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                 <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2715,36 +2715,36 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="66C-Vh-Fd6">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="1096"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="1092"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7d-XT-gaj">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1096"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="1092"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZjF-kM-CUQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e4i-3K-uM1">
-                                                                <rect key="frame" x="16" y="24" width="104" height="28"/>
+                                                                <rect key="frame" x="16" y="24" width="102" height="24"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a payment method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3C-d4-OgN">
-                                                                <rect key="frame" x="16" y="84" width="382" height="19"/>
+                                                                <rect key="frame" x="16" y="80" width="382" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You will not be charged untill you review your purchase on the next page." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frZ-Xs-sw8">
-                                                                <rect key="frame" x="16" y="119" width="382" height="33"/>
+                                                                <rect key="frame" x="16" y="112" width="382" height="28"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tmg-Oz-bgm">
-                                                                <rect key="frame" x="16" y="184" width="35" height="19"/>
+                                                                <rect key="frame" x="16" y="172" width="34" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ud-ha-IJj">
-                                                                <rect key="frame" x="326" y="183.5" width="72" height="20"/>
+                                                                <rect key="frame" x="326" y="170" width="72" height="20"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QCJ-0a-Bjg">
                                                                         <rect key="frame" x="0.0" y="0.0" width="72" height="20"/>
@@ -2769,19 +2769,19 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JFV-3R-6FW">
-                                                                <rect key="frame" x="16" y="211.5" width="382" height="1"/>
+                                                                <rect key="frame" x="16" y="198" width="382" height="1"/>
                                                                 <color key="backgroundColor" red="0.90980392160000001" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="RIj-l2-NX2"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5R-A5-pSl">
-                                                                <rect key="frame" x="16" y="228.5" width="78" height="19"/>
+                                                                <rect key="frame" x="16" y="215" width="77" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIr-Re-hpd">
-                                                                <rect key="frame" x="16" y="255.5" width="382" height="45"/>
+                                                                <rect key="frame" x="16" y="239" width="382" height="45"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Maxim Winter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fBK-5N-k1r" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -2825,12 +2825,12 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Card Number*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIV-R9-QuQ">
-                                                                <rect key="frame" x="16" y="324.5" width="102.5" height="19"/>
+                                                                <rect key="frame" x="16" y="308" width="101" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdt-ar-D5i">
-                                                                <rect key="frame" x="16" y="351.5" width="382" height="45"/>
+                                                                <rect key="frame" x="16" y="332" width="382" height="45"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="3258 1265 7568 7896" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9tf-9W-it3" customClass="FormTextField" customModule="FormTextField">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -2874,7 +2874,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yna-hP-K1S">
-                                                                <rect key="frame" x="16" y="412.5" width="382" height="69"/>
+                                                                <rect key="frame" x="16" y="393" width="382" height="69"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lEG-qa-HOe">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="69"/>
@@ -2883,15 +2883,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="69"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration Date*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn9-ZO-6jL">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="115.5" height="19"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="16"/>
                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                         <nil key="textColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60L-8B-I6g">
-                                                                                        <rect key="frame" x="0.0" y="27" width="183" height="42"/>
+                                                                                        <rect key="frame" x="0.0" y="24" width="183" height="45"/>
                                                                                         <subviews>
                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="03/25" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IWx-JV-yLa" customClass="FormTextField" customModule="FormTextField">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="42"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -2941,19 +2941,19 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                 <rect key="frame" x="199" y="0.0" width="183" height="69"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security Code*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7a-TN-HuI">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="107.5" height="19"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="16"/>
                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                         <nil key="textColor"/>
                                                                                     </label>
                                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="QuestionMark Icons" translatesAutoresizingMaskIntoConstraints="NO" id="UoG-5j-Cmd">
-                                                                                        <rect key="frame" x="167" y="3" width="16" height="16"/>
+                                                                                        <rect key="frame" x="167" y="0.0" width="16" height="16"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="16" id="9Ke-zg-eM5"/>
                                                                                             <constraint firstAttribute="width" constant="16" id="FyC-h1-Cc3"/>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dZE-Rh-pmT">
-                                                                                        <rect key="frame" x="127.5" y="2" width="55.5" height="17"/>
+                                                                                        <rect key="frame" x="125" y="-1" width="58" height="17"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="17" id="gjC-UA-4cS"/>
                                                                                         </constraints>
@@ -2962,10 +2962,10 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                         </connections>
                                                                                     </button>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeF-gI-qmE">
-                                                                                        <rect key="frame" x="0.0" y="27" width="183" height="42"/>
+                                                                                        <rect key="frame" x="0.0" y="24" width="183" height="45"/>
                                                                                         <subviews>
                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="123" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ax-xA-60s" customClass="FormTextField" customModule="FormTextField">
-                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="42"/>
+                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                                 <userDefinedRuntimeAttributes>
@@ -3029,7 +3029,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </view>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c78-Vc-suW">
-                                                                <rect key="frame" x="18" y="499.5" width="16" height="16"/>
+                                                                <rect key="frame" x="18" y="480" width="16" height="16"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="16" id="TdH-P9-zpy"/>
                                                                     <constraint firstAttribute="height" constant="16" id="yB8-t5-WBP"/>
@@ -3038,31 +3038,31 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 <state key="selected" image="CheckBoxSelected Icons"/>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My billing address is the same as my shipping address." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1o-ut-aCY">
-                                                                <rect key="frame" x="44" y="497.5" width="354" height="37.5"/>
+                                                                <rect key="frame" x="44" y="478" width="354" height="37.5"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9K-30-TSO">
-                                                                <rect key="frame" x="16" y="497.5" width="382" height="30"/>
+                                                                <rect key="frame" x="16" y="478" width="382" height="30"/>
                                                                 <connections>
                                                                     <action selector="billingAddressButton:" destination="3O9-el-4t9" eventType="touchUpInside" id="ivR-Xm-SEM"/>
                                                                 </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNM-U9-lLY">
-                                                                <rect key="frame" x="0.0" y="551" width="414" height="530"/>
+                                                                <rect key="frame" x="0.0" y="531.5" width="414" height="530"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a shipping address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j43-F4-35e">
-                                                                        <rect key="frame" x="16" y="0.0" width="382" height="19"/>
+                                                                        <rect key="frame" x="16" y="0.0" width="382" height="16"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uej-wo-bIQ">
-                                                                        <rect key="frame" x="16" y="35" width="78" height="19"/>
+                                                                        <rect key="frame" x="16" y="32" width="77" height="16"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bms-eO-sdU">
-                                                                        <rect key="frame" x="16" y="62" width="382" height="45"/>
+                                                                        <rect key="frame" x="16" y="56" width="382" height="45"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Rebecca Winter" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMm-tS-v4q" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -3106,12 +3106,12 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 1*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbw-ow-gLN">
-                                                                        <rect key="frame" x="16" y="123" width="112.5" height="19"/>
+                                                                        <rect key="frame" x="16" y="117" width="108" height="16"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-GQ-Bsb">
-                                                                        <rect key="frame" x="16" y="150" width="382" height="45"/>
+                                                                        <rect key="frame" x="16" y="141" width="382" height="45"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mandorley 112" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BEh-Ui-7w9" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -3152,12 +3152,12 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtv-Wu-hzH">
-                                                                        <rect key="frame" x="16" y="211" width="107" height="19"/>
+                                                                        <rect key="frame" x="16" y="202" width="106" height="16"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tu2-2D-gXc">
-                                                                        <rect key="frame" x="16" y="238" width="382" height="45"/>
+                                                                        <rect key="frame" x="16" y="226" width="382" height="45"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entrance 1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y03-8T-jhQ" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
@@ -3199,7 +3199,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tfv-gV-bJH">
-                                                                        <rect key="frame" x="16" y="299" width="382" height="160"/>
+                                                                        <rect key="frame" x="16" y="287" width="382" height="160"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="AZE-Ad-vHO">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="160"/>
@@ -3211,15 +3211,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="72"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcD-Xu-lFb">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="34" height="19"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="33" height="16"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                         <nil key="textColor"/>
                                                                                                     </label>
                                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hx9-wK-Y6N">
-                                                                                                        <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                         <subviews>
                                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Truro" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dh3-zf-StH" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                                                 <userDefinedRuntimeAttributes>
@@ -3269,15 +3269,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                                 <rect key="frame" x="0.0" y="88" width="183" height="72"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip Code*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laz-j0-d0r">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="72" height="19"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="16"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                         <nil key="textColor"/>
                                                                                                     </label>
                                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXT-Sf-0cv">
-                                                                                                        <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                         <subviews>
                                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="89750" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNH-qK-Ko6" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                                                                 <userDefinedRuntimeAttributes>
@@ -3332,15 +3332,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                                 <rect key="frame" x="0.0" y="0.0" width="183" height="72"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State/Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLr-17-aaj">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="93.5" height="19"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="91" height="16"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                         <nil key="textColor"/>
                                                                                                     </label>
                                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E3m-ne-h8C">
-                                                                                                        <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                         <subviews>
                                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cornwall" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tSm-U7-Dij" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                                                 <userDefinedRuntimeAttributes>
@@ -3390,15 +3390,15 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                                                 <rect key="frame" x="0.0" y="88" width="183" height="72"/>
                                                                                                 <subviews>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrk-uh-LPL">
-                                                                                                        <rect key="frame" x="0.0" y="0.0" width="63" height="19"/>
+                                                                                                        <rect key="frame" x="0.0" y="0.0" width="62" height="16"/>
                                                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
                                                                                                         <nil key="textColor"/>
                                                                                                     </label>
                                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pTi-AA-3Y7">
-                                                                                                        <rect key="frame" x="0.0" y="27" width="183" height="45"/>
+                                                                                                        <rect key="frame" x="0.0" y="24" width="183" height="48"/>
                                                                                                         <subviews>
                                                                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="United Kingdom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ird-sc-UsY" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
-                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="45"/>
+                                                                                                                <rect key="frame" x="0.0" y="0.0" width="183" height="48"/>
                                                                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                                                                 <textInputTraits key="textInputTraits"/>
                                                                                                                 <userDefinedRuntimeAttributes>
@@ -3550,7 +3550,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SkD-QM-JWy" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1160" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="1156" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="hdu-Av-Ac3"/>
@@ -3562,13 +3562,13 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wQ1-vX-l7A">
-                                        <rect key="frame" x="0.0" y="1160" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="1156" width="414" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLL-DM-P7y" customClass="ButtonRoundCorner" customModule="My_Demo_App" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="382" height="48"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
-                                                <state key="normal" title="Review Order" backgroundImage="RedButton Icons">
+                                                <state key="normal" title="Review Order" backgroundImage="GreenButton Icons">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -3591,14 +3591,14 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrL-CC-4M8" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1242" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="1238" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="szZ-bA-cwE"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rOl-1F-az0">
-                                        <rect key="frame" x="0.0" y="1242" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="1238" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eem-TS-K3A">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -3614,7 +3614,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Catalog" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JX2-4h-4ej">
-                                                                <rect key="frame" x="51.5" y="38" width="35" height="12"/>
+                                                                <rect key="frame" x="52" y="38" width="34.5" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -3675,7 +3675,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0j-Fk-795">
-                                                                <rect key="frame" x="59.5" y="38" width="19.5" height="12"/>
+                                                                <rect key="frame" x="59.5" y="38" width="19" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -3711,7 +3711,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </constraints>
                                                             </imageView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJf-sx-aXq">
-                                                                <rect key="frame" x="57.5" y="38" width="23" height="12"/>
+                                                                <rect key="frame" x="57.5" y="38" width="23" height="10"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                             </label>
@@ -3818,7 +3818,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVE-d4-4Ri">
-                                <rect key="frame" x="0.0" y="44" width="414" height="1082"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="1078"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Zy-Hg-kYi" customClass="ViewShadowBottom" customModule="My_Demo_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -3869,10 +3869,10 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AP1-NO-fpq">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="845"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="841"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uml-fd-nDk">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="845"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="841"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjA-rP-eZg">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="950"/>
@@ -3892,7 +3892,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <view key="tableFooterView" contentMode="scaleToFill" id="tgq-kS-rip">
-                                                                    <rect key="frame" x="0.0" y="262" width="382" height="588"/>
+                                                                    <rect key="frame" x="0.0" y="273" width="382" height="588"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <subviews>
                                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Adx-i2-ocN">
@@ -4103,7 +4103,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 </view>
                                                                 <prototypes>
                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewYourOrderCell" rowHeight="195" id="Ox6-GN-lfU" customClass="ReviewYourOrderCell" customModule="My_Demo_App" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="44.5" width="382" height="195"/>
+                                                                        <rect key="frame" x="0.0" y="50" width="382" height="195"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ox6-GN-lfU" id="dew-by-XFv">
                                                                             <rect key="frame" x="0.0" y="0.0" width="382" height="195"/>
@@ -4274,7 +4274,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dlz-bc-sj2" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="909" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="905" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="peE-4J-OKf"/>
@@ -4286,7 +4286,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0F6-X1-ZEa">
-                                        <rect key="frame" x="0.0" y="909" width="414" height="111"/>
+                                        <rect key="frame" x="0.0" y="905" width="414" height="111"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dse-5r-KCD">
                                                 <rect key="frame" x="16" y="16" width="37.5" height="16"/>
@@ -4307,7 +4307,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                 <rect key="frame" x="16" y="47" width="382" height="48"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
-                                                <state key="normal" title="Place Order" backgroundImage="RedButton Icons">
+                                                <state key="normal" title="Place Order" backgroundImage="GreenButton Icons">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -4336,14 +4336,14 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pL3-HU-ria" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1022" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="1018" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="XK2-hX-nfe"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDp-wE-gCp">
-                                        <rect key="frame" x="0.0" y="1022" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="1018" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Rny-1q-45X">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -4566,7 +4566,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U8X-9r-zDv">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="scq-uj-8yg" customClass="ViewShadowBottom" customModule="My_Demo_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -4605,10 +4605,10 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sq-5i-1XO">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="694"/>
+                                        <rect key="frame" x="0.0" y="62" width="414" height="690"/>
                                         <subviews>
                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="457-um-Jvu">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="690"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4aK-FU-bXw">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="694"/>
@@ -4648,7 +4648,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <accessibility key="accessibilityConfiguration" identifier="ContinueShopping"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
-                                                                        <state key="normal" title="Continue Shopping" backgroundImage="RedButton Icons">
+                                                                        <state key="normal" title="Continue Shopping" backgroundImage="GreenButton Icons">
                                                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         </state>
                                                                         <connections>
@@ -4712,14 +4712,14 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p4z-ce-Br2" customClass="ViewShadowTop" customModule="My_Demo_App" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="15"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="15"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="108-Yr-wZY"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHP-t8-5BF">
-                                        <rect key="frame" x="0.0" y="758" width="414" height="60"/>
+                                        <rect key="frame" x="0.0" y="754" width="414" height="60"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8BS-ea-phA">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
@@ -4929,28 +4929,28 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
     </scenes>
     <designables>
         <designable name="3dq-Qi-y0p">
-            <size key="intrinsicContentSize" width="144.5" height="34"/>
+            <size key="intrinsicContentSize" width="141.5" height="34"/>
         </designable>
         <designable name="5fl-GN-KkH">
-            <size key="intrinsicContentSize" width="105.5" height="34"/>
+            <size key="intrinsicContentSize" width="100" height="34"/>
         </designable>
         <designable name="6hP-ep-Sbu">
-            <size key="intrinsicContentSize" width="135" height="34"/>
+            <size key="intrinsicContentSize" width="127" height="34"/>
         </designable>
         <designable name="7lY-fT-hvP">
-            <size key="intrinsicContentSize" width="142.5" height="34"/>
+            <size key="intrinsicContentSize" width="138.5" height="34"/>
         </designable>
         <designable name="8PS-wL-qWQ">
             <size key="intrinsicContentSize" width="64.5" height="34"/>
         </designable>
         <designable name="BEh-Ui-7w9">
-            <size key="intrinsicContentSize" width="135" height="34"/>
+            <size key="intrinsicContentSize" width="127" height="34"/>
         </designable>
         <designable name="Dh3-zf-StH">
             <size key="intrinsicContentSize" width="64.5" height="34"/>
         </designable>
         <designable name="IRD-hd-7mQ">
-            <size key="intrinsicContentSize" width="72.5" height="34"/>
+            <size key="intrinsicContentSize" width="74.5" height="34"/>
         </designable>
         <designable name="KnD-lR-gCq">
             <size key="intrinsicContentSize" width="342" height="48"/>
@@ -4959,25 +4959,25 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
             <size key="intrinsicContentSize" width="342" height="48"/>
         </designable>
         <designable name="QNH-qK-Ko6">
-            <size key="intrinsicContentSize" width="72.5" height="34"/>
+            <size key="intrinsicContentSize" width="74.5" height="34"/>
         </designable>
         <designable name="aCd-AB-QlJ">
-            <size key="intrinsicContentSize" width="91.5" height="34"/>
+            <size key="intrinsicContentSize" width="89.5" height="34"/>
         </designable>
         <designable name="cZd-7Q-Gp1">
             <size key="intrinsicContentSize" width="342" height="48"/>
         </designable>
         <designable name="fBK-5N-k1r">
-            <size key="intrinsicContentSize" width="127" height="34"/>
+            <size key="intrinsicContentSize" width="123.5" height="34"/>
         </designable>
         <designable name="fDz-1C-hD9">
             <size key="intrinsicContentSize" width="342" height="48"/>
         </designable>
         <designable name="ird-sc-UsY">
-            <size key="intrinsicContentSize" width="144.5" height="34"/>
+            <size key="intrinsicContentSize" width="141.5" height="34"/>
         </designable>
         <designable name="jMm-tS-v4q">
-            <size key="intrinsicContentSize" width="142.5" height="34"/>
+            <size key="intrinsicContentSize" width="138.5" height="34"/>
         </designable>
         <designable name="jcb-I2-odu">
             <size key="intrinsicContentSize" width="342" height="48"/>
@@ -4992,17 +4992,17 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
             <size key="intrinsicContentSize" width="342" height="48"/>
         </designable>
         <designable name="tSm-U7-Dij">
-            <size key="intrinsicContentSize" width="91.5" height="34"/>
+            <size key="intrinsicContentSize" width="89.5" height="34"/>
         </designable>
         <designable name="y03-8T-jhQ">
-            <size key="intrinsicContentSize" width="105.5" height="34"/>
+            <size key="intrinsicContentSize" width="100" height="34"/>
         </designable>
     </designables>
     <resources>
         <image name="AddPlus Icons" width="16" height="16"/>
         <image name="AddToCart Icons" width="20" height="17.5"/>
         <image name="AddToCartUnselected Icons" width="20" height="17.5"/>
-        <image name="AppLogo Icons" width="39" height="38.5"/>
+        <image name="AppLogo Icons" width="39" height="39"/>
         <image name="AppTitle Icons" width="121" height="13.5"/>
         <image name="BackButton Icons" width="14" height="12"/>
         <image name="BagBlack Image" width="164" height="168"/>
@@ -5019,11 +5019,11 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
         <image name="GrayColorSelected Icons" width="32" height="31"/>
         <image name="GrayColorUnSelected Icons" width="24" height="24"/>
         <image name="GrayRoundView Icons" width="18" height="18"/>
+        <image name="GreenButton Icons" width="342" height="48"/>
         <image name="Linkedin Icons" width="20" height="20"/>
         <image name="Menu Icons" width="20" height="20"/>
         <image name="PonyExpress Icons" width="365.5" height="266.5"/>
         <image name="QuestionMark Icons" width="16" height="16"/>
-        <image name="RedButton Icons" width="342" height="48"/>
         <image name="RedColorSelected Icons" width="32" height="31"/>
         <image name="RedColorUnSelected Icons" width="24" height="24"/>
         <image name="RedRoundView Icons" width="18" height="18"/>
@@ -5039,7 +5039,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
         <image name="mastercard Icons" width="32" height="20"/>
         <image name="visa Icons" width="32" height="20"/>
         <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

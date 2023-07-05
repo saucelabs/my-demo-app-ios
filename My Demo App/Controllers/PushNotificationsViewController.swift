@@ -80,7 +80,7 @@ class PushNotificationsButtonView: UIView {
     let button: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setBackgroundImage(UIImage(named: "RedButton Icons"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "GreenButton Icons"), for: .normal)
         view.setTitleColor(.white, for: .normal)
         view.setTitle("Register for Push Notifications", for: .normal)
 
