@@ -221,7 +221,7 @@
                                                                             <rect key="frame" x="269" y="192" width="97" height="32"/>
                                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                                             <state key="normal" title="Remove Item">
-                                                                                <color key="titleColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                                <color key="titleColor" red="0.094117647058823528" green="0.34509803921568627" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                                             </state>
                                                                         </button>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce Labs Backpack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahR-ap-k1g">
@@ -718,7 +718,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u25-Ga-wO2">
                                                 <rect key="frame" x="50" y="22" width="63" height="16"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
-                                                <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.094117647058823528" green="0.34509803921568627" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -1921,7 +1921,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVC-XA-OqY">
                                                 <rect key="frame" x="50" y="22" width="39" height="16"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
-                                                <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.094117647058823528" green="0.34509803921568627" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -2700,7 +2700,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shipping Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4VT-5G-1Uc">
                                                 <rect key="frame" x="50" y="22" width="125.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
-                                                <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.094117647058823528" green="0.34509803921568627" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -3854,7 +3854,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Payment Method" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="55f-Pq-LdR">
                                                 <rect key="frame" x="50" y="22" width="120.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
-                                                <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.094117647058823528" green="0.34509803921568627" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -4618,29 +4618,17 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="24"/>
                                                                 <nil key="textColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank you for your order " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6i-n3-heQ">
-                                                                <rect key="frame" x="16" y="126" width="382" height="16"/>
-                                                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
-                                                                <nil key="textColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your new swag is on its way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-QW-ceh">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Your new swag is on its way" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G9-QW-ceh">
                                                                 <rect key="frame" x="16" y="158" width="382" height="16"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
-                                                                <color key="textColor" red="0.8862745098" green="0.13725490200000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="textColor" red="0.094117647058823528" green="0.34509803921568627" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your order has been dispatched and will arrive as fast as the pony gallops!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBJ-lN-iUj">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Thank you for your order. Your order has been dispatched and will arrive as soon as possible!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LBJ-lN-iUj">
                                                                 <rect key="frame" x="16" y="190" width="382" height="32"/>
                                                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                 <nil key="textColor"/>
                                                             </label>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PonyExpress Icons" translatesAutoresizingMaskIntoConstraints="NO" id="vt4-u0-e9H">
-                                                                <rect key="frame" x="111.5" y="238" width="191" height="140"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="191" id="IaV-N9-9oS"/>
-                                                                    <constraint firstAttribute="height" constant="140" id="Iu6-9v-mU6"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yCn-mO-76u">
+                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCn-mO-76u">
                                                                 <rect key="frame" x="76" y="402" width="262" height="80"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSV-0e-irE" customClass="ButtonRoundCorner" customModule="My_Demo_App" customModuleProvider="target">
@@ -4673,24 +4661,17 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="g6i-n3-heQ" secondAttribute="trailing" constant="16" id="696-6z-Yp7"/>
-                                                            <constraint firstItem="yCn-mO-76u" firstAttribute="top" secondItem="vt4-u0-e9H" secondAttribute="bottom" constant="24" id="7JN-T5-cJg"/>
                                                             <constraint firstAttribute="trailing" secondItem="LBJ-lN-iUj" secondAttribute="trailing" constant="16" id="8mD-Bn-b30"/>
                                                             <constraint firstAttribute="height" constant="694" id="Iwl-Ly-WcA"/>
                                                             <constraint firstAttribute="trailing" secondItem="zqj-P1-ZvD" secondAttribute="trailing" constant="38" id="KcD-DZ-SxH"/>
                                                             <constraint firstItem="zqj-P1-ZvD" firstAttribute="top" secondItem="4aK-FU-bXw" secondAttribute="top" constant="70" id="XjZ-8a-Tea"/>
-                                                            <constraint firstItem="6G9-QW-ceh" firstAttribute="top" secondItem="g6i-n3-heQ" secondAttribute="bottom" constant="16" id="Zi9-PT-NAP"/>
-                                                            <constraint firstItem="g6i-n3-heQ" firstAttribute="leading" secondItem="4aK-FU-bXw" secondAttribute="leading" constant="16" id="aBL-XP-dUh"/>
-                                                            <constraint firstItem="g6i-n3-heQ" firstAttribute="top" secondItem="zqj-P1-ZvD" secondAttribute="bottom" constant="32" id="bpv-hJ-EAw"/>
                                                             <constraint firstItem="6G9-QW-ceh" firstAttribute="leading" secondItem="4aK-FU-bXw" secondAttribute="leading" constant="16" id="cbP-pd-Lgn"/>
                                                             <constraint firstItem="LBJ-lN-iUj" firstAttribute="leading" secondItem="4aK-FU-bXw" secondAttribute="leading" constant="16" id="g9u-Qv-G9Z"/>
                                                             <constraint firstItem="yCn-mO-76u" firstAttribute="leading" secondItem="4aK-FU-bXw" secondAttribute="leading" constant="76" id="gZc-JP-atC"/>
                                                             <constraint firstAttribute="trailing" secondItem="yCn-mO-76u" secondAttribute="trailing" constant="76" id="i03-xJ-Hz8"/>
                                                             <constraint firstItem="zqj-P1-ZvD" firstAttribute="leading" secondItem="4aK-FU-bXw" secondAttribute="leading" constant="38" id="pjz-uE-72B"/>
                                                             <constraint firstItem="LBJ-lN-iUj" firstAttribute="top" secondItem="6G9-QW-ceh" secondAttribute="bottom" constant="16" id="trN-3L-4zE"/>
-                                                            <constraint firstItem="vt4-u0-e9H" firstAttribute="top" secondItem="LBJ-lN-iUj" secondAttribute="bottom" constant="16" id="wRc-Bx-L2A"/>
                                                             <constraint firstAttribute="trailing" secondItem="6G9-QW-ceh" secondAttribute="trailing" constant="16" id="xFF-8R-xZ0"/>
-                                                            <constraint firstItem="vt4-u0-e9H" firstAttribute="centerX" secondItem="4aK-FU-bXw" secondAttribute="centerX" id="y3L-MJ-fnd"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
@@ -5025,7 +5006,6 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
         <image name="GreenRoundView Icons" width="18" height="18"/>
         <image name="Linkedin Icons" width="20" height="20"/>
         <image name="Menu Icons" width="20" height="20"/>
-        <image name="PonyExpress Icons" width="365.5" height="266.5"/>
         <image name="QuestionMark Icons" width="16" height="16"/>
         <image name="SortNameAscending Icons" width="20" height="20"/>
         <image name="SortNameDescending Icons" width="16" height="16"/>

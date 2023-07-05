@@ -62,7 +62,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ix6-AN-KJ7">
                                                 <rect key="frame" x="50" y="22" width="55" height="16"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="16"/>
-                                                <color key="textColor" red="0.88627450980392153" green="0.13725490196078433" blue="0.10196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.094117647058823528" green="0.34509803921568627" blue="0.22745098039215686" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
