@@ -33,8 +33,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A2C826A72706266600616582"
-               BuildableName = "My Demo AppUITests.xctest"
-               BlueprintName = "My Demo AppUITests"
+               BuildableName = "MyDemoAppUITests.xctest"
+               BlueprintName = "MyDemoAppUITests"
                ReferencedContainer = "container:My Demo App.xcodeproj">
             </BuildableReference>
          </TestableReference>
