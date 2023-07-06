@@ -52,23 +52,23 @@ class ProductPageDetailViewController: UIViewController {
         cartCountLbl.text = String(Engine.sharedInstance.cartCount)
         
         
-        if productName == "Test.allTheThings() T-Shirt" || productName == "Sauce Lab Onesie" {
+        if productName == "Test.allTheThings() T-Shirt" || productName == "Sauce Labs Onesie" {
             blueBtn.isHidden = true
             greenBtn.isSelected = true
             selectedColor = "Green"
-        }else if productName == "Sauce Lab Bolt T-Shirt" || productName == "Sauce Lab Bike Light" {
+        }else if productName == "Sauce Labs Bolt T-Shirt" || productName == "Sauce Labs Bike Light" {
             blueBtn.isHidden = true
             grayBtn.isHidden = true
             greenBtn.isHidden = true
             blackBtn.isSelected = true
             selectedColor = "Black"
-        }else if productName == "Sauce Lab Fleece T-Shirt" {
+        }else if productName == "Sauce Labs Fleece T-Shirt" {
             blueBtn.isHidden = true
             blackBtn.isHidden = true
             greenBtn.isHidden = true
             grayBtn.isSelected = true
             selectedColor = "Gray"
-        }else if productName == "Sauce Lab Back Packs" {
+        }else if productName == "Sauce Labs Backpack" {
             greenBtn.isSelected = true
         }
     }

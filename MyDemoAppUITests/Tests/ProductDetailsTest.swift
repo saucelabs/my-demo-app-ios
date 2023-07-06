@@ -1,7 +1,7 @@
 import XCTest
 
 class ProductDetailsTest: MyDemoAppTestBase {
-    let backPack = "Sauce Lab Back Packs"
+    let backPack = "Sauce Labs Backpack"
     
     func testProductDetails() throws {
         PageObject().selectItemByName(itemName: backPack).tap()
@@ -59,6 +59,6 @@ class ProductDetailsTest: MyDemoAppTestBase {
         PageObject().selectItemByName(itemName: backPack).tap()
         PageObject().addToCartButton.tap()
         PageObject().cartButton.tap()
-        XCTAssert(PageObject().detailsPageOf(productName: backPack).exists)
+        XCTAssert(PageObject().cartDetailsPageOf(productName: backPack).exists)
     }
 }

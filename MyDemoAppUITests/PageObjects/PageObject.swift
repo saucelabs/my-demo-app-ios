@@ -34,7 +34,10 @@ public class PageObject {
     lazy var cartScreen = app.otherElements["Cart-screen"]
     lazy var cartEmpty = cartScreen.staticTexts["No Items"]
     lazy var goShoppingButton = cartScreen.buttons["GoShopping"]
-    
+    func cartDetailsPageOf(productName: String)-> XCUIElement {
+        return cartScreen.staticTexts[productName]
+    }
+
     // Catalog
     lazy var catalogScreen = app.otherElements["Catalog-screen"]
     func selectItemByNumber(itemNumber: Int) -> XCUIElement {
