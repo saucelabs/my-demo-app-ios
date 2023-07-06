@@ -38,7 +38,7 @@ class Utils {
         
         Engine.sharedInstance.productList.append(["Id":"4",
                                                   "ProductImageName":"ShirtGray Image",
-                                                  "ProductName":"Sauce Lab Fleece T-Shirt",
+                                                  "ProductName":"Sauce Lab Fleece Jacket",
                                                   "ProductPrice":"49.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":"Its not everyday that you come across a midweight quarter-zip fleec jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.",
