@@ -14,7 +14,7 @@ class Utils {
     {
         Engine.sharedInstance.productList.append(["Id":"1",
                                                   "ProductImageName":"BagBlack Image",
-                                                  "ProductName":"Sauce Lab Back Packs",
+                                                  "ProductName":"Sauce Labs Backpack",
                                                   "ProductPrice":"29.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":"carry.allTheThings() with the sleek, streamlined Sly that melds uncompromising style with unequaled laptop and tablet protection.",
@@ -22,7 +22,7 @@ class Utils {
         
         Engine.sharedInstance.productList.append(["Id":"2",
                                                   "ProductImageName":"BikeLight Image",
-                                                  "ProductName":"Sauce Lab Bike Light",
+                                                  "ProductName":"Sauce Labs Bike Light",
                                                   "ProductPrice":"9.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":"A red light isn't the desire state in testing but it sure helps when riding your bike at night.",
@@ -30,15 +30,15 @@ class Utils {
         
         Engine.sharedInstance.productList.append(["Id":"3",
                                                   "ProductImageName":"ShirtBlack Image",
-                                                  "ProductName":"Sauce Lab Bolt T-Shirt",
+                                                  "ProductName":"Sauce Labs Bolt T-Shirt",
                                                   "ProductPrice":"15.99",
                                                   "ProductRating":"4",
-                                                  "ProductDiscription":"Get your testing superhero on with the sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt.",
-                                                  "ProductHighlights":"Get your testing superhero on with the sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt."])
+                                                  "ProductDiscription":"Get your testing superhero on with the Sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt.",
+                                                  "ProductHighlights":"Get your testing superhero on with the Sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt."])
         
         Engine.sharedInstance.productList.append(["Id":"4",
                                                   "ProductImageName":"ShirtGray Image",
-                                                  "ProductName":"Sauce Lab Fleece T-Shirt",
+                                                  "ProductName":"Sauce Labs Fleece Jacket",
                                                   "ProductPrice":"49.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":"Its not everyday that you come across a midweight quarter-zip fleec jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.",
@@ -46,7 +46,7 @@ class Utils {
         
         Engine.sharedInstance.productList.append(["Id":"5",
                                                   "ProductImageName":"ShirtRedOnesie Image",
-                                                  "ProductName":"Sauce Lab Onesie",
+                                                  "ProductName":"Sauce Labs Onesie",
                                                   "ProductPrice":"7.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":"The Sauce Labs Backpack is the best of all worlds infinite capacity and endless style. Fit in comfortably a laptop up to 15 inch. Never leave a thing behind and forget you have your world on your shoulders.",

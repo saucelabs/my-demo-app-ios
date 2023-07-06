@@ -50,7 +50,9 @@ jobs:
             -configuration Release \
             -derivedDataPath build | xcpretty
       - name: Test against Sauce Labs
-        uses: saucelabs/saucectl-run-action@v1
+        uses: saucelabs/saucectl-run-action@v3
+        env:
+          GITHUB_TOKEN: ${{ github.token }}        
         with:
           sauce-username: ${{ secrets.SAUCE_USERNAME }}
           sauce-access-key: ${{ secrets.SAUCE_ACCESS_KEY }}
