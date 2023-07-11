@@ -47,5 +47,3 @@ class LocalizationTest: XCTestCase {
         app.terminate()
     }
 }
-
-import XCTest
