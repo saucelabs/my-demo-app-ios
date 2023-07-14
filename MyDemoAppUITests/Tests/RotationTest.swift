@@ -13,7 +13,7 @@ class RotationTest: MyDemoAppTestBase {
         device.orientation = .landscapeLeft
 
         // For demoing purpose
-        sleep(5)
+        sleep(15)
 
         // Validate we are now in landscapeLeft
         XCTAssertEqual(device.orientation, UIDeviceOrientation.landscapeLeft)
@@ -22,7 +22,7 @@ class RotationTest: MyDemoAppTestBase {
         device.orientation = .landscapeRight
 
         // For demoing purpose
-        sleep(5)
+        sleep(15)
 
         // Validate we are now in landscapeRight
         XCTAssertEqual(device.orientation, UIDeviceOrientation.landscapeRight)
@@ -31,7 +31,7 @@ class RotationTest: MyDemoAppTestBase {
         device.orientation = .portrait
 
         // For demoing purpose
-        sleep(5)
+        sleep(15)
 
         // Validate we are now in portrait again
         XCTAssertEqual(device.orientation, UIDeviceOrientation.portrait)

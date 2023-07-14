@@ -28,6 +28,7 @@ jobs:
           test \
           -workspace "My Demo App.xcworkspace" \
           -scheme "My Demo App" \
+          -skip-testing MyDemoAppUITests/FailedTests \
           -destination "${{ matrix.destination }}" | xcpretty
 
   run-tests-on-saucelabs:
