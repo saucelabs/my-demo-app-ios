@@ -16,6 +16,13 @@ echo ""
 # Initialize an empty string to store class names and test names
 CLASS_AND_TEST_NAMES=""
 
+# Determine the separator based on the build platform
+if [ "${EFFECTIVE_PLATFORM_NAME}" == "-iphonesimulator" ]; then
+    SEPARATOR="/"
+else
+    SEPARATOR="."
+fi
+
 # Get the class names and test names from the Swift files that contain test methods
 while IFS= read -r file; do
     # Check if the file contains a test method
@@ -28,7 +35,7 @@ while IFS= read -r file; do
 
         # Loop through each test name and append it to the list
         while IFS= read -r test_name; do
-            CLASS_AND_TEST_NAMES+="$TARGET_NAME.$CLASS_NAME/$test_name"$'\n'
+            CLASS_AND_TEST_NAMES+="$TARGET_NAME$SEPARATOR$CLASS_NAME/$test_name"$'\n'
         done <<< "$TEST_NAMES"
     fi
 done <<< "$TEST_FILES"
