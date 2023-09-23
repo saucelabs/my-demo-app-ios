@@ -50,6 +50,7 @@
 		880268AC2A5BFE7E003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268AE2A5BFE7E003E2191 /* Localizable.strings */; };
 		880268B12A5BFF02003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268B32A5BFF02003E2191 /* Localizable.strings */; };
 		880268B52A5BFF52003E2191 /* LocalizationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880268B42A5BFF52003E2191 /* LocalizationTest.swift */; };
+		886CAD5F2A8BC790001627CE /* diffing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CAD5E2A8BC790001627CE /* diffing.swift */; };
 		88724D832A882550009FA753 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = 88724D822A882550009FA753 /* SnapshotTesting */; };
 		88724D852A88AAF6009FA753 /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88724D842A88AAF6009FA753 /* SnapshotTests.swift */; };
 		88782DCB2A6130BA00CE5DC5 /* FailedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88782DCA2A6130BA00CE5DC5 /* FailedTests.swift */; };
@@ -126,6 +127,7 @@
 		880268AD2A5BFE7E003E2191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		880268B22A5BFF02003E2191 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		880268B42A5BFF52003E2191 /* LocalizationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTest.swift; sourceTree = "<group>"; };
+		886CAD5E2A8BC790001627CE /* diffing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = diffing.swift; sourceTree = "<group>"; };
 		88724D842A88AAF6009FA753 /* SnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
 		88782DCA2A6130BA00CE5DC5 /* FailedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedTests.swift; sourceTree = "<group>"; };
 		88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingPageTest.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */,
+				886CAD5E2A8BC790001627CE /* diffing.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -601,6 +604,7 @@
 				880268B52A5BFF52003E2191 /* LocalizationTest.swift in Sources */,
 				88A847D72757B90E00B9F861 /* ProductListingPageTest.swift in Sources */,
 				88A847D92757BB4F00B9F861 /* ProductDetailsTest.swift in Sources */,
+				886CAD5F2A8BC790001627CE /* diffing.swift in Sources */,
 				88782DCB2A6130BA00CE5DC5 /* FailedTests.swift in Sources */,
 				88AD24FA2A5ABF81005732E7 /* RotationTest.swift in Sources */,
 				A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */,
@@ -833,6 +837,9 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FOO_BAR = foo;
+				GCC_PREPROCESSOR_DEFINITIONS = "FOO_BAR=$(FOO_BAR)";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = "FOO_BAR=$(FOO_BAR)";
 				INFOPLIST_FILE = MyDemoAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -858,6 +865,8 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				FOO_BAR = foo;
+				GCC_PREPROCESSOR_DEFINITIONS = "FOO_BAR=$(FOO_BAR)";
 				INFOPLIST_FILE = MyDemoAppUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
