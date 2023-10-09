@@ -5,6 +5,7 @@
 //  Created by Mubashir on 15/09/21.
 //
 
+import os
 import UIKit
 import LocalAuthentication
 
@@ -43,6 +44,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                } else {
                    // Fallback on earlier versions
                }
+               
+               let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "network")
+               
+               
+               let f = ProxyFinder()
+               let s1 = f.swiftGetProxy("http://localhost/foo", destinationHost: "localhost")
+               let s2 = f.swiftGetProxy("http://google.com/foo", destinationHost: "www.google.com")
+
+               logger.error("gilm: localhost -> \(s1)")
+               logger.error("gilm: google -> \(s2)")
+               
                
                
 //               laContext.evaluatePolicy(biometricsPolicy, localizedReason: localizedReason, reply: { (isSuccess, error) in
