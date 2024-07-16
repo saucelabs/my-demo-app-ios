@@ -15,6 +15,7 @@ class CatalogViewController: UIViewController {
     @IBOutlet weak var cartCountContView: UIView!
     
     @IBOutlet weak var cartCountLbl: UILabel!
+    @IBOutlet weak var titleLbl: UILabel!
     
     @IBOutlet weak var nameAscendingBtn: UIButton!
     @IBOutlet weak var nameDescendingBtn: UIButton!
@@ -32,6 +33,12 @@ class CatalogViewController: UIViewController {
         
         if Engine.sharedInstance.cartCount < 1 {
             cartCountContView.isHidden = true
+        }
+        
+        
+        
+        if Engine.sharedInstance.userName == "visual@example.com" {
+            self.titleLbl.textAlignment = .center
         }
         
         nameAscendingBtn.isSelected = true
@@ -172,9 +179,19 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductsCell", for: indexPath)  as!ProductsCell
         
         let productDataDic = Engine.sharedInstance.productList[indexPath.row]
-        let imageName = productDataDic.value(forKey: "ProductImageName") as! String
+        var imageName = productDataDic.value(forKey: "ProductImageName") as! String
         let productName = productDataDic.value(forKey: "ProductName") as! String
-        let productPrice = productDataDic.value(forKey: "ProductPrice") as! String
+        
+        let productPrice = if Engine.sharedInstance.userName == "visual@example.com" {
+            String(Int.random(in: 1...99))
+        } else {
+            productDataDic.value(forKey: "ProductPrice") as! String
+        }
+        
+        if Engine.sharedInstance.userName == "visual@example.com" {
+            if imageName == "BagBlack Image" {imageName = "ShirtRedOnesie Image"}
+            if imageName == "BikeLight Image" {imageName = "ShirtRedOnesie Image"}
+        }
         
         cell.productIV.image = UIImage(named: imageName)
         cell.productNameLbl.text = productName

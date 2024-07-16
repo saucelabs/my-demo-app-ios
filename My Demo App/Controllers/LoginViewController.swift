@@ -68,14 +68,14 @@ class LoginViewController: UIViewController {
                 let storyboard = UIStoryboard.init(name: "TabBar", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "ShippingAddressViewController") as! ShippingAddressViewController
                 self.navigationController?.pushViewController(vc, animated: true)
-                Engine.sharedInstance.isLogin = true
+                
             }else{
                 let storyboard = UIStoryboard.init(name: "TabBar", bundle: nil)
                 let vc = storyboard.instantiateViewController(withIdentifier: "CatalogViewController") as! CatalogViewController
                 self.navigationController?.pushViewController(vc, animated: true)
-                Engine.sharedInstance.isLogin = true
             }
-            
+            Engine.sharedInstance.isLogin = true
+            Engine.sharedInstance.userName = userNameTF.text ?? ""
         }
     }
     
