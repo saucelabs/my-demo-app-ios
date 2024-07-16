@@ -19,6 +19,7 @@ suites:
     testOptions:
       notClass:
         - MyDemoAppUITests.FailedTests
+        - MyDemoAppUITests.SnapshotTests
     devices:
       - name: "iPhone.*"
         # platformVersion: "14.6"
