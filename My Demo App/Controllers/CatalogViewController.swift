@@ -194,11 +194,8 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
         cell.productIV.image = UIImage(named: imageName)
-        cell.productIV.accessibilityIdentifier = String(format: "product-%d-image", indexPath.item)
         cell.productNameLbl.text = productName
-        cell.productNameLbl.accessibilityIdentifier = String(format: "product-%d-name", indexPath.item)
         cell.productPriceLbl.text = "$ " + productPrice
-        cell.productPriceLbl.accessibilityIdentifier = String(format: "product-%d-price", indexPath.item)
 
         cell.star1Btn.tag = indexPath.row
         cell.star1Btn.addTarget(self, action: #selector(showAlert(sender:)), for: .touchUpInside)
