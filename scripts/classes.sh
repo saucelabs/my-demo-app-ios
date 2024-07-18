@@ -16,13 +16,20 @@ echo ""
 # Initialize an empty string to store class names
 CLASS_NAMES=""
 
+# Determine the separator based on the build platform
+if [ "${EFFECTIVE_PLATFORM_NAME}" == "-iphonesimulator" ]; then
+    SEPARATOR="/"
+else
+    SEPARATOR="."
+fi
+
 # Get the class names from the Swift files that contain test methods
 while IFS= read -r file; do
     # Check if the file contains a test method
     if grep -q "func test[A-Za-z0-9_]*()" "$file"; then
         # Extract the class name and append it to the list
         CLASS_NAME=$(grep -Eo "class [a-zA-Z_][a-zA-Z0-9_]*:*" "$file" | awk '{gsub(":", "", $2); print $2}')
-        CLASS_NAMES+="$TARGET_NAME.$CLASS_NAME"$'\n'
+        CLASS_NAMES+="$TARGET_NAME$SEPARATOR$CLASS_NAME"$'\n'
     fi
 done <<< "$TEST_FILES"
 

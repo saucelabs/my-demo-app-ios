@@ -1,0 +1,42 @@
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "0Xk-4V-aM2"; */
+"0Xk-4V-aM2.text" = "Login";
+
+/* Class = "UILabel"; text = "More"; ObjectID = "8wt-eJ-Fdo"; */
+"8wt-eJ-Fdo.text" = "More";
+
+/* Class = "UILabel"; text = "Select a username from the list below"; ObjectID = "BKC-Rr-FEr"; */
+"BKC-Rr-FEr.text" = "Select a username from the list below";
+
+/* Class = "UILabel"; text = "Catalog"; ObjectID = "EK8-5I-L48"; */
+"EK8-5I-L48.text" = "Catalog";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "P59-gr-kCa"; */
+"P59-gr-kCa.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "QPQ-J6-U8Y"; */
+"QPQ-J6-U8Y.text" = "Password";
+
+/* Class = "UILabel"; text = "2"; ObjectID = "SVT-V9-frc"; */
+"SVT-V9-frc.text" = "2";
+
+/* Class = "UILabel"; text = "Cart"; ObjectID = "YUE-09-awz"; */
+"YUE-09-awz.text" = "Cart";
+
+/* Class = "UILabel"; text = "Usernames"; ObjectID = "a5O-tE-dwf"; */
+"a5O-tE-dwf.text" = "Usernames";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "fso-Rl-o8c"; */
+"fso-Rl-o8c.normalTitle" = "Login";
+
+/* Class = "UILabel"; text = "User Name"; ObjectID = "fuk-dO-CKv"; */
+"fuk-dO-CKv.text" = "User Name";
+
+/* Class = "UILabel"; text = "My Cart"; ObjectID = "ix6-AN-KJ7"; */
+"ix6-AN-KJ7.text" = "My Cart";
+
+/* Class = "UILabel"; text = "10203040"; ObjectID = "px5-uD-jmK"; */
+"px5-uD-jmK.text" = "10203040";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "wH0-gj-3UT"; */
+"wH0-gj-3UT.text" = "Password";
