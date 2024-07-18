@@ -1,19 +1,21 @@
 name: Run Tests for My Demo App
 on: 
   push:
+    branches:
+      - main
   pull_request:
   schedule:
     - cron:  '0 2 * * *'
 
 jobs:
   run-tests:
-    runs-on: macos-11
+    runs-on: macos-14
     strategy:
       matrix:
         include:
         # Available XCodes taken from https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md
-        - xcode-version: 12.5
-          destination: "name=iPhone 11 Pro Max"
+        - xcode-version: 15.4
+          destination: "name=iPhone 15 Pro Max"
     timeout-minutes: 30
     steps:
     - uses: actions/checkout@v2
