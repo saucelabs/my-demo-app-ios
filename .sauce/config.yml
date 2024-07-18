@@ -17,8 +17,12 @@ xcuitest:
 suites:
   - name: "saucy xcuitest"
     testOptions:
-      notClass:
-        - MyDemoAppUITests.FailedTests
+      class:
+        - MyDemoAppUITests.ProductListingPageTest
+        - MyDemoAppUITests.ProductDetailsTest
+        - MyDemoAppUITests.NavigationTest
+        - MyDemoAppUITests.RotationTest
+        - MyDemoAppUITests.LocalizationTest
     devices:
       - name: "iPhone.*"
         # platformVersion: "14.6"
