@@ -1394,7 +1394,9 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce Labs Backpack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8Q-qt-MvR">
                                                                             <rect key="frame" x="2" y="194" width="134" height="14"/>
-                                                                            <accessibility key="accessibilityConfiguration" identifier="Product Name" label="Product Name"/>
+                                                                            <accessibility key="accessibilityConfiguration" identifier="Product Name" label="Product Name">
+                                                                                <accessibilityTraits key="traits" staticText="YES"/>
+                                                                            </accessibility>
                                                                             <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                         </label>

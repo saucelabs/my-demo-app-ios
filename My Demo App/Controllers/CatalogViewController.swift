@@ -195,6 +195,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         
         cell.productIV.image = UIImage(named: imageName)
         cell.productNameLbl.text = productName
+        cell.productNameLbl.accessibilityLabel = productName
         cell.productPriceLbl.text = "$ " + productPrice
 
         cell.star1Btn.tag = indexPath.row
