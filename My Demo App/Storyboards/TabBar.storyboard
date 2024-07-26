@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y4s-4M-PJF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="y4s-4M-PJF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -1359,8 +1359,9 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qTe-ou-3DJ">
                                         <rect key="frame" x="0.0" y="62" width="414" height="690"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfl-nE-xjB">
-                                                <rect key="frame" x="16" y="24" width="94" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Products" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfl-nE-xjB">
+                                                <rect key="frame" x="16" y="24" width="390" height="24"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="title" label="title"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="24"/>
                                                 <nil key="textColor"/>
                                             </label>
@@ -1386,17 +1387,22 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                                                     <subviews>
                                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BagBlack Image" translatesAutoresizingMaskIntoConstraints="NO" id="AWq-cs-K6k">
                                                                             <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
+                                                                            <accessibility key="accessibilityConfiguration" identifier="Product Image" label="Product Image"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" secondItem="AWq-cs-K6k" secondAttribute="height" multiplier="1:1" id="FUe-fK-QJ7"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sauce Labs Backpack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8Q-qt-MvR">
                                                                             <rect key="frame" x="2" y="194" width="134" height="14"/>
+                                                                            <accessibility key="accessibilityConfiguration" identifier="Product Name" label="Product Name">
+                                                                                <accessibilityTraits key="traits" staticText="YES"/>
+                                                                            </accessibility>
                                                                             <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                                                             <nil key="textColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$65.97" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rdk-nA-gud">
                                                                             <rect key="frame" x="2" y="220" width="57" height="18"/>
+                                                                            <accessibility key="accessibilityConfiguration" identifier="Product Price" label="Product Price"/>
                                                                             <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
                                                                             <nil key="textColor"/>
                                                                         </label>
@@ -1547,6 +1553,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                                             <constraint firstItem="tfl-nE-xjB" firstAttribute="leading" secondItem="qTe-ou-3DJ" secondAttribute="leading" constant="16" id="8nO-NX-caZ"/>
                                             <constraint firstAttribute="trailing" secondItem="4KV-Hh-Xdg" secondAttribute="trailing" id="Jgb-HZ-TwB"/>
                                             <constraint firstAttribute="bottom" secondItem="4KV-Hh-Xdg" secondAttribute="bottom" id="Wew-mQ-o00"/>
+                                            <constraint firstAttribute="trailing" secondItem="tfl-nE-xjB" secondAttribute="trailing" constant="8" id="hCA-H8-nh9"/>
                                             <constraint firstItem="4KV-Hh-Xdg" firstAttribute="leading" secondItem="qTe-ou-3DJ" secondAttribute="leading" id="hW5-l1-A8l"/>
                                             <constraint firstItem="tfl-nE-xjB" firstAttribute="top" secondItem="qTe-ou-3DJ" secondAttribute="top" constant="24" id="lfT-Ab-XsU"/>
                                             <constraint firstItem="4KV-Hh-Xdg" firstAttribute="top" secondItem="tfl-nE-xjB" secondAttribute="bottom" constant="24" id="uqQ-C4-DxM"/>
@@ -1755,6 +1762,7 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
                         <outlet property="productsCV" destination="4KV-Hh-Xdg" id="BPz-fl-xfH"/>
                         <outlet property="sortBtn" destination="F6K-Ab-dHq" id="6Ms-Uh-Kzs"/>
                         <outlet property="sortPopUpView" destination="Bqb-ot-KjK" id="Ix0-Rd-xGb"/>
+                        <outlet property="titleLbl" destination="tfl-nE-xjB" id="W0X-L0-Ydz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qco-mM-wwn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5019,16 +5027,16 @@ Fits in comfortably a laptop up to 15 inch. Never leave a thing behind and forge
         <image name="mastercard Icons" width="32" height="20"/>
         <image name="visa Icons" width="32" height="20"/>
         <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray3Color">
-            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

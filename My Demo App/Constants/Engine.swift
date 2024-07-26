@@ -39,6 +39,7 @@ class Engine: NSObject {
     var isLogin = false
     var isFaceLogin = false
     var isFaceSupported = false
+    var userName = ""
 }
 
 
