@@ -7,6 +7,9 @@ class LocalizationTest: XCTestCase {
         super.setUp()
         continueAfterFailure = true
         app = XCUIApplication()
+        let device = XCUIDevice.shared
+        // start always in portrait mode
+        device.orientation = .portrait
     }
 
     func testLocalization() throws {

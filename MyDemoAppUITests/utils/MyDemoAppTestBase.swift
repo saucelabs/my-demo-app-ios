@@ -8,6 +8,11 @@ class MyDemoAppTestBase: XCTestCase {
         super.setUp()
         continueAfterFailure = true
         app.launch()
+        // You can only control the orientation of the device, not the app
+        // So use the `XCUIDevice.shared` which represents the physical device
+        let device = XCUIDevice.shared
+        // start always in portrait mode
+        device.orientation = .portrait
     }
     
     func enter( _ text: String, in textField: String) {

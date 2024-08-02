@@ -2,6 +2,7 @@ import XCTest
 
 class NavigationTest: MyDemoAppTestBase {
     func testNavigateToCart() throws {
+        XCTAssert(PageObject().cartButton.waitForExistence(timeout: 2))
         PageObject().cartButton.tap()
         XCTAssert(PageObject().cartEmpty.exists)
     }
@@ -48,11 +49,13 @@ class NavigationTest: MyDemoAppTestBase {
     }
             
     func testNavigateFromCartToCatalog() throws {
+        XCTAssert(PageObject().cartButton.waitForExistence(timeout: 2))
         PageObject().cartButton.tap()
         XCTAssert(PageObject().cartScreen.waitForExistence(timeout: 2))
     }
             
     func testNavigateCartToCatalog() throws {
+        XCTAssert(PageObject().cartButton.waitForExistence(timeout: 2))
         PageObject().cartButton.tap()
         PageObject().goShoppingButton.tap()
         XCTAssert(PageObject().catalogScreen.waitForExistence(timeout: 2))
