@@ -59,6 +59,11 @@ class CatalogViewController: UIViewController {
         cartCountLbl.text = String(Engine.sharedInstance.cartCount)
         
     }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        productsCV.collectionViewLayout.invalidateLayout()
+    }
     
     @IBAction func twitterButton(_ sender: Any) {
         print("twitter pressed")
@@ -235,9 +240,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let noOfCellsInRow = 2
-        
+        let noOfCellsInRow = self.view.bounds.width > self.view.bounds.height ? 3 : 2
         let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout
         let totalSpace = flowLayout.sectionInset.left
             + flowLayout.sectionInset.right

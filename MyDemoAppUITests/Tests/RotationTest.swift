@@ -6,9 +6,6 @@ class RotationTest: MyDemoAppTestBase {
         // So use the `XCUIDevice.shared` which represents the physical device
         let device = XCUIDevice.shared
         
-        // Make sure we start in portrait
-        device.orientation = .portrait
-
         // We start in portrait, validate that
         XCTAssertEqual(device.orientation, UIDeviceOrientation.portrait)
 
