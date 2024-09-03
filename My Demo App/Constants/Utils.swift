@@ -10,51 +10,57 @@ import Foundation
 
 class Utils {
     
-    public static func setProductList()
+    public static func setProductList(includeIdInName: Bool = false)
     {
-        Engine.sharedInstance.productList.append(["Id":"1",
+        let makeName = if includeIdInName {
+            {name in String(format: "[%4d] %@", Engine.sharedInstance.productList.count, name) }
+        } else {
+            {name -> String in name }
+        }
+        
+        Engine.sharedInstance.productList.append(["Id": String(Engine.sharedInstance.productList.count),
                                                   "ProductImageName":"BagBlack Image",
-                                                  "ProductName":NSLocalizedString("ProductOneName", comment: ""),
+                                                  "ProductName":makeName(NSLocalizedString("ProductOneName", comment: "")),
                                                   "ProductPrice":"29.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":NSLocalizedString("ProductOneDiscription", comment: ""),
                                                   "ProductHighlights":NSLocalizedString("ProductOneHighlights", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"2",
+        Engine.sharedInstance.productList.append(["Id": String(Engine.sharedInstance.productList.count),
                                                   "ProductImageName":"BikeLight Image",
-                                                  "ProductName":NSLocalizedString("ProductTwoName", comment: ""),
+                                                  "ProductName":makeName(NSLocalizedString("ProductTwoName", comment: "")),
                                                   "ProductPrice":"9.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":NSLocalizedString("ProductTwoName", comment: ""),
                                                   "ProductHighlights":NSLocalizedString("ProductTwoName", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"3",
+        Engine.sharedInstance.productList.append(["Id": String(Engine.sharedInstance.productList.count),
                                                   "ProductImageName":"ShirtBlack Image",
-                                                  "ProductName":NSLocalizedString("ProductThreeName", comment: ""),
+                                                  "ProductName":makeName(NSLocalizedString("ProductThreeName", comment: "")),
                                                   "ProductPrice":"15.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":NSLocalizedString("ProductThreeName", comment: ""),
                                                   "ProductHighlights":NSLocalizedString("ProductThreeName", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"4",
+        Engine.sharedInstance.productList.append(["Id": String(Engine.sharedInstance.productList.count),
                                                   "ProductImageName":"ShirtGray Image",
-                                                  "ProductName":NSLocalizedString("ProductFourName", comment: ""),
+                                                  "ProductName":makeName(NSLocalizedString("ProductFourName", comment: "")),
                                                   "ProductPrice":"49.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":NSLocalizedString("ProductFourName", comment: ""),
                                                   "ProductHighlights":NSLocalizedString("ProductFourName", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"5",
+        Engine.sharedInstance.productList.append(["Id": String(Engine.sharedInstance.productList.count),
                                                   "ProductImageName":"ShirtRedOnesie Image",
-                                                  "ProductName":NSLocalizedString("ProductFiveName", comment: ""),
+                                                  "ProductName":makeName(NSLocalizedString("ProductFiveName", comment: "")),
                                                   "ProductPrice":"7.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":NSLocalizedString("ProductFiveName", comment: ""),
                                                   "ProductHighlights":NSLocalizedString("ProductFiveName", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"6",
+        Engine.sharedInstance.productList.append(["Id": String(Engine.sharedInstance.productList.count),
                                                   "ProductImageName":"ShirtRed Image",
-                                                  "ProductName":NSLocalizedString("ProductSixName", comment: ""),
+                                                  "ProductName":makeName(NSLocalizedString("ProductSixName", comment: "")),
                                                   "ProductPrice":"15.99",
                                                   "ProductRating":"4",
                                                   "ProductDiscription":NSLocalizedString("ProductSixName", comment: ""),

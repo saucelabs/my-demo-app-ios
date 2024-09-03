@@ -76,6 +76,16 @@ class LoginViewController: UIViewController {
             }
             Engine.sharedInstance.isLogin = true
             Engine.sharedInstance.userName = userNameTF.text ?? ""
+            
+            // Show more items if the visual user is logged in
+            if (Engine.sharedInstance.userName == "visual@example.com") {
+                for i in 1...10 {
+                    Utils.setProductList(includeIdInName: true)
+                }
+            } else {
+                Engine.sharedInstance.productList.removeAll();
+                Utils.setProductList()
+            }
         }
     }
     
