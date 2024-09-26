@@ -12,18 +12,18 @@ jobs:
     strategy:
       matrix:
         include:
-        # Available XCodes taken from https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md
+        # Available XCodes taken from https://github.com/actions/runner-images/blob/main/images/macos/macos-14-Readme.md
         - macos-version: macos-14
           xcode-version: 15.4
           destination: "name=iPhone 15 Pro Max"
     runs-on: ${{ matrix.macos-version }}
     timeout-minutes: 30
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Install Dependencies
       run: gem install xcpretty
     - name: Select XCode
-      uses: maxim-lobanov/setup-xcode@v1.2.1
+      uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: ${{ matrix.xcode-version }}
     - name: Build for iOS Simulator
