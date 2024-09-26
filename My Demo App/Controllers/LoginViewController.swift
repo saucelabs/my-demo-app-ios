@@ -56,7 +56,6 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func LoginButton(_ sender: Any) {
-        
         if(!userNameTF.hasText){
             Methods.showAlertMessage(vc: self, title: "Validation Error!", message: "Username is required")
         }
@@ -76,17 +75,9 @@ class LoginViewController: UIViewController {
             }
             Engine.sharedInstance.isLogin = true
             Engine.sharedInstance.userName = userNameTF.text ?? ""
-            
-            // Show more items if the visual user is logged in
-            if (Engine.sharedInstance.userName == "visual@example.com") {
-                for i in 1...10 {
-                    Utils.setProductList(includeIdInName: true)
-                }
-            } else {
-                Engine.sharedInstance.productList.removeAll();
-                Utils.setProductList()
-            }
         }
+        Engine.sharedInstance.productList.removeAll();
+        Utils.setProductList();
     }
     
     @IBAction func catalogButton(_ sender: Any) {

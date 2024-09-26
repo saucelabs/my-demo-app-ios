@@ -34,9 +34,7 @@ class CatalogViewController: UIViewController {
         if Engine.sharedInstance.cartCount < 1 {
             cartCountContView.isHidden = true
         }
-        
-        
-        
+                
         if Engine.sharedInstance.userName == "visual@example.com" {
             self.titleLbl.textAlignment = .center
         }
@@ -188,14 +186,14 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         let productName = productDataDic.value(forKey: "ProductName") as! String
         
         let productPrice = if Engine.sharedInstance.userName == "visual@example.com" {
-            String(Int.random(in: 1...99))
+            String(format: "%.2f", Double.random(in: 1...99))
         } else {
             productDataDic.value(forKey: "ProductPrice") as! String
         }
         
         if Engine.sharedInstance.userName == "visual@example.com" {
-            if imageName == "BagBlack Image" {imageName = "ShirtRedOnesie Image"}
-            if imageName == "BikeLight Image" {imageName = "ShirtRedOnesie Image"}
+            if imageName == "TShirtBlack Image" {imageName = "ShirtRedOnesie Image"}
+            if imageName == "TShirtBlue Image" {imageName = "ShirtRedOnesie Image"}
         }
         
         cell.productIV.image = UIImage(named: imageName)
@@ -272,7 +270,7 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
 }
 
 class ProductsCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var productIV: UIImageView!
     
     @IBOutlet weak var productNameLbl: UILabel!
