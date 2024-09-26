@@ -18,11 +18,11 @@ jobs:
           destination: "name=iPhone 15 Pro Max"
     timeout-minutes: 30
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Install Dependencies
       run: gem install xcpretty
     - name: Select XCode
-      uses: maxim-lobanov/setup-xcode@v1.2.1
+      uses: maxim-lobanov/setup-xcode@v1
       with:
         xcode-version: ${{ matrix.xcode-version }}
     - name: Run Tests
@@ -38,11 +38,11 @@ jobs:
     runs-on: macos-14
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Install Dependencies
         run: gem install xcpretty
       - name: Select XCode
-        uses: maxim-lobanov/setup-xcode@v1.2.1
+        uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: 15.4
       - name: Build for testing
