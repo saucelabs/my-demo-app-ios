@@ -22,7 +22,7 @@ class LocalizationTest: XCTestCase {
         ]
         app.launch()
         // Now Validate that we are in English
-        XCTAssert(app.staticTexts["Sauce Labs Backpack"].exists)
+        XCTAssert(app.staticTexts["Sauce Labs Backpack - Black"].exists)
 
         // Change the language by:
         // 1.Terminating the App
@@ -42,7 +42,10 @@ class LocalizationTest: XCTestCase {
         app.launch()
 
         // Check the German text
-        XCTAssert(app.staticTexts["Sauce Labs Rucksack"].exists)
+        app.swipeUp()
+        app.swipeUp()
+        XCTAssert(app.staticTexts["Sauce Labs Rucksack - Black"].exists)
+
     }
 
     override func tearDown() {

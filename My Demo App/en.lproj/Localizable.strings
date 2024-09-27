@@ -1,23 +1,42 @@
-"ProductOneName" = "Sauce Labs Backpack";
-"ProductOneDiscription" = "carry.allTheThings() with the sleek, streamlined Sly that melds uncompromising style with unequaled laptop and tablet protection.";
-"ProductOneHighlights" = "carry.allTheThings() with the sleek, streamlined Sly that melds uncompromising style with unequaled laptop and tablet protection.";
+"BackPackNameBlack" = "Sauce Labs Backpack - Black";
+"BackPackNameGreen" = "Sauce Labs Backpack - Green";
+"BackPackNameOrange" = "Sauce Labs Backpack - Orange";
+"BackPackNameRed" = "Sauce Labs Backpack - Red";
+"BackPackNameViolet" = "Sauce Labs Backpack - Violet";
+"BackPackNameYellow" = "Sauce Labs Backpack - Yellow";
+"BackPackDescription" = "carry.allTheThings() with the sleek, streamlined Sly that melds uncompromising style with unequaled laptop and tablet protection.";
+"BackPackHighlights" = "carry.allTheThings() with the sleek, streamlined Sly that melds uncompromising style with unequaled laptop and tablet protection.";
 
-"ProductTwoName" = "Sauce Labs Bike Light";
-"ProductTwoDiscription" = "A red light isn't the desire state in testing but it sure helps when riding your bike at night.";
-"ProductTwoHighlights" = "A red light isn't the desire state in testing but it sure helps when riding your bike at night.";
+"LightName" = "Sauce Labs Bike Light";
+"LightDescription" = "A red light isn't the desire state in testing but it sure helps when riding your bike at night.";
+"LightHighlights" = "A red light isn't the desire state in testing but it sure helps when riding your bike at night.";
 
-"ProductThreeName" = "Sauce Labs Bolt T-Shirt";
-"ProductThreeDiscription" = "Get your testing superhero on with the Sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt.";
-"ProductThreeHighlights" = "Get your testing superhero on with the Sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt.";
+"TShirtNameBlack" = "Sauce Labs Bolt T-Shirt - Black";
+"TShirtNameBlue" = "Sauce Labs Bolt T-Shirt - Blue";
+"TShirtNameGreen" = "Sauce Labs Bolt T-Shirt - Green";
+"TShirtNameRed" = "Sauce Labs Bolt T-Shirt - Red";
+"TShirtNameYellow" = "Sauce Labs Bolt T-Shirt - Yellow";
+"TShirtDescription" = "Get your testing superhero on with the Sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt.";
+"TShirtHighlights" = "Get your testing superhero on with the Sauce Labs bolt T-Shirt. From American Apparel, 100% ringspun combed cotton gray red bolt.";
 
-"ProductFourName" = "Sauce Labs Fleece Jacket";
-"ProductFourDiscription" = "Its not everyday that you come across a midweight quarter-zip fleec jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.";
-"ProductFourHighlights" = "Its not everyday that you come across a midweight quarter-zip fleec jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.";
+"JacketNameGrey" = "Sauce Labs Fleece Jacket - Grey";
+"JacketNameBlue" = "Sauce Labs Fleece Jacket - Blue";
+"JacketNameBrown" = "Sauce Labs Fleece Jacket - Brown";
+"JacketNameGreen" = "Sauce Labs Fleece Jacket - Green";
+"JacketNamePink" = "Sauce Labs Fleece Jacket - Pink";
+"JacketNameRed" = "Sauce Labs Fleece Jacket - Red";
+"JacketDescription" = "Its not everyday that you come across a midweight quarter-zip fleec jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.";
+"JacketHighlights" = "Its not everyday that you come across a midweight quarter-zip fleec jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.";
 
-"ProductFiveName" = "Sauce Labs Onesie";
-"ProductFiveDiscription" = "The Sauce Labs Backpack is the best of all worlds infinite capacity and endless style. Fit in comfortably a laptop up to 15 inch. Never leave a thing behind and forget you have your world on your shoulders.";
-"ProductFiveHighlights" = "The Sauce Labs Backpack is the best of all worlds infinite capacity and endless style. Fit in comfortably a laptop up to 15 inch. Never leave a thing behind and forget you have your world on your shoulders.";
+"OnesieName" = "Sauce Labs Onesie";
+"OnesieDescription" = "The Sauce Labs Backpack is the best of all worlds infinite capacity and endless style. Fit in comfortably a laptop up to 15 inch. Never leave a thing behind and forget you have your world on your shoulders.";
+"OnesieHighlights" = "The Sauce Labs Backpack is the best of all worlds infinite capacity and endless style. Fit in comfortably a laptop up to 15 inch. Never leave a thing behind and forget you have your world on your shoulders.";
 
-"ProductSixName" = "Test.allTheThings() T-Shirt";
-"ProductSixDiscription" = "The classic Sauce Labs t-shirts is perfect to wear when cozying up to your keboard to automate a few tests. Super-soft and comfly ringspun combed cotton.";
-"ProductSixHighlights" = "The classic Sauce Labs t-shirts is perfect to wear when cozying up to your keboard to automate a few tests. Super-soft and comfly ringspun combed cotton.";
+"ShirtNameRed" = "Test.allTheThings() T-Shirt - Red";
+"ShirtNameOrange" = "Test.allTheThings() T-Shirt - Orange";
+"ShirtNamePink" = "Test.allTheThings() T-Shirt - Pink";
+"ShirtNamePurple" = "Test.allTheThings() T-Shirt - Purple";
+"ShirtNameTurquoise" = "Test.allTheThings() T-Shirt - Turquoise";
+"ShirtNameYellow" = "Test.allTheThings() T-Shirt - Yellow";
+"ShirtDescription" = "The classic Sauce Labs t-shirts is perfect to wear when cozying up to your keboard to automate a few tests. Super-soft and comfly ringspun combed cotton.";
+"ShirtHighlights" = "The classic Sauce Labs t-shirts is perfect to wear when cozying up to your keboard to automate a few tests. Super-soft and comfly ringspun combed cotton.";
