@@ -12,53 +12,193 @@ class Utils {
     
     public static func setProductList()
     {
-        Engine.sharedInstance.productList.append(["Id":"1",
+        /* Bags Variants */
+        Engine.sharedInstance.productList.append(["Id": "bag-black",
                                                   "ProductImageName":"BagBlack Image",
-                                                  "ProductName":NSLocalizedString("ProductOneName", comment: ""),
+                                                  "ProductName":NSLocalizedString("BackPackNameBlack", comment: ""),
                                                   "ProductPrice":"29.99",
                                                   "ProductRating":"4",
-                                                  "ProductDiscription":NSLocalizedString("ProductOneDiscription", comment: ""),
-                                                  "ProductHighlights":NSLocalizedString("ProductOneHighlights", comment: "")])
+                                                  "ProductDiscription":NSLocalizedString("BackPackDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("BackPackHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "bag-green",
+                                                  "ProductImageName":"BagGreen Image",
+                                                  "ProductName":NSLocalizedString("BackPackNameGreen", comment: ""),
+                                                  "ProductPrice":"29.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("BackPackDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("BackPackHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "bag-orange",
+                                                  "ProductImageName":"BagOrange Image",
+                                                  "ProductName":NSLocalizedString("BackPackNameOrange", comment: ""),
+                                                  "ProductPrice":"29.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("BackPackDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("BackPackHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "bag-red",
+                                                  "ProductImageName":"BagRed Image",
+                                                  "ProductName":NSLocalizedString("BackPackNameRed", comment: ""),
+                                                  "ProductPrice":"29.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("BackPackDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("BackPackHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "bag-violet",
+                                                  "ProductImageName":"BagViolet Image",
+                                                  "ProductName":NSLocalizedString("BackPackNameViolet", comment: ""),
+                                                  "ProductPrice":"29.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("BackPackDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("BackPackHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "bag-yellow",
+                                                  "ProductImageName":"BagYellow Image",
+                                                  "ProductName":NSLocalizedString("BackPackNameYellow", comment: ""),
+                                                  "ProductPrice":"29.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("BackPackDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("BackPackHighlights", comment: "")])
+
         
-        Engine.sharedInstance.productList.append(["Id":"2",
+        /* Bike Light */
+        Engine.sharedInstance.productList.append(["Id": "bike-light",
                                                   "ProductImageName":"BikeLight Image",
-                                                  "ProductName":NSLocalizedString("ProductTwoName", comment: ""),
+                                                  "ProductName":NSLocalizedString("LightName", comment: ""),
                                                   "ProductPrice":"9.99",
                                                   "ProductRating":"4",
-                                                  "ProductDiscription":NSLocalizedString("ProductTwoName", comment: ""),
-                                                  "ProductHighlights":NSLocalizedString("ProductTwoName", comment: "")])
+                                                  "ProductDescription":NSLocalizedString("LightDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("LightHighlights", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"3",
-                                                  "ProductImageName":"ShirtBlack Image",
-                                                  "ProductName":NSLocalizedString("ProductThreeName", comment: ""),
+        /* TShirt */
+        Engine.sharedInstance.productList.append(["Id": "tshirt-black",
+                                                  "ProductImageName":"TShirtBlack Image",
+                                                  "ProductName":NSLocalizedString("TShirtNameBlack", comment: ""),
                                                   "ProductPrice":"15.99",
                                                   "ProductRating":"4",
-                                                  "ProductDiscription":NSLocalizedString("ProductThreeName", comment: ""),
-                                                  "ProductHighlights":NSLocalizedString("ProductThreeName", comment: "")])
+                                                  "ProductDiscription":NSLocalizedString("TShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("TShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "tshirt-blue",
+                                                  "ProductImageName":"TShirtBlue Image",
+                                                  "ProductName":NSLocalizedString("TShirtNameBlue", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("TShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("TShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "tshirt-green",
+                                                  "ProductImageName":"TShirtGreen Image",
+                                                  "ProductName":NSLocalizedString("TShirtNameGreen", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("TShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("TShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "tshirt-red",
+                                                  "ProductImageName":"TShirtRed Image",
+                                                  "ProductName":NSLocalizedString("TShirtNameRed", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("TShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("TShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "tshirt-yellow",
+                                                  "ProductImageName":"TShirtYellow Image",
+                                                  "ProductName":NSLocalizedString("TShirtNameYellow", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("TShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("TShirtHighlights", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"4",
-                                                  "ProductImageName":"ShirtGray Image",
-                                                  "ProductName":NSLocalizedString("ProductFourName", comment: ""),
+        /* Jacket */
+        Engine.sharedInstance.productList.append(["Id":"jacket-grey",
+                                                  "ProductImageName":"JacketGray Image",
+                                                  "ProductName":NSLocalizedString("JacketNameGrey", comment: ""),
                                                   "ProductPrice":"49.99",
                                                   "ProductRating":"4",
-                                                  "ProductDiscription":NSLocalizedString("ProductFourName", comment: ""),
-                                                  "ProductHighlights":NSLocalizedString("ProductFourName", comment: "")])
+                                                  "ProductDiscription":NSLocalizedString("JacketDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("JacketHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id":"jacket-blue",
+                                                  "ProductImageName":"JacketBlue Image",
+                                                  "ProductName":NSLocalizedString("JacketNameBlue", comment: ""),
+                                                  "ProductPrice":"49.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("JacketDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("JacketHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id":"jacket-brown",
+                                                  "ProductImageName":"JacketBrown Image",
+                                                  "ProductName":NSLocalizedString("JacketNameBrown", comment: ""),
+                                                  "ProductPrice":"49.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("JacketDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("JacketHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id":"jacket-green",
+                                                  "ProductImageName":"JacketGreen Image",
+                                                  "ProductName":NSLocalizedString("JacketNameGreen", comment: ""),
+                                                  "ProductPrice":"49.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("JacketDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("JacketHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id":"jacket-pink",
+                                                  "ProductImageName":"JacketPink Image",
+                                                  "ProductName":NSLocalizedString("JacketNamePink", comment: ""),
+                                                  "ProductPrice":"49.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("JacketDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("JacketHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id":"jacket-red",
+                                                  "ProductImageName":"JacketRed Image",
+                                                  "ProductName":NSLocalizedString("JacketNameRed", comment: ""),
+                                                  "ProductPrice":"49.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("JacketDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("JacketHighlights", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"5",
+        /* Onesie */
+        Engine.sharedInstance.productList.append(["Id": "onesie",
                                                   "ProductImageName":"ShirtRedOnesie Image",
-                                                  "ProductName":NSLocalizedString("ProductFiveName", comment: ""),
+                                                  "ProductName":NSLocalizedString("OnesieName", comment: ""),
                                                   "ProductPrice":"7.99",
                                                   "ProductRating":"4",
-                                                  "ProductDiscription":NSLocalizedString("ProductFiveName", comment: ""),
-                                                  "ProductHighlights":NSLocalizedString("ProductFiveName", comment: "")])
+                                                  "ProductDiscription":NSLocalizedString("OnesieDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("OnesieHightlights", comment: "")])
         
-        Engine.sharedInstance.productList.append(["Id":"6",
+        /* Shirt */
+        Engine.sharedInstance.productList.append(["Id": "shirt-red",
                                                   "ProductImageName":"ShirtRed Image",
-                                                  "ProductName":NSLocalizedString("ProductSixName", comment: ""),
+                                                  "ProductName":NSLocalizedString("ShirtNameRed", comment: ""),
                                                   "ProductPrice":"15.99",
                                                   "ProductRating":"4",
-                                                  "ProductDiscription":NSLocalizedString("ProductSixName", comment: ""),
-                                                  "ProductHighlights":NSLocalizedString("ProductSixName", comment: "")])
+                                                  "ProductDiscription":NSLocalizedString("ShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("ShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "shirt-orange",
+                                                  "ProductImageName":"ShirtOrange Image",
+                                                  "ProductName":NSLocalizedString("ShirtNameOrange", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("ShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("ShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "shirt-pink",
+                                                  "ProductImageName":"ShirtPink Image",
+                                                  "ProductName":NSLocalizedString("ShirtNamePink", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("ShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("ShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "shirt-purple",
+                                                  "ProductImageName":"ShirtPurple Image",
+                                                  "ProductName":NSLocalizedString("ShirtNamePurple", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("ShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("ShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "shirt-turquoise",
+                                                  "ProductImageName":"ShirtTurquoise Image",
+                                                  "ProductName":NSLocalizedString("ShirtNameTurquoise", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("ShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("ShirtHighlights", comment: "")])
+        Engine.sharedInstance.productList.append(["Id": "shirt-yellow",
+                                                  "ProductImageName":"ShirtYellow Image",
+                                                  "ProductName":NSLocalizedString("ShirtNameYellow", comment: ""),
+                                                  "ProductPrice":"15.99",
+                                                  "ProductRating":"4",
+                                                  "ProductDiscription":NSLocalizedString("ShirtDescription", comment: ""),
+                                                  "ProductHighlights":NSLocalizedString("ShirtHighlights", comment: "")])
     }
     
 }

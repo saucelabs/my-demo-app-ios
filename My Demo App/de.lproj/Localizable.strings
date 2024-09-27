@@ -1,23 +1,42 @@
-"ProductOneName" = "Sauce Labs Rucksack";
-"ProductOneDiscription" = "carry.allTheThings() mit dem eleganten, stromlinienförmigen Sly, der kompromisslosen Stil mit unübertroffener Laptop- und Tablet-Schutz verbindet.";
-"ProductOneHighlights" = "carry.allTheThings() mit dem eleganten, stromlinienförmigen Sly, der kompromisslosen Stil mit unübertroffener Laptop- und Tablet-Schutz verbindet.";
+"BackPackNameBlack" = "Sauce Labs Rucksack - Black";
+"BackPackNameGreen" = "Sauce Labs Rucksack - Green";
+"BackPackNameOrange" = "Sauce Labs Rucksack - Orange";
+"BackPackNameRed" = "Sauce Labs Rucksack - Red";
+"BackPackNameViolet" = "Sauce Labs Rucksack - Violet";
+"BackPackNameYellow" = "Sauce Labs Rucksack - Yellow";
+"BackPackDescription" = "carry.allTheThings() mit dem eleganten, stromlinienförmigen Sly, der kompromisslosen Stil mit unübertroffener Laptop- und Tablet-Schutz verbindet.";
+"BackPackHighlights" = "carry.allTheThings() mit dem eleganten, stromlinienförmigen Sly, der kompromisslosen Stil mit unübertroffener Laptop- und Tablet-Schutz verbindet.";
 
-"ProductTwoName" = "Sauce Labs Fahrradlicht";
-"ProductTwoDiscription" = "Ein rotes Licht ist nicht der gewünschte Zustand beim Testen, aber es hilft sicherlich, wenn Sie nachts mit Ihrem Fahrrad fahren.";
-"ProductTwoHighlights" = "Ein rotes Licht ist nicht der gewünschte Zustand beim Testen, aber es hilft sicherlich, wenn Sie nachts mit Ihrem Fahrrad fahren.";
+"LightName" = "Sauce Labs Fahrradlicht";
+"LightDescription" = "Ein rotes Licht ist nicht der gewünschte Zustand beim Testen, aber es hilft sicherlich, wenn Sie nachts mit Ihrem Fahrrad fahren.";
+"LightHighlights" = "Ein rotes Licht ist nicht der gewünschte Zustand beim Testen, aber es hilft sicherlich, wenn Sie nachts mit Ihrem Fahrrad fahren.";
 
-"ProductThreeName" = "Sauce Labs Bolt T-Shirt";
-"ProductThreeDiscription" = "Schlüpfen Sie in Ihre Test-Superheldenrolle mit dem Sauce Labs Bolt T-Shirt. Von American Apparel, 100% ringgesponnene gekämmte Baumwolle, grau, roter Blitz.";
-"ProductThreeHighlights" = "Schlüpfen Sie in Ihre Test-Superheldenrolle mit dem Sauce Labs Bolt T-Shirt. Von American Apparel, 100% ringgesponnene gekämmte Baumwolle, grau, roter Blitz.";
+"TShirtNameBlack" = "Sauce Labs Bolt T-Shirt - Black";
+"TShirtNameBlue" = "Sauce Labs Bolt T-Shirt - Blue";
+"TShirtNameGreen" = "Sauce Labs Bolt T-Shirt - Green";
+"TShirtNameRed" = "Sauce Labs Bolt T-Shirt - Red";
+"TShirtNameYellow" = "Sauce Labs Bolt T-Shirt - Yellow";
+"TShirtDescription" = "Schlüpfen Sie in Ihre Test-Superheldenrolle mit dem Sauce Labs Bolt T-Shirt. Von American Apparel, 100% ringgesponnene gekämmte Baumwolle, grau, roter Blitz.";
+"TShirtHighlights" = "Schlüpfen Sie in Ihre Test-Superheldenrolle mit dem Sauce Labs Bolt T-Shirt. Von American Apparel, 100% ringgesponnene gekämmte Baumwolle, grau, roter Blitz.";
 
-"ProductFourName" = "Sauce Labs Fleecejacke";
-"ProductFourDiscription" = "Es ist nicht jeden Tag, dass Sie auf eine mittelschwere Fleecejacke mit Viertelreißverschluss stoßen, die alles von einem entspannten Tag im Freien bis zu einem geschäftigen Tag im Büro bewältigen kann.";
-"ProductFourHighlights" = "Es ist nicht jeden Tag, dass Sie auf eine mittelschwere Fleecejacke mit Viertelreißverschluss stoßen, die alles von einem entspannten Tag im Freien bis zu einem geschäftigen Tag im Büro bewältigen kann.";
+"JacketNameGrey" = "Sauce Labs Fleecejacke - Grey";
+"JacketNameBlue" = "Sauce Labs Fleecejacke - Blue";
+"JacketNameBrown" = "Sauce Labs Fleecejacke - Brown";
+"JacketNameGreen" = "Sauce Labs Fleecejacke - Green";
+"JacketNamePink" = "Sauce Labs Fleecejacke - Pink";
+"JacketNameRed" = "Sauce Labs Fleecejacke - Red";
+"JacketDescription" = "Es ist nicht jeden Tag, dass Sie auf eine mittelschwere Fleecejacke mit Viertelreißverschluss stoßen, die alles von einem entspannten Tag im Freien bis zu einem geschäftigen Tag im Büro bewältigen kann.";
+"JacketHighlights" = "Es ist nicht jeden Tag, dass Sie auf eine mittelschwere Fleecejacke mit Viertelreißverschluss stoßen, die alles von einem entspannten Tag im Freien bis zu einem geschäftigen Tag im Büro bewältigen kann.";
 
-"ProductFiveName" = "Sauce Labs Strampler";
-"ProductFiveDiscription" = "Der Sauce Labs Rucksack vereint auf beste Weise unendliche Kapazität und endlosen Stil. Passend für ein Laptop bis zu 15 Zoll. Lassen Sie nie etwas zurück und vergessen Sie, dass Sie Ihre Welt auf Ihren Schultern haben.";
-"ProductFiveHighlights" = "Der Sauce Labs Rucksack vereint auf beste Weise unendliche Kapazität und endlosen Stil. Passend für ein Laptop bis zu 15 Zoll. Lassen Sie nie etwas zurück und vergessen Sie, dass Sie Ihre Welt auf Ihren Schultern haben.";
+"OnesieName" = "Sauce Labs Strampler";
+"OnesieDescription" = "Der Sauce Labs Rucksack vereint auf beste Weise unendliche Kapazität und endlosen Stil. Passend für ein Laptop bis zu 15 Zoll. Lassen Sie nie etwas zurück und vergessen Sie, dass Sie Ihre Welt auf Ihren Schultern haben.";
+"OnesieHighlights" = "Der Sauce Labs Rucksack vereint auf beste Weise unendliche Kapazität und endlosen Stil. Passend für ein Laptop bis zu 15 Zoll. Lassen Sie nie etwas zurück und vergessen Sie, dass Sie Ihre Welt auf Ihren Schultern haben.";
 
-"ProductSixName" = "Test.allTheThings() T-Shirt";
-"ProductSixDiscription" = "Das klassische Sauce Labs T-Shirt ist perfekt, um es beim gemütlichen Herankuscheln an Ihre Tastatur zum Automatisieren einiger Tests zu tragen. Superweich und bequem aus ringgesponnener, gekämmter Baumwolle.";
-"ProductSixHighlights" = "Das klassische Sauce Labs T-Shirt ist perfekt, um es beim gemütlichen Herankuscheln an Ihre Tastatur zum Automatisieren einiger Tests zu tragen. Superweich und bequem aus ringgesponnener, gekämmter Baumwolle.";
+"ShirtNameRed" = "Test.allTheThings() T-Shirt - Red";
+"ShirtNameOrange" = "Test.allTheThings() T-Shirt - Orange";
+"ShirtNamePink" = "Test.allTheThings() T-Shirt - Pink";
+"ShirtNamePurple" = "Test.allTheThings() T-Shirt - Purple";
+"ShirtNameTurquoise" = "Test.allTheThings() T-Shirt - Turquoise";
+"ShirtNameYellow" = "Test.allTheThings() T-Shirt - Yellow";
+"ShirtDescription" = "Das klassische Sauce Labs T-Shirt ist perfekt, um es beim gemütlichen Herankuscheln an Ihre Tastatur zum Automatisieren einiger Tests zu tragen. Superweich und bequem aus ringgesponnener, gekämmter Baumwolle.";
+"ShirtHighlights" = "Das klassische Sauce Labs T-Shirt ist perfekt, um es beim gemütlichen Herankuscheln an Ihre Tastatur zum Automatisieren einiger Tests zu tragen. Superweich und bequem aus ringgesponnener, gekämmter Baumwolle.";

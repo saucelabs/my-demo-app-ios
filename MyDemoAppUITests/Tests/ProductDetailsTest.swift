@@ -2,7 +2,7 @@ import XCTest
 
 class ProductDetailsTest: MyDemoAppTestBase {
     let productSelector = "Product Name"
-    let backPack = "Sauce Labs Backpack"
+    let backPack = "Sauce Labs Backpack - Black"
 
     func testProductDetails() throws {
         PageObject().selectItemByName(itemName: productSelector).firstMatch.tap()
