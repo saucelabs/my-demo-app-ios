@@ -192,8 +192,8 @@ extension CatalogViewController: UICollectionViewDataSource, UICollectionViewDel
         }
         
         if Engine.sharedInstance.userName == "visual@example.com" {
-            if imageName == "TShirtBlack Image" {imageName = "ShirtRedOnesie Image"}
-            if imageName == "TShirtBlue Image" {imageName = "ShirtRedOnesie Image"}
+            if imageName == "BagBlack Image" {imageName = "ShirtRedOnesie Image"}
+            if imageName == "BagGreen Image" {imageName = "ShirtRedOnesie Image"}
         }
         
         cell.productIV.image = UIImage(named: imageName)
