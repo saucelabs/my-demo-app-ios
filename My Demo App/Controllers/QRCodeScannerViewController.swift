@@ -7,11 +7,14 @@
 
 import UIKit
 import AVFoundation
+import OSLog
 
 class QRCodeScannerViewController: UIViewController {
     
     let captureSession = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer!
+
+    private let sessionQueue = DispatchQueue(label: "session queue")
     
     @IBOutlet weak var barcodePreview: UIView!
     
@@ -28,7 +31,7 @@ class QRCodeScannerViewController: UIViewController {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
-                print("Your device not aplicable for video processing")
+                os_log("Your device not aplicable for video processing")
                 return
             }
             let videoInput: AVCaptureDeviceInput
@@ -37,21 +40,21 @@ class QRCodeScannerViewController: UIViewController {
                 videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
                 
             }catch{
-                print("Your device cant not give video input")
+                os_log("Your device cant not give video input")
                 return
             }
             if (self.captureSession.canAddInput(videoInput)) {
                 self.captureSession.addInput(videoInput)
             }else{
-                print("Your device can not add in capture session")
+                os_log("Your device can not add in capture session")
                 return
             }
             
             let metadataOutput = AVCaptureMetadataOutput()
             if (self.captureSession.canAddOutput(metadataOutput)){
                 self.captureSession.addOutput(metadataOutput)
-                
-                metadataOutput.metadataObjectTypes = [.ean8,.ean13,.pdf417]
+                metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                metadataOutput.metadataObjectTypes = [.qr]
             }else{
                 return
             }
@@ -60,7 +63,10 @@ class QRCodeScannerViewController: UIViewController {
             self.previewLayer.frame = self.barcodePreview.layer.bounds
             self.previewLayer.videoGravity = .resizeAspectFill
             self.barcodePreview.layer.addSublayer(self.previewLayer)
-            self.captureSession.startRunning()
+
+            self.sessionQueue.async {
+                self.captureSession.startRunning()
+            }
         }
       
         
@@ -89,7 +95,9 @@ class QRCodeScannerViewController: UIViewController {
     
 }
 extension QRCodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+
         if let first = metadataObjects.first{
             guard let readableObject = first as? AVMetadataMachineReadableCodeObject else {
                 return
@@ -97,8 +105,25 @@ extension QRCodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             guard let stringValue = readableObject.stringValue else {
                 return
             }
+            if stringValue.hasPrefix("http") || stringValue.hasPrefix("http") {
+
+                if let url = URL(string: "\(stringValue)"), !url.absoluteString.isEmpty {
+                    if UIApplication.shared.canOpenURL(url) {
+                        os_log("App can open URL")
+                        UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+                            os_log("Open url : \(success)")
+                       })
+
+                    } else {
+                        os_log("App cannot open URL.")
+                    }
+                }
+            } else {
+                os_log("String value received: \(stringValue) is not a URL")
+            }
+            os_log("Got value of: \(stringValue)")
         }else{
-            print("Not able to reade the code! Please try agian or be keep your divice on bar code")
+            os_log("Not able to read the code! Please try again or be keep your device on barcode")
         }
     }
 }
