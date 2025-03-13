@@ -46,6 +46,13 @@ class QRCodeScannerViewController: UIViewController {
         // Configure capture session once
         guard !isCaptureSessionConfigured else { return }
         isCaptureSessionConfigured = true
+        // Attach previewLayer
+        DispatchQueue.main.async {
+            self.previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
+            self.previewLayer.videoGravity = .resizeAspectFill
+            self.previewLayer.frame = self.barcodePreview.bounds
+            self.barcodePreview.layer.addSublayer(self.previewLayer)
+        }
         // Background queue to avoid UI blocking/unresponsiveness warnings
         DispatchQueue.global(qos: .userInitiated).async {
             guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
@@ -84,14 +91,6 @@ class QRCodeScannerViewController: UIViewController {
             
             // Start capture session in background
             self.captureSession.startRunning()
-            
-            // Setup previewLayer UI on the main thread
-            DispatchQueue.main.async {
-                self.previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-                self.previewLayer.videoGravity = .resizeAspectFill
-                self.previewLayer.frame = self.barcodePreview.bounds
-                self.barcodePreview.layer.addSublayer(self.previewLayer)
-            }
         }
     }
     
