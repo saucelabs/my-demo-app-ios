@@ -23,6 +23,10 @@ class QRCodeScannerViewController: UIViewController {
     var previewLayer: AVCaptureVideoPreviewLayer!
     
     private var isCaptureSessionConfigured = false
+    /// Last time a QR code was processed
+    private var lastScanTime = Date.distantPast
+    /// Minimum time between scans (in seconds)
+    private let scanCooldown: TimeInterval = 2.0
     
     // MARK: - Lifecycle
     
@@ -173,6 +177,14 @@ extension QRCodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
             print("No valid QR code detected.")
             return
         }
+        
+        // Delay Between Scan for a better experience
+        let now = Date()
+        // if less than `scanCooldown` since the last scan, ignore.
+        if now.timeIntervalSince(lastScanTime) < scanCooldown {
+            return
+        }
+        lastScanTime = now
         
         presentBrowserOptions(for: url)
     }
