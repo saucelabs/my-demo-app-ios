@@ -7,64 +7,139 @@
 
 import UIKit
 import AVFoundation
+import SafariServices
 
 class QRCodeScannerViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var barcodePreview: UIView!
+    @IBOutlet weak var cartCountContView: UIView!
+    @IBOutlet weak var cartCountLbl: UILabel!
+    
+    // MARK: - Properties
     
     let captureSession = AVCaptureSession()
     var previewLayer: AVCaptureVideoPreviewLayer!
     
-    @IBOutlet weak var barcodePreview: UIView!
+    private var isCaptureSessionConfigured = false
+    /// Last time a QR code was processed
+    private var lastScanTime = Date.distantPast
+    /// Minimum time between scans (in seconds)
+    private let scanCooldown: TimeInterval = 2.0
     
-    @IBOutlet weak var cartCountContView: UIView!
+    // MARK: - Lifecycle
     
-    @IBOutlet weak var cartCountLbl: UILabel!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        cartCountLbl.text = String(Engine.sharedInstance.cartCount)
-        if Engine.sharedInstance.cartCount < 1 {
-            cartCountContView.isHidden = true
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
-                print("Your device not aplicable for video processing")
-                return
-            }
-            let videoInput: AVCaptureDeviceInput
-            
-            do{
-                videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
-                
-            }catch{
-                print("Your device cant not give video input")
-                return
-            }
-            if (self.captureSession.canAddInput(videoInput)) {
-                self.captureSession.addInput(videoInput)
-            }else{
-                print("Your device can not add in capture session")
-                return
-            }
-            
-            let metadataOutput = AVCaptureMetadataOutput()
-            if (self.captureSession.canAddOutput(metadataOutput)){
-                self.captureSession.addOutput(metadataOutput)
-                
-                metadataOutput.metadataObjectTypes = [.ean8,.ean13,.pdf417]
-            }else{
-                return
-            }
-            
+        cartCountLbl.text = String(Engine.sharedInstance.cartCount)
+        cartCountContView.isHidden = (Engine.sharedInstance.cartCount < 1)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Check camera permission
+        checkCameraPermission()
+    }
+    
+    // MARK: - Session Configuration
+    
+    private func setupCaptureSessionIfNeeded() {
+        // Configure capture session once
+        guard !isCaptureSessionConfigured else { return }
+        isCaptureSessionConfigured = true
+        // Attach previewLayer
+        DispatchQueue.main.async {
             self.previewLayer = AVCaptureVideoPreviewLayer(session: self.captureSession)
-            self.previewLayer.frame = self.barcodePreview.layer.bounds
             self.previewLayer.videoGravity = .resizeAspectFill
+            self.previewLayer.frame = self.barcodePreview.bounds
             self.barcodePreview.layer.addSublayer(self.previewLayer)
+        }
+        // Background queue to avoid UI blocking/unresponsiveness warnings
+        DispatchQueue.global(qos: .userInitiated).async {
+            guard let videoCaptureDevice = AVCaptureDevice.default(for: .video) else {
+                print("Camera not available on this device.")
+                return
+            }
+            
+            do {
+                let videoInput = try AVCaptureDeviceInput(device: videoCaptureDevice)
+                if self.captureSession.canAddInput(videoInput) {
+                    self.captureSession.addInput(videoInput)
+                } else {
+                    print("Failed to add camera input to capture session.")
+                    return
+                }
+            } catch {
+                print("Error creating camera input: \(error.localizedDescription)")
+                return
+            }
+            
+            // Add metadata output to capture session
+            let metadataOutput = AVCaptureMetadataOutput()
+            if self.captureSession.canAddOutput(metadataOutput) {
+                self.captureSession.addOutput(metadataOutput)
+                // Update on main thread
+                DispatchQueue.main.async {
+                    // Set AVCaptureMetadataOutputObjects delegate
+                    metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
+                    // Filter AVMetadataObject
+                    metadataOutput.metadataObjectTypes = [.qr, .ean8, .ean13, .pdf417]
+                }
+            } else {
+                print("Failed to add metadata output to capture session.")
+                return
+            }
+            
+            // Start capture session in background
             self.captureSession.startRunning()
         }
-      
-        
     }
+    
+    // MARK: - Camera Permission
+    
+    private func checkCameraPermission() {
+        let status = AVCaptureDevice.authorizationStatus(for: .video)
+        switch status {
+        case .authorized:
+            // Already authorized
+            setupCaptureSessionIfNeeded()
+        case .notDetermined:
+            // Prompt User for permission
+            AVCaptureDevice.requestAccess(for: .video) { [weak self] granted in
+                guard let self = self else { return }
+                DispatchQueue.main.async {
+                    if granted {
+                        // User granted permission
+                        self.setupCaptureSessionIfNeeded()
+                    } else {
+                        // User denied permission
+                        self.showPermissionDeniedAlert()
+                    }
+                }
+            }
+            // Previously denied and/or restricted
+        case .denied, .restricted:
+            showPermissionDeniedAlert()
+        @unknown default:
+            showPermissionDeniedAlert()
+        }
+    }
+    
+    private func showPermissionDeniedAlert() {
+        let alert = UIAlertController(
+            title: "Camera Access Denied",
+            message: "Enable camera access in Settings to scan QR codes.",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        present(alert, animated: true)
+    }
+    
+    // MARK: - Button Actions
+    
     @IBAction func backButton(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -88,17 +163,70 @@ class QRCodeScannerViewController: UIViewController {
     }
     
 }
+
+// MARK: - AVCaptureMetadataOutputObjectsDelegate
+
 extension QRCodeScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        if let first = metadataObjects.first{
-            guard let readableObject = first as? AVMetadataMachineReadableCodeObject else {
-                return
-            }
-            guard let stringValue = readableObject.stringValue else {
-                return
-            }
-        }else{
-            print("Not able to reade the code! Please try agian or be keep your divice on bar code")
+        guard
+            let metadataObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
+            let metadataStringValue = metadataObject.stringValue,
+            let url = URL(string: metadataStringValue)
+        else {
+            print("No valid QR code detected.")
+            return
         }
+        
+        // Delay Between Scan for a better experience
+        let now = Date()
+        // if less than `scanCooldown` since the last scan, ignore.
+        if now.timeIntervalSince(lastScanTime) < scanCooldown {
+            return
+        }
+        lastScanTime = now
+        
+        presentBrowserOptions(for: url)
+    }
+    
+    /// Presents options to let user pick between in-app Safari (SFSafariViewController) or external browser (Safari).
+    private func presentBrowserOptions(for url: URL) {
+        let alert = UIAlertController(
+            title: "Open Link",
+            message: url.absoluteString,
+            preferredStyle: .actionSheet
+        )
+        
+        // Option 1: In-App SFSafariViewController
+        let openInAppAction = UIAlertAction(title: "Open In-App", style: .default) { [weak self] _ in
+            guard let self = self else { return }
+            let safariVC = SFSafariViewController(url: url)
+            safariVC.dismissButtonStyle = .close
+            self.present(safariVC, animated: true)
+        }
+        
+        // Option 2: Default external browser (Safari)
+        let openInBrowserAction = UIAlertAction(title: "Open in Browser", style: .default) { _ in
+            UIApplication.shared.open(url, options: [:]) { success in
+                if !success {
+                    print("Failed to open URL: \(url.absoluteString)")
+                }
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        alert.addAction(openInAppAction)
+        alert.addAction(openInBrowserAction)
+        alert.addAction(cancelAction)
+        // Anchor View
+        if let popover = alert.popoverPresentationController {
+            popover.sourceView = self.view
+            popover.sourceRect = CGRect(x: self.view.bounds.midX,
+                                        y: self.view.bounds.midY,
+                                        width: 0, height: 0)
+            popover.permittedArrowDirections = []
+        }
+        
+        present(alert, animated: true)
     }
 }

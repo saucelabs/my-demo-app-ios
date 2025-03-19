@@ -16,10 +16,15 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>https</string>
+		<string>http</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>Camera is used to scan QR codes.</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string></string>
 	<key>NSLocationAlwaysUsageDescription</key>
