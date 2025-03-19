@@ -180,7 +180,17 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TestFairy/TestFairy.framework"
 fi
+if [[ "$CONFIGURATION" == "Debug Backtrace" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TestFairy/TestFairy.framework"
+fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TestFairy/TestFairy.framework"
+fi
+if [[ "$CONFIGURATION" == "Release Backtrace" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework"
   install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TestFairy/TestFairy.framework"

@@ -1,2 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources.sh
-${PODS_ROOT}/TestFairy/upload-dsym.sh
+${PODS_CONFIGURATION_BUILD_DIR}/Backtrace/BacktraceResources.bundle

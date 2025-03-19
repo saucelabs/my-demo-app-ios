@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20583CE42D8B480E00FFE841 /* BTTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20583CE32D8B47FC00FFE841 /* BTTools.swift */; };
+		20583CE62D8B4BBF00FFE841 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20583CE52D8B4BA100FFE841 /* Credentials.swift */; };
+		20583CF22D8B752A00FFE841 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20583CF12D8B752700FFE841 /* Secrets.plist */; };
 		2F0DE6BA26FB1D71008C6D63 /* Proxima Nova Font.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6B926FB1D71008C6D63 /* Proxima Nova Font.otf */; };
 		2F0DE6BC26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6BB26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf */; };
 		2F0DE6C026FB340C008C6D63 /* proximanova-semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6BE26FB340B008C6D63 /* proximanova-semibold.otf */; };
@@ -76,6 +79,9 @@
 
 /* Begin PBXFileReference section */
 		0DB1B99658623646544D9A3B /* Pods-My Demo App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.release.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.release.xcconfig"; sourceTree = "<group>"; };
+		20583CE32D8B47FC00FFE841 /* BTTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTTools.swift; sourceTree = "<group>"; };
+		20583CE52D8B4BA100FFE841 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		20583CF12D8B752700FFE841 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Secrets.plist; sourceTree = "<group>"; };
 		2F0DE6B926FB1D71008C6D63 /* Proxima Nova Font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Font.otf"; sourceTree = "<group>"; };
 		2F0DE6BB26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FontsFree-Net-Proxima-Nova-Bold.otf"; sourceTree = "<group>"; };
 		2F0DE6BE26FB340B008C6D63 /* proximanova-semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proximanova-semibold.otf"; sourceTree = "<group>"; };
@@ -118,7 +124,9 @@
 		2FBA776326F85C0F0004BCC3 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodViewController.swift; sourceTree = "<group>"; };
 		2FF8B10726FB1BD200921534 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3FFEEA8FE69DE99EB1F96054 /* Pods-My Demo App.release backtrace.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.release backtrace.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.release backtrace.xcconfig"; sourceTree = "<group>"; };
 		4BA2876F17353ADA6DBFD217 /* Pods_My_Demo_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_My_Demo_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F0589D4863DB2AB164567AC /* Pods-My Demo App.debug backtrace.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Demo App.debug backtrace.xcconfig"; path = "Target Support Files/Pods-My Demo App/Pods-My Demo App.debug backtrace.xcconfig"; sourceTree = "<group>"; };
 		880268A82A5BFE5B003E2191 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Authentication.strings; sourceTree = "<group>"; };
 		880268A92A5BFE5B003E2191 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		880268AD2A5BFE7E003E2191 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -167,8 +175,20 @@
 			children = (
 				E0BA5FF8BCA19111EEBEF013 /* Pods-My Demo App.debug.xcconfig */,
 				0DB1B99658623646544D9A3B /* Pods-My Demo App.release.xcconfig */,
+				5F0589D4863DB2AB164567AC /* Pods-My Demo App.debug backtrace.xcconfig */,
+				3FFEEA8FE69DE99EB1F96054 /* Pods-My Demo App.release backtrace.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		20583CE72D8B50D200FFE841 /* Backtrace */ = {
+			isa = PBXGroup;
+			children = (
+				20583CF12D8B752700FFE841 /* Secrets.plist */,
+				20583CE52D8B4BA100FFE841 /* Credentials.swift */,
+				20583CE32D8B47FC00FFE841 /* BTTools.swift */,
+			);
+			path = Backtrace;
 			sourceTree = "<group>";
 		};
 		2F45FB3826F1CC0100A13B16 = {
@@ -346,6 +366,7 @@
 		C4513FF32759B19D004BABDA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				20583CE72D8B50D200FFE841 /* Backtrace */,
 				C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */,
 			);
 			path = Utilities;
@@ -363,6 +384,7 @@
 				2F45FB3E26F1CC0100A13B16 /* Frameworks */,
 				2F45FB3F26F1CC0100A13B16 /* Resources */,
 				D19A17DE31126BF6C3831B06 /* [CP] Embed Pods Frameworks */,
+				7216F75F9D4594C202052937 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -440,6 +462,7 @@
 				2F0DE6BA26FB1D71008C6D63 /* Proxima Nova Font.otf in Resources */,
 				880268B12A5BFF02003E2191 /* Localizable.strings in Resources */,
 				2F45FB5126F1CC0400A13B16 /* LaunchScreen.storyboard in Resources */,
+				20583CF22D8B752A00FFE841 /* Secrets.plist in Resources */,
 				2F45FB4E26F1CC0400A13B16 /* Assets.xcassets in Resources */,
 				2F0DE6BC26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf in Resources */,
 				880268AC2A5BFE7E003E2191 /* Localizable.strings in Resources */,
@@ -460,6 +483,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7216F75F9D4594C202052937 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		8857AC672A15FED400C89032 /* Output classes */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -572,7 +612,9 @@
 				2FBA776426F85C0F0004BCC3 /* CatalogViewController.swift in Sources */,
 				2F81479C26F48283007E98EC /* WebViewViewController.swift in Sources */,
 				2F45FB4726F1CC0100A13B16 /* SceneDelegate.swift in Sources */,
+				20583CE42D8B480E00FFE841 /* BTTools.swift in Sources */,
 				2F5A0C9A26F7C85600666666 /* ProductPageDetailViewController.swift in Sources */,
+				20583CE62D8B4BBF00FFE841 /* Credentials.swift in Sources */,
 				C451404A2787BAA0004BABDA /* PushNotificationsViewController.swift in Sources */,
 				2F219FBD26F77A9000DBFE49 /* MyCartViewController.swift in Sources */,
 				C4513FF72759B554004BABDA /* ReportABugDebugViewController.swift in Sources */,
@@ -769,11 +811,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "My Demo App/My Demo App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JWKXD469L2;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JWKXD469L2;
 				INFOPLIST_FILE = "My Demo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -783,8 +823,7 @@
 				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemo.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Sauce Labs iOS Demo App AdHoc Profile";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Sauce Labs iOS Demo App AdHoc Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -798,11 +837,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "My Demo App/My Demo App.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JWKXD469L2;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JWKXD469L2;
 				INFOPLIST_FILE = "My Demo App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -812,8 +849,7 @@
 				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemo.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Sauce Labs iOS Demo App AdHoc Profile";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Sauce Labs iOS Demo App AdHoc Profile";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

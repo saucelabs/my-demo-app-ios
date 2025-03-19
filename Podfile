@@ -10,5 +10,5 @@ target 'My Demo App' do
   pod 'TestFairy', '1.30.1'
   pod 'FormTextField', '3.1.0'
   pod 'EasyTipView', '2.1.0'
-
+  pod 'Backtrace'
 end

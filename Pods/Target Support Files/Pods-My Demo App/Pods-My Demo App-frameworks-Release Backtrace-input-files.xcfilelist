@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-My Demo App/Pods-My Demo App-frameworks.sh
+${BUILT_PRODUCTS_DIR}/EasyTipView/EasyTipView.framework
+${BUILT_PRODUCTS_DIR}/FormTextField/FormTextField.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/TestFairy/TestFairy.framework/TestFairy

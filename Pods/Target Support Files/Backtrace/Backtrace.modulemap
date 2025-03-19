@@ -1,0 +1,6 @@
+framework module Backtrace {
+  umbrella header "Backtrace-umbrella.h"
+
+  export *
+  module * { export * }
+}

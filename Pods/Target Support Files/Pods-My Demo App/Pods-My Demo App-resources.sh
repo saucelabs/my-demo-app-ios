@@ -97,10 +97,16 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/TestFairy/upload-dsym.sh"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Backtrace/BacktraceResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "Debug Backtrace" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Backtrace/BacktraceResources.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/TestFairy/upload-dsym.sh"
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Backtrace/BacktraceResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "Release Backtrace" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/Backtrace/BacktraceResources.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
