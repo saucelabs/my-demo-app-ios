@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Backtrace
 
 class MenuViewController: UIViewController {
     
@@ -13,6 +14,15 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var cartCountContView: UIView!
     
     @IBOutlet weak var cartCountLbl: UILabel!
+    
+    enum CustomError: Error {
+        case runtimeError
+    }
+
+    func throwingFunc() throws {
+        throw CustomError.runtimeError
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,14 +40,38 @@ class MenuViewController: UIViewController {
     
     @IBAction func crashButton(_ sender: Any) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            fatalError()
+            let invalidPointer = UnsafeMutableRawPointer(bitPattern: 0x1)!
+            invalidPointer.storeBytes(of: 0xDEADBEEF as UInt32, as: UInt32.self)
         }
     }
 
     @IBAction func webViewButton(_ sender: Any) {
-        let storyboard = UIStoryboard.init(name: "Menu", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "WebViewViewController") as! WebViewViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        do {
+            try throwingFunc()
+        } catch let error as CustomError {
+            switch error {
+            case .runtimeError:
+                let exception = NSException(
+                    name: NSExceptionName(rawValue: "RuntimeError Handled Exception"),
+                    reason: "Caught CustomError.runtimeError",
+                    userInfo: ["error": "\(error)"]
+                )
+                BacktraceClient.shared?.send(exception: exception, attachmentPaths: [], completion: { (result: BacktraceResult) in
+                    print("Backtrace: \(result)")
+                })
+            }
+        } catch {
+            print("Unexpected error: \(error)")
+        }
+
+        let exception = NSException(
+            name: NSExceptionName.characterConversionException,
+            reason: "custom reason",
+            userInfo: ["testUserInfo": "tests"]
+        )
+        BacktraceClient.shared?.send(exception: exception, attachmentPaths: [], completion: { (result: BacktraceResult) in
+            print("Test Exception: \(result)")
+        })
     }
     
     @IBAction func qrCodeScannerButton(_ sender: Any) {
@@ -125,7 +159,7 @@ class MenuViewController: UIViewController {
     
     @IBAction func reportABugDebug() {
         let storyboard = UIStoryboard.init(name: "Menu", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ReportABugDebugViewController") as! ReportABugDebugViewController
+        let vc = storyboard.instantiateViewController(withIdentifier: "ErrorReportingViewController") as! ErrorReportingViewController
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

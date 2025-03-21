@@ -16,9 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        TestFairyWrapper.begin()
+        //TestFairyWrapper.begin()
         FaceIdlocalAuthentication()
         Utils.setProductList()
+        _ = BacktraceClient.shared?.addBreadcrumb("Drip Product List Set",
+                                                  attributes: [:],
+                                                  type: .log,
+                                                  level: .info)
         // Backtrace
         let backtraceCredentials = BacktraceCredentials(endpoint: URL(string: Credentials.backtraceUrl as String)!, token: Credentials.backtraceToken as String)
         // Database
@@ -49,6 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("AppDelegate:Result:\(result)")
             }
         }
+        
+        // Send NSException
+        let exception = NSException(name: NSExceptionName.characterConversionException, reason: "custom reason", userInfo: ["testUserInfo": "tests"])
+        BacktraceClient.shared?.send(exception: exception, attachmentPaths: [], completion: { (result: BacktraceResult) in
+            print(result)
+        })
+        
         // Lof level
         BacktraceClient.shared?.loggingDestinations = [BacktraceBaseDestination(level: .debug)]
         // Enable error free metrics https://docs.saucelabs.com/error-reporting/web-console/overview/#stability-metrics-widgets
@@ -56,8 +67,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Enable breadcrumbs https://docs.saucelabs.com/error-reporting/web-console/debug/#breadcrumbs-section
         BacktraceClient.shared?.enableBreadcrumbs()
         // Add breadcrumb
-        _ = BacktraceClient.shared?.addBreadcrumb("My Breadcrumb",
-                                                  attributes: [:],
+        _ = BacktraceClient.shared?.addBreadcrumb("Application finished launching",
+                                                  attributes: ["Backtrace SDK Enabled": "true",
+                                                               "TestFairyWrapper Enabled": "true"],
                                                   type: .navigation,
                                                   level: .info)
         
