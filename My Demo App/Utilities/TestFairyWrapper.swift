@@ -9,6 +9,9 @@ class TestFairyWrapper {
     static func begin() {
         instance.begin()
     }
+    static func enableCrashHandler() {
+        instance.enableCrashHandler()
+    }
     static func showFeedbackForm() {
         instance.showFeedbackForm()
     }
@@ -41,6 +44,7 @@ class TestFairyWrapper {
 
 protocol TestFairyProtocol {
     func begin()
+    func enableCrashHandler()
     func showFeedbackForm()
     func reportBug(_ takeScreenshot: Bool)
     func remoteSupport()
@@ -51,6 +55,7 @@ protocol TestFairyProtocol {
 
 class NoOpTestFairyWrapper: TestFairyProtocol {
     func begin() {}
+    func enableCrashHandler() {}
     func showFeedbackForm() {}
     func reportBug(_ takeScreenshot: Bool) {}
     func remoteSupport() {}
@@ -64,6 +69,10 @@ class DefaultTestFairyWrapper: TestFairyProtocol {
     
     public func begin() {
         TestFairy.begin(TESTFAIRY_APP_TOKEN)
+    }
+    
+    public func enableCrashHandler() {
+        TestFairy.enableCrashHandler()
     }
     
     public func showFeedbackForm() {
