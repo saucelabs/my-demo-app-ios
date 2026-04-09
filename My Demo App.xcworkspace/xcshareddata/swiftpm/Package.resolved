@@ -1,0 +1,33 @@
+{
+  "originHash" : "c5131fe230b879a6b5749afb77fad2561cdfa6db15977a1a0d465f4aac0c50d6",
+  "pins" : [
+    {
+      "identity" : "easytipview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/teodorpatras/EasyTipView",
+      "state" : {
+        "revision" : "1cba0e75f745da03773cd7092480c5fa8cde4a72",
+        "version" : "2.1.0"
+      }
+    },
+    {
+      "identity" : "formtextfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/3lvis/FormTextField",
+      "state" : {
+        "revision" : "77422c5144d8efec3770d77955b679662e4340db",
+        "version" : "4.0.5"
+      }
+    },
+    {
+      "identity" : "testfairy-ios-sdk-swift-package",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/testfairy/testfairy-ios-sdk-swift-package",
+      "state" : {
+        "revision" : "9006b784bebfb8572593a43d8e1d6ec464edd554",
+        "version" : "1.33.1"
+      }
+    }
+  ],
+  "version" : 3
+}
