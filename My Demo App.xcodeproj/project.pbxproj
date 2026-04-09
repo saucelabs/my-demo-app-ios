@@ -163,20 +163,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00ADF45586AA15CD74704D86 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		2F45FB3826F1CC0100A13B16 = {
 			isa = PBXGroup;
 			children = (
 				2F45FB4326F1CC0100A13B16 /* My Demo App */,
 				A2C826A92706266600616582 /* MyDemoAppUITests */,
 				2F45FB4226F1CC0100A13B16 /* Products */,
-				00ADF45586AA15CD74704D86 /* Pods */,
 				98B495C95C2D44BB34FF6F13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
