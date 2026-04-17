@@ -53,7 +53,7 @@ jobs:
           workspace-path: My Demo App.xcworkspace
           project-path: My Demo App.xcodeproj
           scheme: My Demo App
-          code-signing-identity: iPhone Distribution
+          code-signing-identity: Apple Distribution
           export-method: ad-hoc
           output-path: SauceLabs-Demo-App-With-TestFairy.ipa
           p12-base64: ${{ secrets.P12_BASE64 }}
@@ -108,7 +108,7 @@ jobs:
           workspace-path: My Demo App.xcworkspace
           project-path: My Demo App.xcodeproj
           scheme: My Demo App
-          code-signing-identity: iPhone Distribution
+          code-signing-identity: Apple Distribution
           export-method: ad-hoc
           output-path: SauceLabs-Demo-App.ipa
           p12-base64: ${{ secrets.P12_BASE64 }}
