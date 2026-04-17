@@ -3,4 +3,13 @@ build/**
 *.txt
 build.sh
 /.idea/*
-/My Demo App.xcworkspace/xcuserdata/*
+
+# Xcode user-specific data
+xcuserdata/
+*.xcuserstate
+*.xcbkptlist
+
+# Project/workspace-local user data
+*.xcodeproj/xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcworkspace/xcuserdata/
