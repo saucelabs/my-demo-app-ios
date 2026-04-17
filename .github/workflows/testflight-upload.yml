@@ -1,0 +1,265 @@
+name: TestFlight Upload (SDK Validation)
+
+# Triggers on Build/Tests completing for an SDK-bump PR. Signs the app using
+# the existing P12 (reused from release.yml) and an App Store Connect API key
+# to auto-fetch an App Store provisioning profile, then uploads to TestFlight.
+#
+# workflow_dispatch is kept for dev-time testing before this file lands on main.
+
+on:
+  workflow_run:
+    workflows: ["Build My Demo App", "Run Tests for My Demo App"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      head_sha:
+        description: "Commit SHA to build (defaults to dispatched ref)"
+        required: false
+        default: ""
+      head_branch:
+        description: "Branch to check out (defaults to dispatched ref)"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+  statuses: write
+  actions: read   # gate job's `gh run list` needs this
+
+jobs:
+  # workflow_run fires once per referenced workflow. Query the sibling's run
+  # for the same head_sha; only proceed when both are success. workflow_dispatch
+  # bypasses the gate entirely.
+  gate:
+    # head_repository check: workflow_run on a pull_request in our own workflows
+    # CAN fire from forked-PR builds where the code is attacker-controlled. Only
+    # proceed if the triggering workflow's head ref is in *this* repo, not a fork.
+    if: >
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      startsWith(github.event.workflow_run.head_branch, 'chore/testfairy-sdk-bump-')
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - name: Check both Build and Tests are green for this SHA
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          get_conclusion() {
+            local name="$1"
+            gh run list \
+              --repo "$GITHUB_REPOSITORY" \
+              --workflow "$name" \
+              --limit 100 \
+              --json headSha,conclusion \
+              --jq "[.[] | select(.headSha == \"$HEAD_SHA\")] | .[0].conclusion // \"missing\""
+          }
+          BUILD_STATUS=$(get_conclusion "Build My Demo App")
+          TESTS_STATUS=$(get_conclusion "Run Tests for My Demo App")
+          echo "Build=$BUILD_STATUS  Tests=$TESTS_STATUS"
+          if [ "$BUILD_STATUS" = "success" ] && [ "$TESTS_STATUS" = "success" ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Sibling workflows not both green (Build=$BUILD_STATUS, Tests=$TESTS_STATUS). Skipping upload."
+          fi
+
+  upload:
+    needs: [gate]
+    # gate is skipped for workflow_dispatch; use always() so we still evaluate.
+    if: >
+      always() &&
+      (
+        github.event_name == 'workflow_dispatch' ||
+        (needs.gate.result == 'success' && needs.gate.outputs.proceed == 'true')
+      )
+    # macos-15 ships Xcode 16.4 default and 26.x. TestFlight rejects builds
+    # from Xcode <16 since 2025-04-24, and will require Xcode 26 from 2026-04-28.
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      HEAD_SHA: ${{ github.event.workflow_run.head_sha || inputs.head_sha || github.sha }}
+      HEAD_BRANCH: ${{ github.event.workflow_run.head_branch || inputs.head_branch || github.ref_name }}
+      BUNDLE_ID: com.saucelabs.mydemo.app.ios
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ env.HEAD_SHA }}
+
+      - name: Mark status pending
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD_SHA" \
+            -f state=pending \
+            -f context=testflight/upload \
+            -f description="Archiving and uploading to TestFlight"
+
+      - name: Select Xcode 16.4
+        # Apple requires Xcode 16+ for App Store Connect uploads as of 2025-04-24.
+        # Bump to 26.x before the 2026-04-28 deadline after verifying the app compiles.
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.4"
+
+      - name: Install xcpretty
+        run: gem install xcpretty --no-document
+
+      - name: Import signing identity into ephemeral keychain
+        env:
+          P12_BASE64: ${{ secrets.P12_BASE64 }}
+          P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: |
+          set -euo pipefail
+          KC="$RUNNER_TEMP/signing.keychain-db"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" "$KC"
+          security set-keychain-settings -lut 21600 "$KC"
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" "$KC"
+          # prepend our keychain to the user search list so codesign finds the identity
+          existing=$(security list-keychains -d user | tr -d '"' | tr '\n' ' ')
+          security list-keychains -d user -s "$KC" $existing
+          echo "$P12_BASE64" | base64 --decode > "$RUNNER_TEMP/dist.p12"
+          if [ ! -s "$RUNNER_TEMP/dist.p12" ]; then
+            echo "::error::Decoded P12 is empty. P12_BASE64 secret is missing or not valid base64."
+            exit 1
+          fi
+          security import "$RUNNER_TEMP/dist.p12" \
+            -k "$KC" \
+            -P "$P12_PASSWORD" \
+            -T /usr/bin/codesign \
+            -T /usr/bin/security \
+            -T /usr/bin/productbuild
+          security set-key-partition-list \
+            -S apple-tool:,apple: \
+            -s \
+            -k "$KEYCHAIN_PASSWORD" \
+            "$KC"
+          rm -f "$RUNNER_TEMP/dist.p12"
+
+      - name: Install App Store Connect API key
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_KEY_P8_BASE64: ${{ secrets.ASC_KEY_P8_BASE64 }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.appstoreconnect/private_keys"
+          KEY_PATH="$HOME/.appstoreconnect/private_keys/AuthKey_${ASC_KEY_ID}.p8"
+          echo "$ASC_KEY_P8_BASE64" | base64 --decode > "$KEY_PATH"
+          if [ ! -s "$KEY_PATH" ]; then
+            echo "::error::Decoded ASC p8 key is empty. ASC_KEY_P8_BASE64 secret is missing or not valid base64."
+            exit 1
+          fi
+          chmod 600 "$KEY_PATH"
+          echo "ASC_KEY_PATH=$KEY_PATH" >> "$GITHUB_ENV"
+
+      - name: Bump CFBundleVersion (in-memory only)
+        run: |
+          set -euo pipefail
+          BUILD=$(date -u +%s)
+          echo "BUILD_NUMBER=$BUILD" >> "$GITHUB_ENV"
+          cd "My Demo App"
+          xcrun agvtool new-version -all "$BUILD"
+
+      - name: Archive (automatic signing via ASC API key)
+        env:
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          set -euo pipefail
+          xcodebuild archive \
+            -workspace "My Demo App.xcworkspace" \
+            -scheme "My Demo App" \
+            -configuration Release \
+            -destination "generic/platform=iOS" \
+            -archivePath "$RUNNER_TEMP/MyDemoApp.xcarchive" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            CODE_SIGN_STYLE=Automatic \
+            DEVELOPMENT_TEAM="$TEAM_ID" \
+            | xcpretty
+
+      - name: Write ExportOptions.plist
+        env:
+          TEAM_ID: ${{ secrets.TEAM_ID }}
+        run: |
+          set -euo pipefail
+          cat > "$RUNNER_TEMP/ExportOptions.plist" <<PLIST
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key><string>app-store</string>
+            <key>teamID</key><string>${TEAM_ID}</string>
+            <key>signingStyle</key><string>automatic</string>
+            <key>uploadSymbols</key><true/>
+            <key>uploadBitcode</key><false/>
+            <key>stripSwiftSymbols</key><true/>
+          </dict>
+          </plist>
+          PLIST
+
+      - name: Export IPA
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          set -euo pipefail
+          xcodebuild -exportArchive \
+            -archivePath "$RUNNER_TEMP/MyDemoApp.xcarchive" \
+            -exportPath "$RUNNER_TEMP/export" \
+            -exportOptionsPlist "$RUNNER_TEMP/ExportOptions.plist" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+          ls -l "$RUNNER_TEMP/export"
+
+      - name: Upload to TestFlight
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          IPAS=("$RUNNER_TEMP/export"/*.ipa)
+          if [ ${#IPAS[@]} -eq 0 ]; then
+            echo "::error::No .ipa produced by xcodebuild -exportArchive."
+            exit 1
+          fi
+          if [ ${#IPAS[@]} -gt 1 ]; then
+            echo "::warning::Multiple IPAs found; uploading the first: ${IPAS[0]}"
+          fi
+          xcrun altool --upload-app \
+            -f "${IPAS[0]}" \
+            --type ios \
+            --apiKey "$ASC_KEY_ID" \
+            --apiIssuer "$ASC_ISSUER_ID"
+
+      - name: Mark status success
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD_SHA" \
+            -f state=success \
+            -f context=testflight/upload \
+            -f description="Uploaded build ${BUILD_NUMBER} to TestFlight"
+
+      - name: Mark status failure
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$HEAD_SHA" \
+            -f state=failure \
+            -f context=testflight/upload \
+            -f description="TestFlight upload failed; see workflow logs"

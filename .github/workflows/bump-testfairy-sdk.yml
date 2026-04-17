@@ -1,0 +1,150 @@
+name: Bump TestFairy SDK
+
+on:
+  repository_dispatch:
+    types: [testfairy-sdk-bump]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "TestFairy SDK version to bump to (e.g. 1.34.0)"
+        required: true
+      base_branch:
+        description: "Base branch to branch from"
+        required: false
+        default: main
+      release_url:
+        description: "URL to the SDK release notes"
+        required: false
+        default: ""
+      notes:
+        description: "SDK release notes (markdown)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  bump:
+    # Match the TestFlight workflow (macos-15 + Xcode 16.4) so Package.resolved
+    # and project.pbxproj are serialized with the same toolchain in both places.
+    runs-on: macos-15
+    timeout-minutes: 20
+    env:
+      VERSION_RAW: ${{ github.event.client_payload.version || inputs.version }}
+      RELEASE_URL: ${{ github.event.client_payload.release_url || inputs.release_url }}
+      NOTES: ${{ github.event.client_payload.notes || inputs.notes }}
+      XCFRAMEWORK_SHA: ${{ github.event.client_payload.xcframework_sha || '' }}
+    steps:
+      - name: Require bump token (fail fast)
+        env:
+          BUMP_TOKEN: ${{ secrets.EXAMPLE_APP_BUMP_TOKEN }}
+        run: |
+          if [ -z "${BUMP_TOKEN:-}" ]; then
+            echo "::error::EXAMPLE_APP_BUMP_TOKEN secret is not set. Without it, PRs would be opened with GITHUB_TOKEN, which does not trigger downstream workflows — the TestFlight validation chain would break silently. Aborting."
+            exit 1
+          fi
+
+      - name: Normalize version (strip leading v if present)
+        run: |
+          VERSION="${VERSION_RAW#v}"
+          if [ -z "$VERSION" ]; then
+            echo "::error::Empty version after normalization (raw='$VERSION_RAW')."
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Checkout base branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.base_branch || inputs.base_branch || 'main' }}
+          token: ${{ secrets.EXAMPLE_APP_BUMP_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configure git
+        run: |
+          git config user.name "testfairy-release-bot"
+          git config user.email "testfairy-release-bot@users.noreply.github.com"
+
+      - name: Select Xcode 16.4
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: "16.4"
+
+      - name: Install xcodeproj gem
+        run: gem install xcodeproj --no-document
+
+      - name: Create branch
+        id: branch
+        run: |
+          BRANCH="chore/testfairy-sdk-bump-$VERSION"
+          if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+            echo "::error::Remote branch '$BRANCH' already exists. Close/merge the existing PR or delete the branch, then re-dispatch."
+            exit 1
+          fi
+          git checkout -b "$BRANCH"
+          echo "name=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Bump minimumVersion in project.pbxproj
+        run: ruby .github/scripts/bump_spm_pin.rb testfairy-ios-sdk-swift-package "$VERSION"
+
+      - name: Resolve SPM packages
+        run: |
+          xcodebuild -resolvePackageDependencies \
+            -workspace "My Demo App.xcworkspace" \
+            -scheme "My Demo App"
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet -- \
+               "My Demo App.xcodeproj/project.pbxproj" \
+               "My Demo App.xcworkspace/xcshareddata/swiftpm/Package.resolved"; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::No changes produced; SDK appears to already be at $VERSION on base branch."
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git add "My Demo App.xcodeproj/project.pbxproj" \
+                  "My Demo App.xcworkspace/xcshareddata/swiftpm/Package.resolved"
+          git commit -m "chore(deps): bump TestFairy SDK to $VERSION"
+          git push -u origin "${{ steps.branch.outputs.name }}"
+
+      - name: Ensure PR labels exist
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.EXAMPLE_APP_BUMP_TOKEN }}
+        run: |
+          gh label create "sdk-bump"  --color 0366d6 --description "Automated SDK dependency bump" --force
+          gh label create "automated" --color ededed --description "Opened by automation"          --force
+
+      - name: Open PR
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.EXAMPLE_APP_BUMP_TOKEN }}
+        run: |
+          {
+            printf 'Automated bump from TestFairy iOS SDK release **%s**.\n\n' "$VERSION"
+            if [ -n "$RELEASE_URL" ]; then
+              printf 'Release notes: %s\n\n' "$RELEASE_URL"
+            fi
+            if [ -n "$XCFRAMEWORK_SHA" ]; then
+              printf 'xcframework checksum: `%s`\n\n' "$XCFRAMEWORK_SHA"
+            fi
+            if [ -n "$NOTES" ]; then
+              printf -- '---\n\n%s\n' "$NOTES"
+            fi
+          } > $RUNNER_TEMP/pr-body.md
+
+          gh pr create \
+            --base "${{ github.event.client_payload.base_branch || inputs.base_branch || 'main' }}" \
+            --head "${{ steps.branch.outputs.name }}" \
+            --title "chore(deps): bump TestFairy SDK to $VERSION" \
+            --body-file $RUNNER_TEMP/pr-body.md \
+            --label sdk-bump \
+            --label automated
