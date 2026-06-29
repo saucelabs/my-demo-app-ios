@@ -10,6 +10,7 @@
 		2038AC5D2F8801BF00EAA756 /* TestFairy in Frameworks */ = {isa = PBXBuildFile; productRef = 2038AC5C2F8801BF00EAA756 /* TestFairy */; };
 		2038AC612F88041600EAA756 /* FormTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 2038AC602F88041600EAA756 /* FormTextField */; };
 		2038AC642F88045B00EAA756 /* EasyTipView in Frameworks */ = {isa = PBXBuildFile; productRef = 2038AC632F88045B00EAA756 /* EasyTipView */; };
+		20B74CF22FF32A5000659B76 /* Backtrace in Frameworks */ = {isa = PBXBuildFile; productRef = 20B74CF12FF32A5000659B76 /* Backtrace */; };
 		2F0DE6BA26FB1D71008C6D63 /* Proxima Nova Font.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6B926FB1D71008C6D63 /* Proxima Nova Font.otf */; };
 		2F0DE6BC26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6BB26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf */; };
 		2F0DE6C026FB340C008C6D63 /* proximanova-semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6BE26FB340B008C6D63 /* proximanova-semibold.otf */; };
@@ -150,6 +151,7 @@
 				2038AC642F88045B00EAA756 /* EasyTipView in Frameworks */,
 				2038AC612F88041600EAA756 /* FormTextField in Frameworks */,
 				C4513FFB275D1139004BABDA /* PencilKit.framework in Frameworks */,
+				20B74CF22FF32A5000659B76 /* Backtrace in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +415,7 @@
 				2038AC5B2F8801BF00EAA756 /* XCRemoteSwiftPackageReference "testfairy-ios-sdk-swift-package" */,
 				2038AC5F2F88041500EAA756 /* XCRemoteSwiftPackageReference "FormTextField" */,
 				2038AC622F88045B00EAA756 /* XCRemoteSwiftPackageReference "EasyTipView" */,
+				20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */,
 			);
 			productRefGroup = 2F45FB4226F1CC0100A13B16 /* Products */;
 			projectDirPath = "";
@@ -875,6 +878,14 @@
 				minimumVersion = 2.1.0;
 			};
 		};
+		20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/backtrace-labs/backtrace-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -892,6 +903,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2038AC622F88045B00EAA756 /* XCRemoteSwiftPackageReference "EasyTipView" */;
 			productName = EasyTipView;
+		};
+		20B74CF12FF32A5000659B76 /* Backtrace */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */;
+			productName = Backtrace;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

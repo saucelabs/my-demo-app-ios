@@ -1,6 +1,15 @@
 {
-  "originHash" : "4dd5b54c420db070f9b68da0c0355349ef9d2c7b18351b86d0ef98895e7516db",
+  "originHash" : "6e0776e9003aa906842d6533d1ccac946e3ec1eec1e1221a33a1adef7ec37e30",
   "pins" : [
+    {
+      "identity" : "backtrace-cocoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/backtrace-labs/backtrace-cocoa.git",
+      "state" : {
+        "revision" : "64a2c7a9d7f14fc531ca6676626156b9825590d8",
+        "version" : "2.1.0"
+      }
+    },
     {
       "identity" : "easytipview",
       "kind" : "remoteSourceControl",
@@ -17,6 +26,15 @@
       "state" : {
         "revision" : "77422c5144d8efec3770d77955b679662e4340db",
         "version" : "4.0.5"
+      }
+    },
+    {
+      "identity" : "plcrashreporter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/microsoft/plcrashreporter.git",
+      "state" : {
+        "revision" : "8c61e5e38e9f737dd68512ed1ea5ab081244ad65",
+        "version" : "1.12.0"
       }
     },
     {
