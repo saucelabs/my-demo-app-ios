@@ -7,16 +7,54 @@
 
 import UIKit
 import LocalAuthentication
+import Backtrace
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        TestFairyWrapper.enableCrashHandler()
+
+        // Coexistence pattern: Backtrace initializes FIRST and is the sole crash owner
+        // the Sauce Mobile Beta SDK starts crashless afterwards
+        // (beginWithoutCrashHandler never installs a crash handler).
+        startBacktrace()
         TestFairyWrapper.begin()
+
+        // Shared correlation attribute so a Backtrace report and the SMB session recording can be joined across both consoles.
+        let correlationId = UUID().uuidString
+        BacktraceClient.shared?.attributes["sauce.correlation_id"] = correlationId
+        TestFairy.setAttribute("sauce.correlation_id", withValue: correlationId)
+
         FaceIdlocalAuthentication()
         Utils.setProductList()
         return true
+    }
+
+    private func startBacktrace() {
+        guard let submissionUrl = URL(string: Credentials.backtraceSubmissionUrl) else {
+            print("Backtrace: invalid or missing submission URL — skipping init")
+            return
+        }
+        let credentials = BacktraceCredentials(submissionUrl: submissionUrl)
+
+        let dbSettings = BacktraceDatabaseSettings()
+        dbSettings.maxRecordCount = 10
+
+        let configuration = BacktraceClientConfiguration(credentials: credentials,
+                                                         dbSettings: dbSettings,
+                                                         reportsPerMin: 10,
+                                                         allowsAttachingDebugger: true,
+                                                         detectOOM: true)
+        BacktraceClient.shared = try? BacktraceClient(configuration: configuration)
+        BacktraceClient.shared?.delegate = self
+        BacktraceClient.shared?.loggingDestinations = [BacktraceBaseDestination(level: .debug)]
+        // Error-free metrics + breadcrumbs, as in the Backtrace demo template.
+        BacktraceClient.shared?.metrics.enable(settings: BacktraceMetricsSettings())
+        BacktraceClient.shared?.enableBreadcrumbs()
+        _ = BacktraceClient.shared?.addBreadcrumb("Application finished launching",
+                                                  attributes: ["backtrace": "enabled",
+                                                               "sauce_mobile_beta": "crashless"],
+                                                  type: .navigation,
+                                                  level: .info)
     }
     
     func FaceIdlocalAuthentication() -> Void {
@@ -101,6 +139,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             object: nil,
             userInfo: ["error": error]
         )
+    }
+}
+
+extension AppDelegate: BacktraceClientDelegate {
+    func willSend(_ report: BacktraceReport) -> BacktraceReport {
+        print("Backtrace: willSend")
+        return report
+    }
+
+    func willSendRequest(_ request: URLRequest) -> URLRequest {
+        print("Backtrace: willSendRequest")
+        return request
+    }
+
+    func serverDidRespond(_ result: BacktraceResult) {
+        print("Backtrace: serverDidRespond: \(result)")
+    }
+
+    func connectionDidFail(_ error: Error) {
+        print("Backtrace: connectionDidFail: \(error)")
+    }
+
+    func didFinishSending(_ result: BacktraceResult) {
+        print("Backtrace: didFinishSending: \(result)")
     }
 }
 

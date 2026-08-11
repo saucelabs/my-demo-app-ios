@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/testfairy/testfairy-ios-sdk-swift-package",
       "state" : {
-        "revision" : "9006b784bebfb8572593a43d8e1d6ec464edd554",
-        "version" : "1.33.1"
+        "branch" : "feature/SauceMobileAppDistribution",
+        "revision" : "300605c730d55d8ddc773619304dbdc845130df5"
       }
     }
   ],

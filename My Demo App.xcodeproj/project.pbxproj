@@ -62,6 +62,8 @@
 		88AD24FA2A5ABF81005732E7 /* RotationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD24F92A5ABF81005732E7 /* RotationTest.swift */; };
 		A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */; };
 		C4513FF52759B1BA004BABDA /* TestFairyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */; };
+		BAC7BACE0000000000000001 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7BACE0000000000000003 /* Credentials.swift */; };
+		BAC7BACE0000000000000002 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAC7BACE0000000000000004 /* Secrets.plist */; };
 		C4513FF72759B554004BABDA /* ReportABugDebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4513FF62759B554004BABDA /* ReportABugDebugViewController.swift */; };
 		C4513FFB275D1139004BABDA /* PencilKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4513FFA275D1139004BABDA /* PencilKit.framework */; };
 		C451404A2787BAA0004BABDA /* PushNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45140492787BAA0004BABDA /* PushNotificationsViewController.swift */; };
@@ -135,6 +137,8 @@
 		A2C826AC2706266600616582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDemoAppTestBase.swift; sourceTree = "<group>"; };
 		C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFairyWrapper.swift; sourceTree = "<group>"; };
+		BAC7BACE0000000000000003 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		BAC7BACE0000000000000004 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		C4513FF62759B554004BABDA /* ReportABugDebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportABugDebugViewController.swift; sourceTree = "<group>"; };
 		C4513FFA275D1139004BABDA /* PencilKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PencilKit.framework; path = System/Library/Frameworks/PencilKit.framework; sourceTree = SDKROOT; };
 		C45140482787B996004BABDA /* My Demo App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "My Demo App.entitlements"; sourceTree = "<group>"; };
@@ -339,8 +343,18 @@
 			isa = PBXGroup;
 			children = (
 				C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */,
+				BAC7BACE0000000000000005 /* Backtrace */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		BAC7BACE0000000000000005 /* Backtrace */ = {
+			isa = PBXGroup;
+			children = (
+				BAC7BACE0000000000000003 /* Credentials.swift */,
+				BAC7BACE0000000000000004 /* Secrets.plist */,
+			);
+			path = Backtrace;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,6 +446,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC7BACE0000000000000002 /* Secrets.plist in Resources */,
 				2F592B2326F9B31B00F9D6ED /* Menu.storyboard in Resources */,
 				2F0DE6BA26FB1D71008C6D63 /* Proxima Nova Font.otf in Resources */,
 				880268B12A5BFF02003E2191 /* Localizable.strings in Resources */,
@@ -515,6 +530,7 @@
 				2F7BEFAE26F48C8C00457331 /* AboutViewController.swift in Sources */,
 				2F45FB4926F1CC0100A13B16 /* LoginViewController.swift in Sources */,
 				C4513FF52759B1BA004BABDA /* TestFairyWrapper.swift in Sources */,
+				BAC7BACE0000000000000001 /* Credentials.swift in Sources */,
 				2FF8B10826FB1BD200921534 /* Constants.swift in Sources */,
 				2F4AA65B26FA0CA2006A65BB /* RatingController.swift in Sources */,
 				2FC1FA5726F36CEE004A2555 /* PaymentMethodViewController.swift in Sources */,
@@ -858,8 +874,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/testfairy/testfairy-ios-sdk-swift-package";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.33.1;
+				branch = "feature/SauceMobileAppDistribution";
+				kind = branch;
 			};
 		};
 		2038AC5F2F88041500EAA756 /* XCRemoteSwiftPackageReference "FormTextField" */ = {
@@ -892,7 +908,7 @@
 		2038AC5C2F8801BF00EAA756 /* TestFairy */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2038AC5B2F8801BF00EAA756 /* XCRemoteSwiftPackageReference "testfairy-ios-sdk-swift-package" */;
-			productName = TestFairy;
+			productName = SauceMobileBeta;
 		};
 		2038AC602F88041600EAA756 /* FormTextField */ = {
 			isa = XCSwiftPackageProductDependency;
