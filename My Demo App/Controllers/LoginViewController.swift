@@ -8,29 +8,29 @@
 import UIKit
 import LocalAuthentication
 
-class LoginViewController: UIViewController {
-    
+class LoginViewController: UIViewController, UITextFieldDelegate {
+
     @IBOutlet weak var userNameTF: TextFieldBorderColor!
     @IBOutlet weak var passwordTF: TextFieldBorderColor!
-    
+
     @IBOutlet weak var myCartLbl: UILabel!
     @IBOutlet weak var cartCountLbl: UILabel!
-    
+
     @IBOutlet weak var backBtnContVew: UIView!
     @IBOutlet weak var cartCountContView: UIView!
     @IBOutlet weak var faceLoginContView: UIView!
-    
+
     var isFromProcessCheckout = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         cartCountLbl.text = String(Engine.sharedInstance.cartCount)
-        
+
         if Engine.sharedInstance.cartCount < 1 {
             cartCountContView.isHidden = true
         }
-        
+
         if !isFromProcessCheckout{
             backBtnContVew.isHidden = true
             myCartLbl.isHidden = true
@@ -40,6 +40,18 @@ class LoginViewController: UIViewController {
         }else{
             faceLoginContView.isHidden = true
         }
+
+        userNameTF.delegate = self
+        passwordTF.delegate = self
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userNameTF {
+            passwordTF.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return true
     }
     
     @IBAction func backButton(_ sender: Any) {

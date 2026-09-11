@@ -1,0 +1,86 @@
+apiVersion: v1alpha
+kind: xcuitest
+sauce:
+  region: us-west-1
+  concurrency: 5
+  metadata:
+    tags:
+      - e2e
+      - parameterized-login
+    build: Release $CI_COMMIT_SHORT_SHA
+xcuitest:
+  app: build/Build/Products/Release-iphonesimulator/My Demo App.app
+  testApp: build/Build/Products/Release-iphonesimulator/MyDemoAppUITests-Runner.app
+suites:
+  # `env:` only reaches the test process for simulator suites (Sauce's VMD backend) -
+  # it's a documented, deliberate saucectl feature (added in "feat: Enable env vars
+  # for xcuitest", 2023), NOT the RDC/real-device path used by `devices:`, which has
+  # no env channel at all. Every suite below runs the same LoginTest.testLogin, reading
+  # `username`/`password` from ProcessInfo.processInfo.environment - one login flow,
+  # different credentials per suite, one simulator each, running in parallel. This is
+  # the direct XCUITest analogue of Android's testOptions username/password injection.
+  #
+  # Simulator names must match Sauce's platform catalog exactly, including the
+  # "Simulator" suffix (e.g. "iPhone 15 Simulator", not "iPhone 15") - verified via
+  # GET /rest/v1.1/info/platforms/all, since `saucectl devices list` only covers
+  # real devices, not simulators.
+  - name: "login - locked out user - iPhone 15 simulator"
+    env:
+      username: "alice@example.com"
+      password: "10203040"
+    testOptions:
+      class:
+        - MyDemoAppUITests/LoginTest
+    simulators:
+      - name: "iPhone 15 Simulator"
+        platformVersions:
+          - "17.5"
+
+  - name: "login - standard user - iPhone 15 Pro simulator"
+    env:
+      username: "bod@example.com"
+      password: "10203040"
+    testOptions:
+      class:
+        - MyDemoAppUITests/LoginTest
+    simulators:
+      - name: "iPhone 15 Pro Simulator"
+        platformVersions:
+          - "17.5"
+
+  - name: "login - standard user - iPhone 14 simulator"
+    env:
+      username: "bod@example.com"
+      password: "10203040"
+    testOptions:
+      class:
+        - MyDemoAppUITests/LoginTest
+    simulators:
+      - name: "iPhone 14 Simulator"
+        platformVersions:
+          - "17.5"
+
+  - name: "login - standard user - iPad (10th generation) simulator"
+    env:
+      username: "bod@example.com"
+      password: "10203040"
+    testOptions:
+      class:
+        - MyDemoAppUITests/LoginTest
+    simulators:
+      - name: "iPad (10th generation) Simulator"
+        platformVersions:
+          - "17.5"
+
+# Controls what artifacts to fetch when the suite on Sauce Cloud has finished.
+artifacts:
+  download:
+    when: fail
+    match:
+      - "*.junit.xml"
+      - "*.log"
+    directory: ./artifacts/
+
+reporters:
+  spotlight:
+    enabled: true
