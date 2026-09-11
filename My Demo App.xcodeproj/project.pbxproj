@@ -58,6 +58,7 @@
 		88A847D72757B90E00B9F861 /* ProductListingPageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */; };
 		88A847D92757BB4F00B9F861 /* ProductDetailsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */; };
 		88A847DB2757BC3100B9F861 /* NavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847DA2757BC3100B9F861 /* NavigationTest.swift */; };
+		DFB3BCA2880BDB0EA774B897 /* LoginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B2EF9EC81B3424B44500E07 /* LoginTest.swift */; };
 		88A847DD2757BD6A00B9F861 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847DC2757BD6A00B9F861 /* PageObject.swift */; };
 		88AD24FA2A5ABF81005732E7 /* RotationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD24F92A5ABF81005732E7 /* RotationTest.swift */; };
 		A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */; };
@@ -129,6 +130,7 @@
 		88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingPageTest.swift; sourceTree = "<group>"; };
 		88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTest.swift; sourceTree = "<group>"; };
 		88A847DA2757BC3100B9F861 /* NavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTest.swift; sourceTree = "<group>"; };
+		8B2EF9EC81B3424B44500E07 /* LoginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTest.swift; sourceTree = "<group>"; };
 		88A847DC2757BD6A00B9F861 /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
 		88AD24F92A5ABF81005732E7 /* RotationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationTest.swift; sourceTree = "<group>"; };
 		A2C826A82706266600616582 /* MyDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +295,7 @@
 				88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */,
 				88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */,
 				88A847DA2757BC3100B9F861 /* NavigationTest.swift */,
+				8B2EF9EC81B3424B44500E07 /* LoginTest.swift */,
 				88AD24F92A5ABF81005732E7 /* RotationTest.swift */,
 				880268B42A5BFF52003E2191 /* LocalizationTest.swift */,
 				88782DCA2A6130BA00CE5DC5 /* FailedTests.swift */,
@@ -550,6 +553,7 @@
 				88AD24FA2A5ABF81005732E7 /* RotationTest.swift in Sources */,
 				A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */,
 				88A847DB2757BC3100B9F861 /* NavigationTest.swift in Sources */,
+				DFB3BCA2880BDB0EA774B897 /* LoginTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
