@@ -30,8 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func startBacktrace() {
-        guard let submissionUrl = URL(string: Credentials.backtraceSubmissionUrl) else {
-            print("Backtrace: invalid or missing submission URL — skipping init")
+        guard !Credentials.universeName.isEmpty, !Credentials.backtraceToken.isEmpty,
+              let submissionUrl = URL(string: Credentials.backtraceSubmissionUrl) else {
+            print("Backtrace: Credentials.universeName/backtraceToken not set — skipping init")
             return
         }
         let credentials = BacktraceCredentials(submissionUrl: submissionUrl)
