@@ -68,11 +68,12 @@ class DefaultTestFairyWrapper: TestFairyProtocol {
     public let TESTFAIRY_APP_TOKEN = ""
     
     public func begin() {
-        TestFairy.begin(TESTFAIRY_APP_TOKEN)
+        // Sauce Mobile Beta (crashless): Backtrace owns crash reporting.
+        TestFairy.beginWithoutCrashHandler(TESTFAIRY_APP_TOKEN)
     }
-    
+
     public func enableCrashHandler() {
-        TestFairy.enableCrashHandler()
+        // No-op in the crashless Sauce Mobile Beta artifact.
     }
     
     public func showFeedbackForm() {
