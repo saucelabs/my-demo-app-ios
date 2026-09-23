@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/backtrace-labs/backtrace-cocoa.git",
       "state" : {
-        "revision" : "64a2c7a9d7f14fc531ca6676626156b9825590d8",
-        "version" : "2.1.0"
+        "revision" : "005963358c0ac3ee08ba8abbb8494d5b27a60cba",
+        "version" : "2.2.0-rc"
       }
     },
     {

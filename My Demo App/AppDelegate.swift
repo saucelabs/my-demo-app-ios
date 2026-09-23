@@ -13,26 +13,63 @@ import Backtrace
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        // Coexistence pattern: Backtrace initializes FIRST and is the sole crash owner
+        // Coexistence pattern: Backtrace initializes FIRST and is the sole crash owner;
         // the Sauce Mobile Beta SDK starts crashless afterwards
         // (beginWithoutCrashHandler never installs a crash handler).
-        startBacktrace()
-        TestFairyWrapper.begin()
+        //
+        // Both SDKs receive the same attributes, generated once per launch BEFORE either SDK starts.
+        // `sauce.correlation_id` (a lowercase UUID v4) joins a Backtrace report with its Sauce Mobile Beta session recording across the two consoles.
+        let sharedAttributes = makeSharedAttributes()
+        startBacktrace(sharedAttributes: sharedAttributes)
 
-        // Shared correlation attribute so a Backtrace report and the SMB session recording can be joined across both consoles.
-        let correlationId = UUID().uuidString
-        BacktraceClient.shared?.attributes["sauce.correlation_id"] = correlationId
-        TestFairy.setAttribute("sauce.correlation_id", withValue: correlationId)
+        // Reverse link: once a Mobile Beta session exists, record its URL on the Backtrace side.
+        // A launch can produce several sessions (stop()/resume), so the value is overwritten each time.
+        // Used for Testing.
+        TestFairyWrapper.observeSessions { event in
+            DispatchQueue.main.async {
+                guard let client = BacktraceClient.shared else { return }
+                var attributes = client.attributes
+                switch event {
+                case .started(let sessionUrl):
+                    attributes["sauce.mobile_beta.session_started"] = "true"
+                    attributes["sauce.mobile_beta.session_url"] = sessionUrl ?? ""
+                case .failed:
+                    attributes["sauce.mobile_beta.session_started"] = "false"
+                    attributes["sauce.mobile_beta.session_url"] = ""
+                }
+                client.attributes = attributes
+            }
+        }
+        TestFairyWrapper.setAttributes(sharedAttributes)
+        TestFairyWrapper.begin()
 
         FaceIdlocalAuthentication()
         Utils.setProductList()
         return true
     }
 
-    private func startBacktrace() {
-        guard !Credentials.universeName.isEmpty, !Credentials.backtraceToken.isEmpty,
+    /// Attributes carried by both SDKs (identical key set on iOS, Android and React Native).
+    private func makeSharedAttributes() -> [String: String] {
+        let info = Bundle.main.infoDictionary ?? [:]
+        let version = info["CFBundleShortVersionString"] as? String ?? "unknown"
+        let build = info["CFBundleVersion"] as? String ?? "unknown"
+        var attributes: [String: String] = [
+            "sauce.correlation_id": UUID().uuidString.lowercased(),
+            "sauce.sdk.coexistence_mode": "backtrace_crash_owner",
+            "sauce.environment": Credentials.environment,
+            "sauce.release": "\(Bundle.main.bundleIdentifier ?? "unknown")@\(version)",
+            "sauce.dist": build,
+        ]
+        if !Credentials.distributionId.isEmpty {
+            attributes["mad.distribution_id"] = Credentials.distributionId
+        }
+        return attributes
+    }
+
+    private func startBacktrace(sharedAttributes: [String: String]) {
+        guard Credentials.isBacktraceConfigured,
               let submissionUrl = URL(string: Credentials.backtraceSubmissionUrl) else {
-            print("Backtrace: Credentials.universeName/backtraceToken not set — skipping init")
+            print("Backtrace: backtraceUniverse/backtraceToken not configured (Config/Local.xcconfig) — skipping init")
             return
         }
         let credentials = BacktraceCredentials(submissionUrl: submissionUrl)
@@ -45,10 +82,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                          reportsPerMin: 10,
                                                          allowsAttachingDebugger: true,
                                                          detectOOM: true)
-        BacktraceClient.shared = try? BacktraceClient(configuration: configuration)
+        do {
+            BacktraceClient.shared = try BacktraceClient(configuration: configuration)
+        } catch {
+            print("Backtrace: initialization failed — \(error)")
+            return
+        }
+        // First statement after init: PLCrashReporter's handlers are already installed and only this setter writes attributes into native crash reports,
+        // A crash before this line would carry no correlation id. One assignment, String values only.
+        BacktraceClient.shared?.attributes = sharedAttributes
         BacktraceClient.shared?.delegate = self
         BacktraceClient.shared?.loggingDestinations = [BacktraceBaseDestination(level: .debug)]
-        // Error-free metrics + breadcrumbs, as in the Backtrace demo template.
+        // Error-free metrics + breadcrumbs
         BacktraceClient.shared?.metrics.enable(settings: BacktraceMetricsSettings())
         BacktraceClient.shared?.enableBreadcrumbs()
         _ = BacktraceClient.shared?.addBreadcrumb("Application finished launching",

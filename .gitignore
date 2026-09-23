@@ -13,3 +13,6 @@ xcuserdata/
 *.xcodeproj/xcuserdata/
 *.xcodeproj/project.xcworkspace/xcuserdata/
 *.xcworkspace/xcuserdata/
+
+# Local SDK credentials (see Config/Local.xcconfig.example)
+Config/Local.xcconfig

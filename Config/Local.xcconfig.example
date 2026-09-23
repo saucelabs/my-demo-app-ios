@@ -1,0 +1,12 @@
+// Copy this file to Config/Local.xcconfig (gitignored) and fill in the values.
+// Empty values leave the corresponding SDK disabled, so an unedited copy changes nothing.
+
+// Sauce Mobile Beta app token (Sauce Mobile Beta > app settings), e.g. SDK-xxxxxxxx
+SAUCE_MOBILE_BETA_TOKEN =
+// Backtrace universe and submission token; the app builds
+// https://submit.backtrace.io/<universe>/<token>/plcrash from them.
+BACKTRACE_UNIVERSE =
+BACKTRACE_TOKEN =
+// Optional: reported as sauce.environment (default beta) and mad.distribution_id (only when set).
+SAUCE_ENVIRONMENT = beta
+SAUCE_DISTRIBUTION_ID =
