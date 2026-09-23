@@ -7,6 +7,9 @@ import Foundation
 
 class TestFairyWrapper {
     static func begin() {
+        if !isEnabled {
+            print("Sauce Mobile Beta: disabled (testfairyEnabled=\(plistEnabled), token configured=\(Credentials.isSauceMobileBetaConfigured)) — skipping begin")
+        }
         instance.begin()
     }
     static func enableCrashHandler() {
@@ -30,16 +33,36 @@ class TestFairyWrapper {
     static func resetFeedbackForm() {
         instance.resetFeedbackForm()
     }
-    
+    /// Session-level attributes shared with Backtrace (call before `begin()`; the SDK keeps them and attaches them to every session it starts).
+    static func setAttributes(_ attributes: [String: String]) {
+        instance.setAttributes(attributes)
+    }
+    /// Observe session start/failure.
+    /// Call before `begin()` so the first session is observed.
+    static func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {
+        instance.observeSessions(handler)
+    }
+
+    /// Mobile Beta runs only when Info.plist `testfairyEnabled` is true AND a token is configured.
+    static var isEnabled: Bool {
+        return plistEnabled && Credentials.isSauceMobileBetaConfigured
+    }
+
+    private static var plistEnabled: Bool {
+        return Bundle.main.infoDictionary?["testfairyEnabled"] as? Bool ?? false
+    }
+
     private static var instance: TestFairyProtocol {
         get {
-            guard let testfairyEnabled = Bundle.main.infoDictionary?["testfairyEnabled"] as? Bool else {
-                return NoOpTestFairyWrapper()
-            }
-            
-            return testfairyEnabled ? DefaultTestFairyWrapper() : NoOpTestFairyWrapper()
+            return isEnabled ? DefaultTestFairyWrapper() : NoOpTestFairyWrapper()
         }
     }
+}
+
+enum SauceMobileBetaSessionEvent {
+    /// A session started; `sessionUrl` is the recording's address in the Sauce Mobile Beta console.
+    case started(sessionUrl: String?)
+    case failed
 }
 
 protocol TestFairyProtocol {
@@ -51,6 +74,8 @@ protocol TestFairyProtocol {
     func customFeedback()
     func log(_ message: String!)
     func resetFeedbackForm()
+    func setAttributes(_ attributes: [String: String])
+    func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void)
 }
 
 class NoOpTestFairyWrapper: TestFairyProtocol {
@@ -62,14 +87,51 @@ class NoOpTestFairyWrapper: TestFairyProtocol {
     func customFeedback() {}
     func log(_ message: String!) {}
     func resetFeedbackForm() {}
+    func setAttributes(_ attributes: [String: String]) {}
+    func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {}
 }
 
 class DefaultTestFairyWrapper: TestFairyProtocol {
-    public let TESTFAIRY_APP_TOKEN = ""
-    
+    /// Sauce Mobile Beta app token (Config/Local.xcconfig -> Info.plist -> Credentials).
+    private var appToken: String { Credentials.sauceMobileBetaToken }
+    /// The SDK keeps a strong reference to the delegate and `setSessionStateDelegate` ADDS a delegate rather than replacing it,
+    /// so register once per launch; we also hold it so the observer's lifetime is explicit.
+    private static var sessionObserver: SessionObserver?
+
     public func begin() {
         // Sauce Mobile Beta (crashless): Backtrace owns crash reporting.
-        TestFairy.beginWithoutCrashHandler(TESTFAIRY_APP_TOKEN)
+        TestFairy.beginWithoutCrashHandler(appToken)
+    }
+
+    public func setAttributes(_ attributes: [String: String]) {
+        for (key, value) in attributes {
+            if !TestFairy.setAttribute(key, withValue: value) {
+                print("Sauce Mobile Beta rejected attribute \(key)")
+            }
+        }
+    }
+
+    public func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {
+        let observer = SessionObserver(handler: handler)
+        DefaultTestFairyWrapper.sessionObserver = observer
+        TestFairy.setSessionStateDelegate(observer)
+    }
+
+    private final class SessionObserver: NSObject, TestFairySessionStateDelegate {
+        private let handler: (SauceMobileBetaSessionEvent) -> Void
+
+        init(handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {
+            self.handler = handler
+        }
+
+        // Fires for every session the SDK starts (including the new session created after `TestFairy.stop()` + resume), so consumers must overwrite, not set once.
+        func sessionStarted() {
+            handler(.started(sessionUrl: TestFairy.sessionUrl()))
+        }
+
+        func sessionFailed() {
+            handler(.failed)
+        }
     }
 
     public func enableCrashHandler() {
@@ -81,12 +143,12 @@ class DefaultTestFairyWrapper: TestFairyProtocol {
     }
     
     public func reportBug(_ takeScreenshot: Bool) {
-        TestFairy.showFeedbackForm(TESTFAIRY_APP_TOKEN, takeScreenshot: takeScreenshot)
+        TestFairy.showFeedbackForm(appToken, takeScreenshot: takeScreenshot)
     }
     
     public func remoteSupport() {
         TestFairy.stop()
-        TestFairy.showFeedbackForm(TESTFAIRY_APP_TOKEN, takeScreenshot: false)
+        TestFairy.showFeedbackForm(appToken, takeScreenshot: false)
     }
     
     public func customFeedback() {

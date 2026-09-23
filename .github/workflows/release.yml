@@ -29,6 +29,27 @@ jobs:
           echo ${GITHUB_REF##*/} > RELEASE_TAG
           xcrun agvtool new-marketing-version $(cat RELEASE_TAG)
         if: startsWith(github.ref, 'refs/tags/')
+      # SDK credentials for every artifact built below (IPAs, simulator and XCUITest builds).
+      # Config/Demo.xcconfig includes this gitignored file; Info.plist keys are filled from it.
+      # Empty secrets leave the corresponding SDK disabled (fork builds report nothing).
+      - name: Write SDK credentials
+        env:
+          SAUCE_MOBILE_BETA_TOKEN: ${{ secrets.SAUCE_MOBILE_BETA_TOKEN }}
+          BACKTRACE_UNIVERSE: ${{ secrets.BACKTRACE_UNIVERSE }}
+          BACKTRACE_TOKEN: ${{ secrets.BACKTRACE_TOKEN }}
+        run: |
+          # xcconfig treats '//' as a comment, '$(' as a build-setting reference and trims whitespace:
+          # refuse values it cannot carry instead of silently misconfiguring an SDK.
+          for value in "${SAUCE_MOBILE_BETA_TOKEN}" "${BACKTRACE_UNIVERSE}" "${BACKTRACE_TOKEN}"; do
+            case "${value}" in *//*|*'$('*|*[[:space:]]*) echo "::error::a secret contains characters an xcconfig value cannot carry (// , \$( or whitespace)"; exit 1;; esac
+          done
+          {
+            echo "SAUCE_MOBILE_BETA_TOKEN = ${SAUCE_MOBILE_BETA_TOKEN}"
+            echo "BACKTRACE_UNIVERSE = ${BACKTRACE_UNIVERSE}"
+            echo "BACKTRACE_TOKEN = ${BACKTRACE_TOKEN}"
+          } > Config/Local.xcconfig
+          [ -n "${SAUCE_MOBILE_BETA_TOKEN}" ] || echo "::warning::SAUCE_MOBILE_BETA_TOKEN secret is empty; Sauce Mobile Beta is disabled in these artifacts"
+          { [ -n "${BACKTRACE_UNIVERSE}" ] && [ -n "${BACKTRACE_TOKEN}" ]; } || echo "::warning::BACKTRACE_UNIVERSE/BACKTRACE_TOKEN secrets are empty; Backtrace is disabled in these artifacts"
       - name: Build for iOS Simulator
         run: |
           set -o pipefail && \
@@ -102,7 +123,10 @@ jobs:
           rm -rf MyDemoAppUITests-Runner.app
           cp -R build/Build/Products/*.xctestrun SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
       - name: Disable TestFairy
-        run: /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
+        # Backtrace-only artifact: switch Sauce Mobile Beta off and drop its token from the bundle.
+        run: |
+          /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
+          sed -i '' 's/^SAUCE_MOBILE_BETA_TOKEN = .*/SAUCE_MOBILE_BETA_TOKEN =/' Config/Local.xcconfig
       - uses: yukiarrr/ios-build-action@v1.12.0
         with:
           workspace-path: My Demo App.xcworkspace

@@ -22,3 +22,12 @@ can be used to demo this option.
 ## Publish
 
 To publish a new version, create a release with a valid semver tag name. A CI workflow will handle setting the app version name/code and upload the APK into the release. 
+
+## SDK credentials
+
+The app runs Backtrace and the Sauce Mobile Beta SDK side by side.
+
+1. Copy `Config/Local.xcconfig.example` to `Config/Local.xcconfig` and fill in `SAUCE_MOBILE_BETA_TOKEN`, `BACKTRACE_UNIVERSE` and `BACKTRACE_TOKEN`.
+
+2. Build. `Config/Demo.xcconfig` includes your file, Xcode expands the values into Info.plist
+   (`sauceMobileBetaToken`, `backtraceUniverse`, `backtraceToken`) and `Credentials.swift` reads them.

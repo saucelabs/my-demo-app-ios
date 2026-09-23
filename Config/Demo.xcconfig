@@ -1,0 +1,17 @@
+// SDK configuration for the Backtrace + Sauce Mobile Beta demo.
+//
+// These build settings are expanded into Info.plist
+// (see the sauceMobileBetaToken, backtraceUniverse, backtraceToken, sauceEnvironment and sauceDistributionId keys) and read at runtime by Credentials.swift.
+// Empty values leave the corresponding SDK disabled.
+//
+// Local development: copy Config/Local.xcconfig.example to Config/Local.xcconfig and fill in your values. CI:
+// .github/workflows/release.yml writes Config/Local.xcconfig from the repository secrets SAUCE_MOBILE_BETA_TOKEN, BACKTRACE_UNIVERSE and BACKTRACE_TOKEN.
+// Never put real values in this file.
+
+SAUCE_MOBILE_BETA_TOKEN =
+BACKTRACE_UNIVERSE =
+BACKTRACE_TOKEN =
+SAUCE_ENVIRONMENT = beta
+SAUCE_DISTRIBUTION_ID =
+
+#include? "Local.xcconfig"

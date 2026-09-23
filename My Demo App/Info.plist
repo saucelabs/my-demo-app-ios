@@ -75,6 +75,16 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>backtraceToken</key>
+	<string>$(BACKTRACE_TOKEN)</string>
+	<key>backtraceUniverse</key>
+	<string>$(BACKTRACE_UNIVERSE)</string>
+	<key>sauceDistributionId</key>
+	<string>$(SAUCE_DISTRIBUTION_ID)</string>
+	<key>sauceEnvironment</key>
+	<string>$(SAUCE_ENVIRONMENT)</string>
+	<key>sauceMobileBetaToken</key>
+	<string>$(SAUCE_MOBILE_BETA_TOKEN)</string>
 	<key>testfairyEnabled</key>
 	<true/>
 </dict>
