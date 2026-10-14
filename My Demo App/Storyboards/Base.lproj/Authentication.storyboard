@@ -105,6 +105,7 @@
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pxu-fh-Ovf" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="username-field"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="16"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -151,6 +152,7 @@
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8K8-Ip-ghL" customClass="TextFieldBorderColor" customModule="My_Demo_App" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="382" height="45"/>
+                                                                        <accessibility key="accessibilityConfiguration" identifier="password-field"/>
                                                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="8"/>
                                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -342,6 +344,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fso-Rl-o8c" customClass="ButtonRoundCorner" customModule="My_Demo_App" customModuleProvider="target">
                                                 <rect key="frame" x="16" y="16" width="382" height="48"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="login-button"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
                                                 <state key="normal" title="Login" backgroundImage="GreenButton Icons">
@@ -371,6 +374,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P59-gr-kCa" customClass="ButtonRoundCorner" customModule="My_Demo_App" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="16" width="298" height="48"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="login-button-faceid"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="ProximaNova-Medium" family="Proxima Nova" pointSize="18"/>
                                                 <state key="normal" title="Login" backgroundImage="GreenButton Icons">
