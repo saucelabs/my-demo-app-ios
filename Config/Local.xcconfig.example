@@ -1,8 +1,11 @@
 // Copy this file to Config/Local.xcconfig (gitignored) and fill in the values.
 // Empty values leave the corresponding SDK disabled, so an unedited copy changes nothing.
 
-// Sauce Mobile Beta app token (Sauce Mobile Beta > app settings), e.g. SDK-xxxxxxxx
+// Sauce Mobile Beta SDK App Token and Server Endpoint, both from Organization Settings > SDK Settings
+// on your Mobile App Distribution dashboard. The endpoint is required: the SDK's built-in default
+// server is no longer in service.
 SAUCE_MOBILE_BETA_TOKEN =
+SAUCE_MOBILE_BETA_ENDPOINT =
 // Backtrace universe and submission token; the app builds
 // https://submit.backtrace.io/<universe>/<token>/plcrash from them.
 BACKTRACE_UNIVERSE =

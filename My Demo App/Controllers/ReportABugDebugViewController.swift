@@ -179,6 +179,28 @@ TestFairy.showFeedbackForm()
             TestFairyWrapper.resetFeedbackForm()
             TestFairyWrapper.customFeedback()
         })
+
+        // Backtrace coexistence: every session start gets a new sauce.correlation_id, which the SDK
+        // pushes to Backtrace. Crash after this and the report must carry the id shown here.
+        let restartSessionText = """
+// Stop and resume session: the SDK generates
+// a new sauce.correlation_id for the new session
+TestFairy.stop()
+TestFairy.resume()
+TestFairy.sessionCorrelationId()
+"""
+        let restartSessionItem = ReportABugDebugItemView(restartSessionText, action: nil)
+        restartSessionItem.button.setTitle("STOP AND RESUME SESSION", for: .normal)
+        restartSessionItem.action = { [weak restartSessionItem] in
+            let previous = TestFairyWrapper.sessionCorrelationId() ?? "nil"
+            TestFairyWrapper.restartSession()
+            let current = TestFairyWrapper.sessionCorrelationId() ?? "nil"
+            TestFairyWrapper.log("Sauce Mobile Beta session restarted. sauce.correlation_id: \(previous) -> \(current)")
+            restartSessionItem?.label.text = restartSessionText
+                + "\n\n// previous: \(previous)"
+                + "\n// current:  \(current)"
+        }
+        contentView.addArrangedSubview(restartSessionItem)
     }
 }
 

@@ -35,20 +35,27 @@ jobs:
       - name: Write SDK credentials
         env:
           SAUCE_MOBILE_BETA_TOKEN: ${{ secrets.SAUCE_MOBILE_BETA_TOKEN }}
+          SAUCE_MOBILE_BETA_ENDPOINT: ${{ secrets.SAUCE_MOBILE_BETA_ENDPOINT }}
           BACKTRACE_UNIVERSE: ${{ secrets.BACKTRACE_UNIVERSE }}
           BACKTRACE_TOKEN: ${{ secrets.BACKTRACE_TOKEN }}
         run: |
-          # xcconfig treats '//' as a comment, '$(' as a build-setting reference and trims whitespace:
-          # refuse values it cannot carry instead of silently misconfiguring an SDK.
           for value in "${SAUCE_MOBILE_BETA_TOKEN}" "${BACKTRACE_UNIVERSE}" "${BACKTRACE_TOKEN}"; do
             case "${value}" in *//*|*'$('*|*[[:space:]]*) echo "::error::a secret contains characters an xcconfig value cannot carry (// , \$( or whitespace)"; exit 1;; esac
           done
+          case "${SAUCE_MOBILE_BETA_ENDPOINT}" in
+            ""|https://*/services/) ;;
+            *) echo "::error::SAUCE_MOBILE_BETA_ENDPOINT must be the Server Endpoint from Organization Settings > SDK Settings (https://<host>/services/)"; exit 1;;
+          esac
+          case "${SAUCE_MOBILE_BETA_ENDPOINT}" in *[[:space:]]*) echo "::error::SAUCE_MOBILE_BETA_ENDPOINT contains whitespace"; exit 1;; esac
+          endpoint_xcconfig="$(printf '%s' "${SAUCE_MOBILE_BETA_ENDPOINT}" | sed 's#://#:/$()/#')"
           {
             echo "SAUCE_MOBILE_BETA_TOKEN = ${SAUCE_MOBILE_BETA_TOKEN}"
+            echo "SAUCE_MOBILE_BETA_ENDPOINT = ${endpoint_xcconfig}"
             echo "BACKTRACE_UNIVERSE = ${BACKTRACE_UNIVERSE}"
             echo "BACKTRACE_TOKEN = ${BACKTRACE_TOKEN}"
           } > Config/Local.xcconfig
           [ -n "${SAUCE_MOBILE_BETA_TOKEN}" ] || echo "::warning::SAUCE_MOBILE_BETA_TOKEN secret is empty; Sauce Mobile Beta is disabled in these artifacts"
+          [ -n "${SAUCE_MOBILE_BETA_ENDPOINT}" ] || echo "::warning::SAUCE_MOBILE_BETA_ENDPOINT secret is empty; Sauce Mobile Beta is disabled in these artifacts (the SDK's built-in default server is no longer in service)"
           { [ -n "${BACKTRACE_UNIVERSE}" ] && [ -n "${BACKTRACE_TOKEN}" ]; } || echo "::warning::BACKTRACE_UNIVERSE/BACKTRACE_TOKEN secrets are empty; Backtrace is disabled in these artifacts"
       - name: Build for iOS Simulator
         run: |
@@ -123,10 +130,11 @@ jobs:
           rm -rf MyDemoAppUITests-Runner.app
           cp -R build/Build/Products/*.xctestrun SauceLabs-Demo-App.Simulator.XCUITest.xctestrun
       - name: Disable TestFairy
-        # Backtrace-only artifact: switch Sauce Mobile Beta off and drop its token from the bundle.
+        # Backtrace-only artifact: switch Sauce Mobile Beta off and drop its token and endpoint from the bundle.
         run: |
           /usr/libexec/PlistBuddy -c "SET testfairyEnabled NO" "./My Demo App/Info.plist"
           sed -i '' 's/^SAUCE_MOBILE_BETA_TOKEN = .*/SAUCE_MOBILE_BETA_TOKEN =/' Config/Local.xcconfig
+          sed -i '' 's/^SAUCE_MOBILE_BETA_ENDPOINT = .*/SAUCE_MOBILE_BETA_ENDPOINT =/' Config/Local.xcconfig
       - uses: yukiarrr/ios-build-action@v1.12.0
         with:
           workspace-path: My Demo App.xcworkspace
