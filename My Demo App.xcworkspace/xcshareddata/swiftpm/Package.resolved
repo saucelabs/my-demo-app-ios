@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/testfairy/testfairy-ios-sdk-swift-package",
       "state" : {
-        "revision" : "5fae02fa3facf055fe000b6cd5bd53d86c486f96",
-        "version" : "2.2.0-rc"
+        "revision" : "2d0172aa3083a4bcbe7dabbe64b60e0f10394f5c",
+        "version" : "2.3.0"
       }
     }
   ],

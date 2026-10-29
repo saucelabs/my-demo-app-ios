@@ -8,7 +8,11 @@ import Foundation
 class TestFairyWrapper {
     static func begin() {
         if !isEnabled {
-            print("Sauce Mobile Beta: disabled (testfairyEnabled=\(plistEnabled), token configured=\(Credentials.isSauceMobileBetaConfigured)) — skipping begin")
+            print("Sauce Mobile Beta: disabled (testfairyEnabled=\(plistEnabled), token and endpoint configured=\(Credentials.isSauceMobileBetaConfigured)) — skipping begin")
+            let endpoint = Credentials.sauceMobileBetaEndpoint
+            if !endpoint.isEmpty && !Credentials.isSauceMobileBetaEndpointValid {
+                print("Sauce Mobile Beta: SAUCE_MOBILE_BETA_ENDPOINT is \"\(endpoint)\".")
+            }
         }
         instance.begin()
     }
@@ -33,17 +37,21 @@ class TestFairyWrapper {
     static func resetFeedbackForm() {
         instance.resetFeedbackForm()
     }
-    /// Session-level attributes shared with Backtrace (call before `begin()`; the SDK keeps them and attaches them to every session it starts).
+    /// App-owned session attributes shared with Backtrace (call before `begin()`; the SDK keeps them and attaches them to every session it starts).
     static func setAttributes(_ attributes: [String: String]) {
         instance.setAttributes(attributes)
     }
-    /// Observe session start/failure.
-    /// Call before `begin()` so the first session is observed.
-    static func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {
-        instance.observeSessions(handler)
+    /// Stops the current session and starts a new one; the SDK generates a new `sauce.correlation_id` for it and writes it to
+    /// `BacktraceClient.shared` (the SDK links Backtrace through its public API at every session start, no glue code needed).
+    static func restartSession() {
+        instance.restartSession()
+    }
+    /// The SDK-generated correlation id of the current session; nil before the first session start or when Mobile Beta is disabled.
+    static func sessionCorrelationId() -> String? {
+        return instance.sessionCorrelationId()
     }
 
-    /// Mobile Beta runs only when Info.plist `testfairyEnabled` is true AND a token is configured.
+    /// Mobile Beta runs only when Info.plist `testfairyEnabled` is true AND both the app token and the server endpoint are configured.
     static var isEnabled: Bool {
         return plistEnabled && Credentials.isSauceMobileBetaConfigured
     }
@@ -59,12 +67,6 @@ class TestFairyWrapper {
     }
 }
 
-enum SauceMobileBetaSessionEvent {
-    /// A session started; `sessionUrl` is the recording's address in the Sauce Mobile Beta console.
-    case started(sessionUrl: String?)
-    case failed
-}
-
 protocol TestFairyProtocol {
     func begin()
     func enableCrashHandler()
@@ -75,7 +77,8 @@ protocol TestFairyProtocol {
     func log(_ message: String!)
     func resetFeedbackForm()
     func setAttributes(_ attributes: [String: String])
-    func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void)
+    func restartSession()
+    func sessionCorrelationId() -> String?
 }
 
 class NoOpTestFairyWrapper: TestFairyProtocol {
@@ -88,19 +91,25 @@ class NoOpTestFairyWrapper: TestFairyProtocol {
     func log(_ message: String!) {}
     func resetFeedbackForm() {}
     func setAttributes(_ attributes: [String: String]) {}
-    func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {}
+    func restartSession() {}
+    func sessionCorrelationId() -> String? { return nil }
 }
 
 class DefaultTestFairyWrapper: TestFairyProtocol {
     /// Sauce Mobile Beta app token (Config/Local.xcconfig -> Info.plist -> Credentials).
     private var appToken: String { Credentials.sauceMobileBetaToken }
-    /// The SDK keeps a strong reference to the delegate and `setSessionStateDelegate` ADDS a delegate rather than replacing it,
-    /// so register once per launch; we also hold it so the observer's lifetime is explicit.
-    private static var sessionObserver: SessionObserver?
+
+    /// Sauce Mobile Beta server endpoint (Config/Local.xcconfig -> Info.plist -> Credentials).
+    /// Required: the SDK's built-in default server is no longer in service.
+    private var serverEndpoint: String { Credentials.sauceMobileBetaEndpoint }
 
     public func begin() {
         // Sauce Mobile Beta (crashless): Backtrace owns crash reporting.
+        // The Server Endpoint from Organization Settings > SDK Settings must be set before begin.
+        TestFairy.setServerEndpoint(serverEndpoint)
         TestFairy.beginWithoutCrashHandler(appToken)
+        // The SDK generates the id synchronously at begin, so it is already current here.
+        print("Sauce Mobile Beta: session started, sauce.correlation_id: \(TestFairy.sessionCorrelationId() ?? "nil")")
     }
 
     public func setAttributes(_ attributes: [String: String]) {
@@ -111,27 +120,14 @@ class DefaultTestFairyWrapper: TestFairyProtocol {
         }
     }
 
-    public func observeSessions(_ handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {
-        let observer = SessionObserver(handler: handler)
-        DefaultTestFairyWrapper.sessionObserver = observer
-        TestFairy.setSessionStateDelegate(observer)
+    public func restartSession() {
+        // stop() ends the current session; resume() starts a new one, which rotates sauce.correlation_id.
+        TestFairy.stop()
+        TestFairy.resume()
     }
 
-    private final class SessionObserver: NSObject, TestFairySessionStateDelegate {
-        private let handler: (SauceMobileBetaSessionEvent) -> Void
-
-        init(handler: @escaping (SauceMobileBetaSessionEvent) -> Void) {
-            self.handler = handler
-        }
-
-        // Fires for every session the SDK starts (including the new session created after `TestFairy.stop()` + resume), so consumers must overwrite, not set once.
-        func sessionStarted() {
-            handler(.started(sessionUrl: TestFairy.sessionUrl()))
-        }
-
-        func sessionFailed() {
-            handler(.failed)
-        }
+    public func sessionCorrelationId() -> String? {
+        return TestFairy.sessionCorrelationId()
     }
 
     public func enableCrashHandler() {

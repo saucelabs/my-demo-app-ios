@@ -27,7 +27,7 @@ To publish a new version, create a release with a valid semver tag name. A CI wo
 
 The app runs Backtrace and the Sauce Mobile Beta SDK side by side.
 
-1. Copy `Config/Local.xcconfig.example` to `Config/Local.xcconfig` and fill in `SAUCE_MOBILE_BETA_TOKEN`, `BACKTRACE_UNIVERSE` and `BACKTRACE_TOKEN`.
+1. Copy `Config/Local.xcconfig.example` to `Config/Local.xcconfig` and fill in `SAUCE_MOBILE_BETA_TOKEN`, `SAUCE_MOBILE_BETA_ENDPOINT` (both from Organization Settings > SDK Settings), `BACKTRACE_UNIVERSE` and `BACKTRACE_TOKEN`. The endpoint is the Server Endpoint (`https://<host>/services/`). The SDK's built-in default server is no longer in service, so without the endpoint the app skips Sauce Mobile Beta.
 
 2. Build. `Config/Demo.xcconfig` includes your file, Xcode expands the values into Info.plist
-   (`sauceMobileBetaToken`, `backtraceUniverse`, `backtraceToken`) and `Credentials.swift` reads them.
+   (`sauceMobileBetaToken`, `sauceMobileBetaEndpoint`, `backtraceUniverse`, `backtraceToken`) and `Credentials.swift` reads them.

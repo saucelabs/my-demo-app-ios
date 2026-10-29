@@ -15,6 +15,9 @@ enum Credentials {
     static var backtraceToken: String { infoValue("backtraceToken") }
     /// Sauce Mobile Beta app token (Info.plist `sauceMobileBetaToken` <- SAUCE_MOBILE_BETA_TOKEN)
     static var sauceMobileBetaToken: String { infoValue("sauceMobileBetaToken") }
+    /// Sauce Mobile Beta server endpoint, `https://<host>/services/` from Organization Settings > SDK Settings
+    /// (Info.plist `sauceMobileBetaEndpoint` <- SAUCE_MOBILE_BETA_ENDPOINT). Required: the SDK's built-in default server is no longer in service.
+    static var sauceMobileBetaEndpoint: String { infoValue("sauceMobileBetaEndpoint") }
     /// Reported as `sauce.environment` on both SDKs (Info.plist `sauceEnvironment`, default "beta")
     static var environment: String {
         let value = infoValue("sauceEnvironment")
@@ -24,7 +27,11 @@ enum Credentials {
     static var distributionId: String { infoValue("sauceDistributionId") }
 
     static var isBacktraceConfigured: Bool { !universeName.isEmpty && !backtraceToken.isEmpty }
-    static var isSauceMobileBetaConfigured: Bool { !sauceMobileBetaToken.isEmpty }
+    
+    static var isSauceMobileBetaEndpointValid: Bool {
+        sauceMobileBetaEndpoint.hasPrefix("https://") && sauceMobileBetaEndpoint.count > "https://".count
+    }
+    static var isSauceMobileBetaConfigured: Bool { !sauceMobileBetaToken.isEmpty && isSauceMobileBetaEndpointValid }
 
     /// https://docs.saucelabs.com/error-reporting/project-setup/submission-url/
     static var backtraceSubmissionUrl: String {

@@ -83,6 +83,8 @@
 	<string>$(SAUCE_DISTRIBUTION_ID)</string>
 	<key>sauceEnvironment</key>
 	<string>$(SAUCE_ENVIRONMENT)</string>
+	<key>sauceMobileBetaEndpoint</key>
+	<string>$(SAUCE_MOBILE_BETA_ENDPOINT)</string>
 	<key>sauceMobileBetaToken</key>
 	<string>$(SAUCE_MOBILE_BETA_TOKEN)</string>
 	<key>testfairyEnabled</key>
