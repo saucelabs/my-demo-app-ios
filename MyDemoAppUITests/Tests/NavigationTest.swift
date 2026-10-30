@@ -1,4 +1,5 @@
 import XCTest
+import SauceVisual
 
 class NavigationTest: MyDemoAppTestBase {
     func testNavigateToCart() throws {
@@ -22,6 +23,8 @@ class NavigationTest: MyDemoAppTestBase {
         PageObject().moreButton.tap()
         PageObject().webviewButton.tap()
         XCTAssert(PageObject().webviewScreen.waitForExistence(timeout: 2))
+        
+        let visual = try VisualClient(options: VisualBuildOptions(name: "Checkout", project: "iOS app"))
     }
     
     func testNavigateMoreToAbout() throws {

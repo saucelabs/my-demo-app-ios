@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2038AC5D2F8801BF00EAA756 /* SauceMobileBeta in Frameworks */ = {isa = PBXBuildFile; productRef = 2038AC5C2F8801BF00EAA756 /* SauceMobileBeta */; };
 		2038AC612F88041600EAA756 /* FormTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 2038AC602F88041600EAA756 /* FormTextField */; };
 		2038AC642F88045B00EAA756 /* EasyTipView in Frameworks */ = {isa = PBXBuildFile; productRef = 2038AC632F88045B00EAA756 /* EasyTipView */; };
+		208836CF3094D10C00E3EBC8 /* SauceVisual in Frameworks */ = {isa = PBXBuildFile; productRef = 208836CE3094D10C00E3EBC8 /* SauceVisual */; };
 		20B74CF22FF32A5000659B76 /* Backtrace in Frameworks */ = {isa = PBXBuildFile; productRef = 20B74CF12FF32A5000659B76 /* Backtrace */; };
 		2F0DE6BA26FB1D71008C6D63 /* Proxima Nova Font.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6B926FB1D71008C6D63 /* Proxima Nova Font.otf */; };
 		2F0DE6BC26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F0DE6BB26FB335E008C6D63 /* FontsFree-Net-Proxima-Nova-Bold.otf */; };
@@ -151,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				208836CF3094D10C00E3EBC8 /* SauceVisual in Frameworks */,
 				2038AC5D2F8801BF00EAA756 /* SauceMobileBeta in Frameworks */,
 				2038AC642F88045B00EAA756 /* EasyTipView in Frameworks */,
 				2038AC612F88041600EAA756 /* FormTextField in Frameworks */,
@@ -382,6 +384,9 @@
 			dependencies = (
 			);
 			name = "My Demo App";
+			packageProductDependencies = (
+				208836CE3094D10C00E3EBC8 /* SauceVisual */,
+			);
 			productName = "My Demo App";
 			productReference = 2F45FB4126F1CC0100A13B16 /* My Demo App.app */;
 			productType = "com.apple.product-type.application";
@@ -439,6 +444,7 @@
 				2038AC5F2F88041500EAA756 /* XCRemoteSwiftPackageReference "FormTextField" */,
 				2038AC622F88045B00EAA756 /* XCRemoteSwiftPackageReference "EasyTipView" */,
 				20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */,
+				208836CD3094D10C00E3EBC8 /* XCLocalSwiftPackageReference "../visual/visual-sdks/visual-apple" */,
 			);
 			productRefGroup = 2F45FB4226F1CC0100A13B16 /* Products */;
 			projectDirPath = "";
@@ -882,6 +888,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		208836CD3094D10C00E3EBC8 /* XCLocalSwiftPackageReference "../visual/visual-sdks/visual-apple" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../visual/visual-sdks/visual-apple";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		2038AC5B2F8801BF00EAA756 /* XCRemoteSwiftPackageReference "testfairy-ios-sdk-swift-package" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -932,6 +945,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2038AC622F88045B00EAA756 /* XCRemoteSwiftPackageReference "EasyTipView" */;
 			productName = EasyTipView;
+		};
+		208836CE3094D10C00E3EBC8 /* SauceVisual */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SauceVisual;
 		};
 		20B74CF12FF32A5000659B76 /* Backtrace */ = {
 			isa = XCSwiftPackageProductDependency;
