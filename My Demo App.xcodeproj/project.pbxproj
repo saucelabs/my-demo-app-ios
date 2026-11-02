@@ -52,6 +52,7 @@
 		2FC1FA5726F36CEE004A2555 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */; };
 		2FF8B10826FB1BD200921534 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8B10726FB1BD200921534 /* Constants.swift */; };
 		716630533094DE1700463DA1 /* SauceVisual in Frameworks */ = {isa = PBXBuildFile; productRef = 716630523094DE1700463DA1 /* SauceVisual */; };
+		716630543094DE1700463DA1 /* SauceVisual in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 716630523094DE1700463DA1 /* SauceVisual */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		880268AC2A5BFE7E003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268AE2A5BFE7E003E2191 /* Localizable.strings */; };
 		880268B12A5BFF02003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268B32A5BFF02003E2191 /* Localizable.strings */; };
 		880268B52A5BFF52003E2191 /* LocalizationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880268B42A5BFF52003E2191 /* LocalizationTest.swift */; };
@@ -78,6 +79,20 @@
 			remoteInfo = "My Demo App";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		716630553094DE1700463DA1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				716630543094DE1700463DA1 /* SauceVisual in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F0DE6B926FB1D71008C6D63 /* Proxima Nova Font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Font.otf"; sourceTree = "<group>"; };
@@ -396,6 +411,7 @@
 			buildPhases = (
 				A2C826A42706266600616582 /* Sources */,
 				A2C826A52706266600616582 /* Frameworks */,
+				716630553094DE1700463DA1 /* Embed Frameworks */,
 				A2C826A62706266600616582 /* Resources */,
 				8857AC672A15FED400C89032 /* Output classes */,
 				88DAF6992A165B5300716C26 /* Output test names */,
@@ -406,6 +422,9 @@
 				A2C826AE2706266600616582 /* PBXTargetDependency */,
 			);
 			name = MyDemoAppUITests;
+			packageProductDependencies = (
+				716630523094DE1700463DA1 /* SauceVisual */,
+			);
 			productName = MyDemoAppUITests;
 			productReference = A2C826A82706266600616582 /* MyDemoAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -758,8 +777,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "My Demo App/My Demo App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JWKXD469L2;
@@ -773,7 +791,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemo.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Sauce Labs iOS Demo App AdHoc Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -952,6 +969,7 @@
 		};
 		716630523094DE1700463DA1 /* SauceVisual */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 716630513094DE1700463DA1 /* XCLocalSwiftPackageReference "../visual-sdks/visual-apple" */;
 			productName = SauceVisual;
 		};
 /* End XCSwiftPackageProductDependency section */
