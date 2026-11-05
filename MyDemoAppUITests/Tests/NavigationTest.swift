@@ -1,5 +1,4 @@
 import XCTest
-import SauceVisual
 
 class NavigationTest: MyDemoAppTestBase {
     func testNavigateToCart() throws {
@@ -19,14 +18,10 @@ class NavigationTest: MyDemoAppTestBase {
         XCTAssert(PageObject().biometricsButton.exists)
     }
         
-    @MainActor
-     func testNavigateMoreToWebview() async throws {
+    func testNavigateMoreToWebview() throws {
         PageObject().moreButton.tap()
         PageObject().webviewButton.tap()
         XCTAssert(PageObject().webviewScreen.waitForExistence(timeout: 2))
-        
-        let visual = try VisualClient(options: VisualBuildOptions( name: "Checkout flow", project: "Example app", branch: "feature-checkout", defaultBranch: "main"))
-        try await visual.sauceVisualCheck("test")
     }
     
     func testNavigateMoreToAbout() throws {
