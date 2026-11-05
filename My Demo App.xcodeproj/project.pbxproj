@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,6 +51,8 @@
 		2FBA776426F85C0F0004BCC3 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA776326F85C0F0004BCC3 /* CatalogViewController.swift */; };
 		2FC1FA5726F36CEE004A2555 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */; };
 		2FF8B10826FB1BD200921534 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8B10726FB1BD200921534 /* Constants.swift */; };
+		716630533094DE1700463DA1 /* SauceVisual in Frameworks */ = {isa = PBXBuildFile; productRef = 716630523094DE1700463DA1 /* SauceVisual */; };
+		716630543094DE1700463DA1 /* SauceVisual in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 716630523094DE1700463DA1 /* SauceVisual */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		880268AC2A5BFE7E003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268AE2A5BFE7E003E2191 /* Localizable.strings */; };
 		880268B12A5BFF02003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268B32A5BFF02003E2191 /* Localizable.strings */; };
 		880268B52A5BFF52003E2191 /* LocalizationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880268B42A5BFF52003E2191 /* LocalizationTest.swift */; };
@@ -58,6 +60,7 @@
 		88A847D72757B90E00B9F861 /* ProductListingPageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */; };
 		88A847D92757BB4F00B9F861 /* ProductDetailsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */; };
 		88A847DB2757BC3100B9F861 /* NavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847DA2757BC3100B9F861 /* NavigationTest.swift */; };
+		A1B2C3D4E5F60718293A4B5D /* VisualTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C /* VisualTest.swift */; };
 		88A847DD2757BD6A00B9F861 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847DC2757BD6A00B9F861 /* PageObject.swift */; };
 		88AD24FA2A5ABF81005732E7 /* RotationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD24F92A5ABF81005732E7 /* RotationTest.swift */; };
 		A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */; };
@@ -77,6 +80,20 @@
 			remoteInfo = "My Demo App";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		716630553094DE1700463DA1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				716630543094DE1700463DA1 /* SauceVisual in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F0DE6B926FB1D71008C6D63 /* Proxima Nova Font.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Proxima Nova Font.otf"; sourceTree = "<group>"; };
@@ -132,6 +149,7 @@
 		88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingPageTest.swift; sourceTree = "<group>"; };
 		88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTest.swift; sourceTree = "<group>"; };
 		88A847DA2757BC3100B9F861 /* NavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTest.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B5C /* VisualTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualTest.swift; sourceTree = "<group>"; };
 		88A847DC2757BD6A00B9F861 /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
 		88AD24F92A5ABF81005732E7 /* RotationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationTest.swift; sourceTree = "<group>"; };
 		A2C826A82706266600616582 /* MyDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				716630533094DE1700463DA1 /* SauceVisual in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +326,7 @@
 				88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */,
 				88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */,
 				88A847DA2757BC3100B9F861 /* NavigationTest.swift */,
+				A1B2C3D4E5F60718293A4B5C /* VisualTest.swift */,
 				88AD24F92A5ABF81005732E7 /* RotationTest.swift */,
 				880268B42A5BFF52003E2191 /* LocalizationTest.swift */,
 				88782DCA2A6130BA00CE5DC5 /* FailedTests.swift */,
@@ -392,6 +412,7 @@
 			buildPhases = (
 				A2C826A42706266600616582 /* Sources */,
 				A2C826A52706266600616582 /* Frameworks */,
+				716630553094DE1700463DA1 /* Embed Frameworks */,
 				A2C826A62706266600616582 /* Resources */,
 				8857AC672A15FED400C89032 /* Output classes */,
 				88DAF6992A165B5300716C26 /* Output test names */,
@@ -402,6 +423,9 @@
 				A2C826AE2706266600616582 /* PBXTargetDependency */,
 			);
 			name = MyDemoAppUITests;
+			packageProductDependencies = (
+				716630523094DE1700463DA1 /* SauceVisual */,
+			);
 			productName = MyDemoAppUITests;
 			productReference = A2C826A82706266600616582 /* MyDemoAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -439,6 +463,7 @@
 				2038AC5F2F88041500EAA756 /* XCRemoteSwiftPackageReference "FormTextField" */,
 				2038AC622F88045B00EAA756 /* XCRemoteSwiftPackageReference "EasyTipView" */,
 				20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */,
+				716630513094DE1700463DA1 /* XCLocalSwiftPackageReference "../visual-sdks/visual-apple" */,
 			);
 			productRefGroup = 2F45FB4226F1CC0100A13B16 /* Products */;
 			projectDirPath = "";
@@ -574,6 +599,7 @@
 				88AD24FA2A5ABF81005732E7 /* RotationTest.swift in Sources */,
 				A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */,
 				88A847DB2757BC3100B9F861 /* NavigationTest.swift in Sources */,
+				A1B2C3D4E5F60718293A4B5D /* VisualTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,8 +779,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "My Demo App/My Demo App.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = JWKXD469L2;
@@ -768,7 +793,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.saucelabs.mydemo.app.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "Sauce Labs iOS Demo App AdHoc Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/My Demo App/Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -882,6 +906,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		716630513094DE1700463DA1 /* XCLocalSwiftPackageReference "../visual-sdks/visual-apple" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../visual-sdks/visual-apple";
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		2038AC5B2F8801BF00EAA756 /* XCRemoteSwiftPackageReference "testfairy-ios-sdk-swift-package" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -937,6 +968,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */;
 			productName = Backtrace;
+		};
+		716630523094DE1700463DA1 /* SauceVisual */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 716630513094DE1700463DA1 /* XCLocalSwiftPackageReference "../visual-sdks/visual-apple" */;
+			productName = SauceVisual;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
