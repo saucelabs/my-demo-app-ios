@@ -25,22 +25,23 @@ class VisualTest: MyDemoAppTestBase {
     }
 
     // The status bar clock changes on every run, so leave it out of the comparison.
+    // The status bar belongs to SpringBoard, not the app, and its height depends on the device.
     @MainActor
-    var statusBar: CGRect { CGRect(x: 0, y: 0, width: app.frame.width, height: 62) }
+    var statusBar: XCUIElement { XCUIApplication(bundleIdentifier: "com.apple.springboard").statusBars.firstMatch }
 
     @MainActor
     func testCatalogToCheckout() async throws {
         // Catalog
         XCTAssert(PageObject().catalogScreen.waitForExistence(timeout: 2))
         try await visual.sauceVisualCheck("Catalog", options: VisualCheckOptions(
-            ignoreRegions: [statusBar]
+            ignoreElements: [statusBar]
         ))
 
         // Product details, with the element tree so the dashboard shows which element changed
         PageObject().selectItemByName(itemName: productSelector).firstMatch.tap()
         XCTAssert(PageObject().detailsPageOf(productName: backPack).waitForExistence(timeout: 2))
         try await visual.sauceVisualCheck("Product details", options: VisualCheckOptions(
-            ignoreRegions: [statusBar],
+            ignoreElements: [statusBar],
             captureDom: true
         ))
 
@@ -49,7 +50,7 @@ class VisualTest: MyDemoAppTestBase {
         PageObject().cartButton.tap()
         XCTAssert(PageObject().cartDetailsPageOf(productName: backPack).waitForExistence(timeout: 2))
         try await visual.sauceVisualCheck("Cart", options: VisualCheckOptions(
-            ignoreRegions: [statusBar],
+            ignoreElements: [statusBar],
             captureDom: true
         ))
 
@@ -57,7 +58,7 @@ class VisualTest: MyDemoAppTestBase {
         PageObject().cartScreen.buttons["ProceedToCheckout"].tap()
         XCTAssert(app.staticTexts["Select a username from the list below"].waitForExistence(timeout: 2))
         try await visual.sauceVisualCheck("Login", options: VisualCheckOptions(
-            ignoreRegions: [statusBar]
+            ignoreElements: [statusBar]
         ))
 
         // Snapshot only the Login button, with its element tree
@@ -81,11 +82,12 @@ class VisualTest: MyDemoAppTestBase {
         ))
     }
 
-    // Run with bob@example.com and approve the snapshot as the baseline, then switch to
-    // visual@example.com to see a diff: for that user the app gives products random
-    // prices, swaps two product images and centres the title.
-    let user = "bob@example.com"
-    // let user = "visual@example.com"
+    // Run without VISUAL_CHECK and approve the snapshot as the baseline, then run with
+    // VISUAL_CHECK=true to log in as visual@example.com and see a diff: for that user
+    // the app gives products random prices, swaps two product images and centres the title.
+    var user: String {
+        (ProcessInfo.processInfo.environment["VISUAL_CHECK"] ?? "").isEmpty ? "bob@example.com" : "visual@example.com"
+    }
 
     @MainActor
     func testCatalogAfterLogin() async throws {
@@ -97,7 +99,7 @@ class VisualTest: MyDemoAppTestBase {
         XCTAssert(PageObject().catalogScreen.waitForExistence(timeout: 2))
 
         try await visual.sauceVisualCheck("Catalog - login", options: VisualCheckOptions(
-            ignoreRegions: [statusBar],
+            ignoreElements: [statusBar],
             captureDom: true
         ))
     }
