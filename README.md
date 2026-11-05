@@ -76,7 +76,7 @@ xcrun xcresulttool get log --type action --path "<result>.xcresult" | grep get-t
 TEST_RUNNER_SAUCE_USERNAME="$SAUCE_USERNAME" TEST_RUNNER_SAUCE_ACCESS_KEY="$SAUCE_ACCESS_KEY" \
   xcodebuild test -workspace "My Demo App.xcworkspace" -scheme "My Demo App" \
   -destination 'platform=iOS,id=<device-udid>' \
-  -only-testing MyDemoAppUITests/NavigationTest/testNavigateMoreToWebview
+  -only-testing MyDemoAppUITests/VisualTest
 ```
 
 If a test passes there but stalls in Xcode, check the entitlements.
