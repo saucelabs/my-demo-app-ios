@@ -1,5 +1,5 @@
 {
-  "originHash" : "6e0776e9003aa906842d6533d1ccac946e3ec1eec1e1221a33a1adef7ec37e30",
+  "originHash" : "3509b2beb5b8e0a0a06c45f55f2fd003914e1049482690ffe792949a5b48035b",
   "pins" : [
     {
       "identity" : "backtrace-cocoa",
@@ -44,6 +44,14 @@
       "state" : {
         "revision" : "2d0172aa3083a4bcbe7dabbe64b60e0f10394f5c",
         "version" : "2.3.0"
+      }
+    },
+    {
+      "identity" : "visual-sdks",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/saucelabs/visual-sdks.git",
+      "state" : {
+        "revision" : "671a9fb05c5bd0c76e9f5602288f0d9af6283e86"
       }
     }
   ],
