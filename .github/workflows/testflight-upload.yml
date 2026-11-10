@@ -37,7 +37,10 @@ jobs:
     if: >
       github.event_name == 'workflow_run' &&
       github.event.workflow_run.head_repository.full_name == github.repository &&
-      startsWith(github.event.workflow_run.head_branch, 'chore/testfairy-sdk-bump-')
+      (
+        startsWith(github.event.workflow_run.head_branch, 'chore/testfairy-sdk-bump-') ||
+        startsWith(github.event.workflow_run.head_branch, 'chore/backtrace-sdk-bump-')
+      )
     runs-on: ubuntu-latest
     outputs:
       proceed: ${{ steps.check.outputs.proceed }}
