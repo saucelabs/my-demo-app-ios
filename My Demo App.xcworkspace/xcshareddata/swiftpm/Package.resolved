@@ -1,5 +1,5 @@
 {
-  "originHash" : "6e0776e9003aa906842d6533d1ccac946e3ec1eec1e1221a33a1adef7ec37e30",
+  "originHash" : "18b1aeb15c5cf08b7baa29cfa823fcfa5237e2e41c7e4f89cc233385b3b94005",
   "pins" : [
     {
       "identity" : "backtrace-cocoa",
@@ -44,6 +44,15 @@
       "state" : {
         "revision" : "2d0172aa3083a4bcbe7dabbe64b60e0f10394f5c",
         "version" : "2.3.0"
+      }
+    },
+    {
+      "identity" : "visual-apple",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:saucelabs/visual-apple.git",
+      "state" : {
+        "revision" : "a69966197d46c3f2142b17e2423f5df1fd48bef3",
+        "version" : "0.1.0"
       }
     }
   ],

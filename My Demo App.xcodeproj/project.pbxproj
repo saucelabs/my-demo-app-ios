@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,8 +51,8 @@
 		2FBA776426F85C0F0004BCC3 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBA776326F85C0F0004BCC3 /* CatalogViewController.swift */; };
 		2FC1FA5726F36CEE004A2555 /* PaymentMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC1FA5626F36CEE004A2555 /* PaymentMethodViewController.swift */; };
 		2FF8B10826FB1BD200921534 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF8B10726FB1BD200921534 /* Constants.swift */; };
-		716630533094DE1700463DA1 /* SauceVisual in Frameworks */ = {isa = PBXBuildFile; productRef = 716630523094DE1700463DA1 /* SauceVisual */; };
-		716630543094DE1700463DA1 /* SauceVisual in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 716630523094DE1700463DA1 /* SauceVisual */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		710B804B30A2047C00FF59F2 /* SauceVisual in Frameworks */ = {isa = PBXBuildFile; productRef = 710B804A30A2047C00FF59F2 /* SauceVisual */; };
+		710B804C30A2049500FF59F2 /* SauceVisual in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 710B804A30A2047C00FF59F2 /* SauceVisual */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		880268AC2A5BFE7E003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268AE2A5BFE7E003E2191 /* Localizable.strings */; };
 		880268B12A5BFF02003E2191 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880268B32A5BFF02003E2191 /* Localizable.strings */; };
 		880268B52A5BFF52003E2191 /* LocalizationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880268B42A5BFF52003E2191 /* LocalizationTest.swift */; };
@@ -60,9 +60,9 @@
 		88A847D72757B90E00B9F861 /* ProductListingPageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */; };
 		88A847D92757BB4F00B9F861 /* ProductDetailsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */; };
 		88A847DB2757BC3100B9F861 /* NavigationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847DA2757BC3100B9F861 /* NavigationTest.swift */; };
-		A1B2C3D4E5F60718293A4B5D /* VisualTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C /* VisualTest.swift */; };
 		88A847DD2757BD6A00B9F861 /* PageObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88A847DC2757BD6A00B9F861 /* PageObject.swift */; };
 		88AD24FA2A5ABF81005732E7 /* RotationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AD24F92A5ABF81005732E7 /* RotationTest.swift */; };
+		A1B2C3D4E5F60718293A4B5D /* VisualTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B2C3D4E5F60718293A4B5C /* VisualTest.swift */; };
 		A2C826B52706268B00616582 /* MyDemoAppTestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */; };
 		BAC7BACE0000000000000001 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7BACE0000000000000003 /* Credentials.swift */; };
 		C4513FF52759B1BA004BABDA /* TestFairyWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4513FF42759B1BA004BABDA /* TestFairyWrapper.swift */; };
@@ -88,7 +88,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				716630543094DE1700463DA1 /* SauceVisual in Embed Frameworks */,
+				710B804C30A2049500FF59F2 /* SauceVisual in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,9 +149,9 @@
 		88A847D62757B90D00B9F861 /* ProductListingPageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListingPageTest.swift; sourceTree = "<group>"; };
 		88A847D82757BB4F00B9F861 /* ProductDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsTest.swift; sourceTree = "<group>"; };
 		88A847DA2757BC3100B9F861 /* NavigationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTest.swift; sourceTree = "<group>"; };
-		A1B2C3D4E5F60718293A4B5C /* VisualTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualTest.swift; sourceTree = "<group>"; };
 		88A847DC2757BD6A00B9F861 /* PageObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageObject.swift; sourceTree = "<group>"; };
 		88AD24F92A5ABF81005732E7 /* RotationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationTest.swift; sourceTree = "<group>"; };
+		A1B2C3D4E5F60718293A4B5C /* VisualTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualTest.swift; sourceTree = "<group>"; };
 		A2C826A82706266600616582 /* MyDemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C826AC2706266600616582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2C826B42706268B00616582 /* MyDemoAppTestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDemoAppTestBase.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				716630533094DE1700463DA1 /* SauceVisual in Frameworks */,
+				710B804B30A2047C00FF59F2 /* SauceVisual in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +424,7 @@
 			);
 			name = MyDemoAppUITests;
 			packageProductDependencies = (
-				716630523094DE1700463DA1 /* SauceVisual */,
+				710B804A30A2047C00FF59F2 /* SauceVisual */,
 			);
 			productName = MyDemoAppUITests;
 			productReference = A2C826A82706266600616582 /* MyDemoAppUITests.xctest */;
@@ -463,7 +463,7 @@
 				2038AC5F2F88041500EAA756 /* XCRemoteSwiftPackageReference "FormTextField" */,
 				2038AC622F88045B00EAA756 /* XCRemoteSwiftPackageReference "EasyTipView" */,
 				20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */,
-				716630513094DE1700463DA1 /* XCLocalSwiftPackageReference "../visual-sdks/visual-apple" */,
+				710B804930A2047C00FF59F2 /* XCRemoteSwiftPackageReference "visual-apple" */,
 			);
 			productRefGroup = 2F45FB4226F1CC0100A13B16 /* Products */;
 			projectDirPath = "";
@@ -906,13 +906,6 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		716630513094DE1700463DA1 /* XCLocalSwiftPackageReference "../visual-sdks/visual-apple" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = "../visual-sdks/visual-apple";
-		};
-/* End XCLocalSwiftPackageReference section */
-
 /* Begin XCRemoteSwiftPackageReference section */
 		2038AC5B2F8801BF00EAA756 /* XCRemoteSwiftPackageReference "testfairy-ios-sdk-swift-package" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -946,6 +939,15 @@
 				version = "2.2.0-rc";
 			};
 		};
+		710B804930A2047C00FF59F2 /* XCRemoteSwiftPackageReference "visual-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:saucelabs/visual-apple.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 1.0.0;
+				minimumVersion = 0.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -969,9 +971,9 @@
 			package = 20B74CF02FF32A5000659B76 /* XCRemoteSwiftPackageReference "backtrace-cocoa" */;
 			productName = Backtrace;
 		};
-		716630523094DE1700463DA1 /* SauceVisual */ = {
+		710B804A30A2047C00FF59F2 /* SauceVisual */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 716630513094DE1700463DA1 /* XCLocalSwiftPackageReference "../visual-sdks/visual-apple" */;
+			package = 710B804930A2047C00FF59F2 /* XCRemoteSwiftPackageReference "visual-apple" */;
 			productName = SauceVisual;
 		};
 /* End XCSwiftPackageProductDependency section */
