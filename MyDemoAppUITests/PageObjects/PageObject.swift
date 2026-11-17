@@ -9,6 +9,11 @@ public class PageObject {
     lazy var cartButton = app.buttons["Cart-tab-item"]
     lazy var moreButton = app.buttons["More-tab-item"]
     
+    // Login
+    lazy var usernameField = app.textFields["username-field"]
+    lazy var passwordField = app.secureTextFields["password-field"]
+    lazy var loginButton = app.buttons["login-button"]
+
     // Menu items
     lazy var webviewButton = app.buttons["Webview-menu-item"]
     lazy var qrCodeScannerButton = app.buttons["QrCodeScanner-menu-item"]
