@@ -31,3 +31,25 @@ The app runs Backtrace and the Sauce Mobile Beta SDK side by side.
 
 2. Build. `Config/Demo.xcconfig` includes your file, Xcode expands the values into Info.plist
    (`sauceMobileBetaToken`, `sauceMobileBetaEndpoint`, `backtraceUniverse`, `backtraceToken`) and `Credentials.swift` reads them.
+
+## UI tests
+
+### Sauce Visual
+
+`VisualTest` uses [SauceVisual](https://github.com/saucelabs/visual-apple), added to the `MyDemoAppUITests` target as a Swift package. Open `My Demo App.xcworkspace`, whose `Package.resolved` pins the version.
+
+`SauceVisual` is a dynamic framework and is set to **Embed & Sign** in the UI test target. Keep it that way: without it, tests pass on a simulator but fail on a device with `Library not loaded: @rpath/SauceVisual.framework/SauceVisual`.
+
+The tests need `SAUCE_USERNAME` and `SAUCE_ACCESS_KEY`, and are skipped without them. These are separate from the SDK credentials in `Config/Local.xcconfig`.
+
+- **Xcode:** add them under **Edit Scheme → Run → Arguments → Environment Variables**. The Test action uses them too. The scheme is shared, so don't commit it with your keys.
+- **Terminal:** pass them with the `TEST_RUNNER_` prefix. For a device, use `-destination 'platform=iOS,id=<device-udid>'`.
+
+```bash
+TEST_RUNNER_SAUCE_USERNAME="$SAUCE_USERNAME" TEST_RUNNER_SAUCE_ACCESS_KEY="$SAUCE_ACCESS_KEY" \
+  xcodebuild test -workspace "My Demo App.xcworkspace" -scheme "My Demo App" \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro' \
+  -only-testing MyDemoAppUITests/VisualTest
+```
+
+To see a visual change, accept the first build's snapshots as baselines, then set `VISUAL_CHECK=true` (`TEST_RUNNER_VISUAL_CHECK=true` in the terminal). The test then logs in as `visual@example.com`, whose catalog looks different.
